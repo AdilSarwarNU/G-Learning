@@ -1,4 +1,7 @@
-G_Learning
+G-LEARNING
 ==========
 
-Front End of G-Learning
+Talha Naveed's branch of the G-Learning project.
+
+**CURRENTLY WORKING ON**
+- Login page
