@@ -8,8 +8,11 @@
             <file>file:/C:/wamp/www/G-Learning/application/views/drills_page.php</file>
             <file>file:/C:/wamp/www/G-Learning/application/views/student_dashboard.php</file>
             <file>file:/C:/wamp/www/G-Learning/assets/css/student_dashboard.css</file>
+<<<<<<< HEAD
             <file>file:/C:/wamp/www/G-Learning/application/views/login_view.php</file>
             <file>file:/C:/wamp/www/G-Learning/assets/css/login.css</file>
+=======
+>>>>>>> origin/talha
         </group>
     </open-files>
 </project-private>

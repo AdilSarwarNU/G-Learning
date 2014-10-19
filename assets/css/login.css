@@ -8,6 +8,12 @@ margin: 0;
 background: #f7f8f8 url(../images/blue-background.jpg) no-repeat center center fixed;
  background-size: cover;
 }
+<<<<<<< HEAD
+=======
+.login-page-container {
+
+}
+>>>>>>> origin/talha
 
 .login-page-container #login-box-wrapper {
 margin: 	0px auto;
@@ -50,6 +56,7 @@ background-color: rgba(0,0,0,.15);
 outline: 0;
 border: 0;
 font-family: 'Ideal Sans SSm A','Ideal Sans SSm B',sans-serif;
+<<<<<<< HEAD
 border-radius:5px;
 -moz-border-radius:5px;
 -webkit-border-radius:5px;
@@ -73,6 +80,32 @@ border-radius:5px;
 -moz-border-radius:5px;
 -webkit-border-radius:5px;
 }
+=======
+}
+.login-page-container #login-box-wrapper input:focus {
+	   /*Glow*/
+    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    box-shadow: 0px 0px 20px rgba(255,255,255,0.8); 
+}
+
+::-webkit-input-placeholder {
+   color: #fff !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #fff !important;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #fff !important;
+}
+
+:-ms-input-placeholder {  
+ color: #fff !important;
+}
+
+>>>>>>> origin/talha
 .login-page-container #login-box-wrapper .login-links {
 margin-top: 55px;
 margin-left: 22px;
@@ -118,6 +151,7 @@ font-weight: 400;
 cursor: pointer;
 
 }
+<<<<<<< HEAD
 ::-webkit-input-placeholder {
    color: #fff !important;
 }
@@ -133,3 +167,73 @@ cursor: pointer;
 :-ms-input-placeholder {  
  color: #fff !important;
 }
+=======
+.login-page-container #login-box-wrapper button:hover {
+   /*Glow*/
+    -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    box-shadow: 0px 0px 20px rgba(255,255,255,0.8); 
+}
+
+.tool-tip-right-container
+{
+
+padding: 0;
+margin: 0px auto;
+width: 250px;
+height: 200px;
+position: absolute;
+top: -90; left: 610; bottom: 0; right: 0;
+margin: auto;
+}
+
+.tool-tip-right
+{
+    display:block;
+    overflow:hidden;
+    position:relative; 
+}
+
+
+.tool-tip-right span
+{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin-left: 22px;
+    margin-top: 4px;
+}
+
+.tool-tip-right-bottom-container
+{
+
+padding: 0;
+margin: 0px auto;
+width: 250px;
+height: 200px;
+position: absolute;
+top: 100; left: 610; bottom: 0; right: 0;
+margin: auto;
+}
+
+.tool-tip-right-bottom
+{
+    display:block;
+    overflow:hidden;
+    position:relative; 
+}
+
+
+.tool-tip-right-bottom span
+{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin-left: 22px;
+    margin-top: 4px;
+}
+
+
+
+
+>>>>>>> origin/talha
