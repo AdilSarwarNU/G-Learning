@@ -24,7 +24,7 @@
           
                     <div id="myContainerRight">
                          <div class="grey_icon_nav"> <img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>
-                         <div class="green_icon_nav"><img  src="<?php echo base_url();?>/assets/images/docs_nav"/></div>
+                         <div class="green_icon_nav"><img  src="<?php echo base_url();?>/assets/images/docs_nav.png"/></div>
                          <div class="blue_icon_nav"><img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>
                          <div class="pink_icon_nav"><img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>  
                      </div> 

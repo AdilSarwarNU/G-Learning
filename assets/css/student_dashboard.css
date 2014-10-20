@@ -131,7 +131,6 @@ margin-top: -25%;
 .drills-content{
     background-color: #666981;
     width: auto;
-    height: 600px;
 }
 
 .leftpane
@@ -164,6 +163,7 @@ margin-top: -25%;
 {
     
     padding-top:21px;
+    padding-bottom:21px;
     padding-left:400px;
     width:700px;
 }
@@ -175,6 +175,7 @@ margin-top: -25%;
 }
 
 .gamebox{
+    overflow: auto;
     background-color: #C0C0C0;
     padding:30px;
     font-size:18px;
@@ -183,10 +184,59 @@ margin-top: -25%;
 }
 
 .gamerow img{
-    width:200px;
-    height: 200px;
+    width:250px;
+    height:250px;
 }
 
-.gameImg2{
-    margin-left: 200px;
+.goback_fixed_button
+{
+    width:250px;
+    height:83px;
+    margin: auto;
+    padding: 0;
+}
+.goback_fixed_button
+{
+    display:block;
+    overflow:hidden;
+    position:fixed; 
+    top:520px;
+    left:50px;
+    z-index:20000;
+    cursor: pointer;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    border: #bbbbbb ridge medium;
+    -webkit-box-shadow:0 0 20px #0088cc; 
+    -moz-box-shadow: 0 0 20px #0088cc;  
+    box-shadow:0 0 20px #0088cc;
+    -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.goback_fixed_button:hover
+{
+    -webkit-box-shadow:0 0 20px cornsilk; 
+    -moz-box-shadow: 0 0 20px cornsilk;  
+    box-shadow:0 0 20px cornsilk;
+}
+
+.gamelabel{
+    float:top;
+    text-align: center;
+    height:25px;
+}
+.gamelabel label{
+    color:black;
+    font-size: 24px;
+}
+
+.gamecontainer{
+    display:block;
+    float:left;
+    height: 275px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
