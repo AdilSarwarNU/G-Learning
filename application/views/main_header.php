@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/grid_12.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/login.css" type="text/css" media="screen">
+
 </head>
 <body>
     <header class="main">
@@ -24,7 +24,7 @@
           
                     <div id="myContainerRight">
                          <div class="grey_icon_nav"> <img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>
-                         <div class="green_icon_nav"><img  src="<?php echo base_url();?>/assets/images/docs_nav"/></div>
+                         <div class="green_icon_nav"><img  src="<?php echo base_url();?>/assets/images/docs_nav.png"/></div>
                          <div class="blue_icon_nav"><img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>
                          <div class="pink_icon_nav"><img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>  
                      </div> 
