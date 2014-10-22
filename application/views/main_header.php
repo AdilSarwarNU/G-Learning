@@ -23,10 +23,26 @@
            <div class="pull-right">
           
                     <div id="myContainerRight">
-                         <div class="grey_icon_nav"> <img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>
-                         <div class="green_icon_nav"><img  src="<?php echo base_url();?>/assets/images/docs_nav.png"/></div>
-                         <div class="blue_icon_nav"><img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>
-                         <div class="pink_icon_nav"><img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>  
+                        <div class="green_icon_nav">
+                            <div class="navbar-images-container">
+                                <img class="navbar-images" src="<?php echo base_url();?>/assets/images/docs_nav.png"/>
+                            </div>
+                        </div>
+                        <div class="grey_icon_nav">
+                            <div class="navbar-images-container">
+                                <img class="navbar-images" src="<?php echo base_url();?>/assets/images/who_nav.png"/>
+                            </div>
+                        </div>
+                        <div class="blue_icon_nav">
+                            <div class="navbar-images-container">
+                                <img class="navbar-images" src="<?php echo base_url();?>/assets/images/who_nav.png"/>
+                            </div>
+                        </div>
+                        <div class="pink_icon_nav">
+                            <div class="navbar-images-container">
+                                <img class="navbar-images" src="<?php echo base_url();?>/assets/images/who_nav.png"/>
+                            </div>  
+                        </div>
                      </div> 
 <!--               <div > <a title="What is G-Learning" > </a> </div>
                    <div class="navbar_icons"> <a title="Why G-Learning" > </a>  </div>
