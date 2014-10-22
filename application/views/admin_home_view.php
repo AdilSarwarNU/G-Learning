@@ -119,7 +119,7 @@
                                 <td  class="inputField" ></td>
                                 <td class="input">
                                       <div class="fieldgroup">
-                                        <input type="submit" value='Search Student'>
+                                        <input type="submit" value='Search Student'><br/><br/>
                                       </div>
                                 </td>
                             </tr>
@@ -200,7 +200,7 @@
                                 <td  class="inputField" ></td>
                                 <td class="input">
                                       <div class="fieldgroup">
-                                        <input type="submit" value='Submit'>
+                                        <input type="submit" value='Submit'><br/><br/>
                                       </div>
                                 </td>
                             </tr>

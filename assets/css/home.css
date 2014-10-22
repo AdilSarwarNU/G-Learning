@@ -45,7 +45,7 @@ table {
 }
 
 html ,body{
-    width:1360px;
+    width:1340px;
     padding:0;
     margin:auto;
 }
@@ -58,7 +58,7 @@ html ,body{
 
 body {
     font: 14px/24px Tahoma, Geneva, sans-serif !important;
-    width:1360px ;
+    width:1340px ;
     margin:auto !important;
     background: #D0D0D0;
     
@@ -258,6 +258,7 @@ outline: 0 none;
 /*  FOOTER   */
 #footer{
     height:130px;
+    z-index:40000;
 }
 
 #center_footer{
@@ -350,6 +351,7 @@ outline: 0 none;
     float:right;
     background-color: #222222;
     margin-right: 57px;
+    border-top-left-radius: 90px;
 }
 
 .nav_element
@@ -372,6 +374,7 @@ outline: 0 none;
     border: 1px solid;
     display:table;
     padding:40px;
+    border-top-left-radius: 90px;
 }
 
 .nav_element label
@@ -545,7 +548,7 @@ div.fieldgroup
 .fieldgroup input[type="submit"]
 {
     color:white;
-    background-color: #555555;
+    background-color: #7C8389;
     width: auto;
     height: 30px;
     border-radius: 8px;
