@@ -1,0 +1,242 @@
+.student_dashboard_body{
+    width:100%;
+    height:auto;
+    margin:auto;
+}
+
+.student_dashboard_tips{
+    background-color: #CCEFE1;
+    width:100%;
+    height:auto;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.student_dashboard_tips label{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.student_dashboard_video{
+    text-align: center;
+    margin: auto;
+}
+
+.fixed_buttons
+{
+    width:200px;
+    height: 200px;
+    margin: auto;
+    padding: 0;
+}
+
+.left_fixed_button
+{
+    display:block;
+    overflow:hidden;
+    position:fixed; 
+    top:425px;
+    left:50px;
+    z-index:20000;
+    cursor: pointer;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    border: #bbbbbb ridge medium;
+    -webkit-box-shadow:0 0 20px #0088cc; 
+    -moz-box-shadow: 0 0 20px #0088cc;  
+    box-shadow:0 0 20px #0088cc;
+    -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.left_fixed_button:hover label{
+    color:white;
+}
+
+.left_fixed_button:hover
+{
+    -webkit-box-shadow:0 0 20px cornsilk; 
+    -moz-box-shadow: 0 0 20px cornsilk;  
+    box-shadow:0 0 20px cornsilk;
+}
+
+.left_fixed_button label
+{
+    font-size:32px;
+    color:#d3c70c;
+    margin-top: -25%;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.right_fixed_button
+{
+    display:block;
+    overflow:hidden;
+    position:fixed; 
+    top:425px;
+    left:1085px;
+    z-index:20000;
+    cursor: pointer;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    border: #bbbbbb ridge medium;
+    -webkit-box-shadow:0 0 20px #0088cc; 
+    -moz-box-shadow: 0 0 20px #0088cc;  
+    box-shadow:0 0 20px #0088cc;
+    -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.right_fixed_button:hover
+{
+    -webkit-box-shadow:0 0 20px cornsilk; 
+    -moz-box-shadow: 0 0 20px cornsilk;  
+    box-shadow:0 0 20px cornsilk;
+}
+
+.right_fixed_button label
+{
+    font-size:32px;
+    color:#d3c70c;
+margin-top: -25%;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.mid-content{
+    background-color: #68CAB6;
+}
+
+.right_fixed_button:hover label{
+    color:white;
+}
+
+.right_fixed_button:hover
+{
+    -webkit-box-shadow:0 0 20px cornsilk; 
+    -moz-box-shadow: 0 0 20px cornsilk;  
+    box-shadow:0 0 20px cornsilk;
+}
+
+
+/* DRILLS PAGE CSS */
+.drills-content{
+    background-color: #666981;
+    width: auto;
+}
+
+.leftpane
+{
+    width:250px;
+    height:400px;
+    padding:20px;
+    float: left;
+}
+
+.topicsbox{
+    background-color: #C0C0C0;
+    padding:20px;
+    font-size:18px;
+    color:#444444;
+    margin-top: 10px;
+}
+
+.topicsbox input[type="radio"]
+{
+    margin-bottom: 5px;
+}
+.leftpane label
+{
+    font-size: 28px;
+    color:white;
+}
+
+.rightpane
+{
+    
+    padding-top:21px;
+    padding-bottom:21px;
+    padding-left:400px;
+    width:700px;
+}
+
+.rightpane label
+{
+    font-size: 28px;
+    color:white;
+}
+
+.gamebox{
+    overflow: auto;
+    background-color: #C0C0C0;
+    padding:30px;
+    font-size:18px;
+    color:#444444;
+    margin-top: 10px;
+}
+
+.gamerow img{
+    width:250px;
+    height:250px;
+}
+
+.goback_fixed_button
+{
+    width:250px;
+    height:83px;
+    margin: auto;
+    padding: 0;
+}
+.goback_fixed_button
+{
+    display:block;
+    overflow:hidden;
+    position:fixed; 
+    top:520px;
+    left:50px;
+    z-index:20000;
+    cursor: pointer;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    border: #bbbbbb ridge medium;
+    -webkit-box-shadow:0 0 20px #0088cc; 
+    -moz-box-shadow: 0 0 20px #0088cc;  
+    box-shadow:0 0 20px #0088cc;
+    -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.goback_fixed_button:hover
+{
+    -webkit-box-shadow:0 0 20px cornsilk; 
+    -moz-box-shadow: 0 0 20px cornsilk;  
+    box-shadow:0 0 20px cornsilk;
+}
+
+.gamelabel{
+    float:top;
+    text-align: center;
+    height:25px;
+}
+.gamelabel label{
+    color:black;
+    font-size: 24px;
+}
+
+.gamecontainer{
+    display:block;
+    float:left;
+    height: 275px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}

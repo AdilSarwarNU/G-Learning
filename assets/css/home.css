@@ -1,0 +1,495 @@
+/* Global properties ======================================================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,div,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video ,header {
+	margin: 0 ;
+	padding: 0 ;
+	border: 0 ;
+	font-size: 100% ;
+	font: inherit ;
+	vertical-align: baseline ;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html ,body{
+    width:1360px;
+    padding:0;
+    margin:auto;
+}
+
+.header_studentdashboard {
+    width:100%;
+    margin:0 auto;
+}
+
+
+body {
+    font: 14px/24px Tahoma, Geneva, sans-serif !important;
+    width:1360px ;
+    margin:auto !important;
+    background: #D0D0D0;
+    
+}
+
+.main {
+    width:inherit;
+    margin:auto !important;
+    background:white;   
+    height:80px;
+    overflow:hidden;
+}
+
+.logo_span
+{
+ background:white;   
+}
+.logo
+{
+    height:70px !important;
+    transform: translateX(3%) translateY(5%);
+}
+
+
+.pink_icon_nav
+{
+   background:#f8b9b7;
+  
+}
+
+.blue_icon_nav
+{
+    background: #5bc0de;
+     width:100px;
+}
+
+.green_icon_nav
+{
+    background:#bce8f1;
+    margin:auto;
+     width:100px;
+}
+
+.grey_icon_nav
+{
+    background:#555;
+     width:100px;
+    
+}
+
+#myContainerRight {
+  width:700px;
+margin:auto;
+    //height:100%;
+       white-space: nowrap;
+}
+ 
+#myContainerRight .pink_icon_nav, #myContainerRight .blue_icon_nav, #myContainerRight .green_icon_nav, #myContainerRight .grey_icon_nav  {
+    width:100px;
+    height:80px;    
+    float:right;
+    padding:0 !important;
+    margin:auto !important;
+    text-align: center;
+  //  border:1px solid black !important;
+    
+    
+    vertical-align:middle !important;
+   
+}
+ 
+#myContainerRight .pink_icon_nav img, #myContainerRight .blue_icon_nav img, #myContainerRight .green_icon_nav img , #myContainerRight .grey_icon_nav img  {
+     height:50px !important;
+      display: inline-block;
+    vertical-align:middle !important;
+}
+#myContainerRight img{
+    margin:auto !important;
+    height:50px !important;
+    vertical-align:middle !important;
+    //border:1px solid black !important;
+}
+/*  FOOTER   */
+#footer{
+    height:130px;
+}
+
+#center_footer{
+    background:#000;
+    height: 130px;
+    width: 1340px;
+    margin:0 auto;
+}
+
+#left_footer,#right_footer {
+    width:450px;
+    padding:20px;
+    float:left;
+}
+
+#left_footer b{
+    color:#fff;
+}
+
+#left_footer li{
+    float:left;
+    margin:0 20px;
+}
+
+#left_footer img{
+    width:60px;
+    height:60px;
+}
+
+#right_footer{
+    float:right;
+}
+
+#right_footer a{ 
+    color:#aaa;
+    padding:0 10px;
+    line-height: 21px;
+    font-size: 13px;
+    font-weight:bold;
+}
+
+#footer span{
+    color:#ccc;
+    font-size: 13px;
+    margin-left: 150px;
+}
+
+.copyright
+{
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*  ADMIN CSS   */
+.main_container_general
+{
+    width:1340px;
+    margin: auto;
+    height: auto;
+}
+
+.main_heading_general
+{
+    height: 40px;
+    border: 1px ridge #dbc59e;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #dbc59e;
+    text-align: center;
+}
+
+.main_heading_general label
+{
+    font-size:24px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.mid_content_general
+{
+    background-color: #F1F1F1;
+    min-height: 440px;
+    width:1340px;
+}
+
+.right_nav_general
+{
+    float:right;
+    background-color: #222222;
+    margin-right: 57px;
+}
+
+.nav_element
+{
+    background-color: #222222;
+    width:137px;
+    height: 60px;
+    text-align: center;
+    border: 1px solid #343434;
+    display:table;
+    padding:40px;
+}
+
+.nav_element_default
+{
+    background-color: #343434;
+    width:137px;
+    height: 60px;
+    text-align: center;
+    border: 1px solid;
+    display:table;
+    padding:40px;
+}
+
+.nav_element label
+{
+    display: table-cell;
+    vertical-align:middle; 
+    font-size: 18px;
+    color:#FBF9FB;
+}
+
+.nav_element_default label
+{
+    display: table-cell;
+    vertical-align:middle; 
+    font-size: 20px;
+    font-weight: 600;
+    color: #7C8389;
+}
+
+.nav_element:hover
+{
+    cursor: pointer;
+    background-color: #343434;
+    color: #7C8389;
+    border: 1px solid;
+}
+
+.nav_element:hover label
+{
+    cursor: pointer;
+    background-color: #343434;
+    color: #7C8389;
+}
+
+.nav_element_default:hover
+{
+    cursor: pointer;
+}
+
+.nav_element_default:hover label
+{
+    cursor: pointer;
+}
+
+.top_tabs_general
+{
+    background-color: #F1F1F1;
+    width:500px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.top_tabs_element
+{
+    display: table-cell;
+}
+
+.top_tabs_inside
+{
+    width: 160px;
+    text-align: center;
+    border: 1px solid #343434;
+    display:table;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #FFF;
+    margin-left: 5px;
+}
+
+.top_tabs_element_default
+{
+    display: table-cell;
+}
+
+.top_tabs_inside_default
+{
+    width: 160px;
+    text-align: center;
+    border: 1px solid #343434;
+    display:table;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #E6E6E6;
+    margin-left: 5px;
+}
+
+
+.top_tabs_inside label
+{
+    display: table-cell;
+    vertical-align:middle; 
+    font-size: 14px;
+    color:#343434;
+    font-weight: 600;
+}
+
+.top_tabs_inside_default label
+{
+    display: table-cell;
+    vertical-align:middle; 
+    font-size: 14px;
+    color:#343434;
+    font-weight: 600;
+}
+
+.top_tabs_inside:hover
+{
+    background-color: #E6E6E6;
+}
+
+.top_tabs_inside label:hover
+{
+    cursor: pointer;
+}
+
+.top_tabs_inside_default label:hover
+{
+    cursor: pointer;
+}
+
+.mid_forms_general
+{
+    margin: auto;
+    width:600px;
+    background-color: white;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    margin-top: 15px;
+    border: 1px dotted gray;
+}
+
+.mid_forms_body
+{
+    margin-left: 30px;
+}
+
+.forms_heading
+{
+    text-align: left;
+}
+
+.forms_heading label
+{
+    font-size: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+div.fieldgroup
+{
+  text-align:left;
+}
+
+.fieldgroup input
+{
+  margin-left:5px;
+  width:240px;
+        margin-top: 13px;
+}
+
+.fieldgroup select
+{
+  margin-left:5px;
+  width:253px;
+        margin-top: 13px;
+}
+
+.fieldgroup input[type="submit"]
+{
+    color:white;
+    background-color: #555555;
+    width: auto;
+    height: 30px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    margin-top: 17px;
+    
+    border: #bbbbbb ridge medium;
+    -webkit-box-shadow:0 0 2px gray; 
+    -moz-box-shadow: 0 0 2px gray;  
+    box-shadow:0 0 2px gray;
+    font-size: 16px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.fieldgroup input[type="submit"]:hover
+{
+    cursor: pointer;
+    color:#212121;
+    background-color: #E6E6E6;
+    -webkit-box-shadow:0 0 8px #555555; 
+    -moz-box-shadow: 0 0 8px #555555;  
+    box-shadow:0 0 8px #555555;
+}
+
+.inputField
+{
+    text-align: right;
+    color: #333333;
+    padding: 10px 0px 3px 25px;
+    right:100px;
+    font-family: Arial,sans-serif;
+    font-size: 100%;
+    color: #333;
+    font-weight: bold;
+    height:20px;
+    width: 200px;
+}
+
+#add_student
+{
+    display: block;
+}
+
+#edit_student
+{
+    display: none;
+}
+
+#search_general
+{
+    display: none;
+}
+
+#delete_student
+{
+    display: none;
+}

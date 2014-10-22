@@ -1,4 +1,8 @@
-G_Learning
+G-LEARNING
 ==========
 
-Front End of G-Learning
+**CURRENTLY WORKING ON**
+- Login page (Talha)
+- Dashboard (Haider)
+- Home (Adil)
+- Admin (Zain)
