@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/grid_12.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/login.css" type="text/css" media="screen">
+
 </head>
 <body>
     <header class="main">

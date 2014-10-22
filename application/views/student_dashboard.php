@@ -2,11 +2,9 @@
     
     <div class="student_dashboard_tips">
         <label >
-<<<<<<< HEAD
+
             Tip: You can perform better if you concentrate.
-=======
-            Tip: You can perform better if u concentrate.
->>>>>>> origin/talha
+
         </label>
     </div>
     <div class="mid-content">
