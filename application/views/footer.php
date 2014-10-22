@@ -35,5 +35,6 @@
     <script src="<?php echo base_url(); ?>/assets/js/jquery-2.0.3.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap-select.js"></script>
+    <br/>
 </body>
 </html>
