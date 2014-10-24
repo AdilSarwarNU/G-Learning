@@ -1,55 +1,3 @@
-<script type="text/javascript">
-    function AddStudent()
-    {
-        $("#add_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
-        $("#add_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");
-        
-        $("#delete_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
-        $("#delete_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
-        
-        $("#edit_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
-        $("#edit_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
-        $("#delete_student").hide();
-        $("#edit_student").hide();
-        $("#add_student").show();
-        $("#search_general").hide();
-        $("#main_form").show();
-    }
-
-    function EditStudent()
-    {
-        $("#edit_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
-        $("#edit_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");
-        
-        $("#delete_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
-        $("#delete_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
-        
-        $("#add_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
-        $("#add_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
-        $("#add_student").hide();
-        $("#delete_student").hide();
-        $("#edit_student").show();
-        $("#search_general").show();
-        $("#main_form").hide();
-    }
-
-    function DeleteStudent()
-    {
-        $("#delete_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
-        $("#delete_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");
-        
-        $("#edit_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
-        $("#edit_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
-        
-        $("#add_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
-        $("#add_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
-        $("#add_student").hide();
-        $("#edit_student").hide();
-        $("#delete_student").show();
-        $("#search_general").show();
-        $("#main_form").hide();
-    }
-</script>
 
 <div class="main_container_general">
     <div class="main_heading_general">
@@ -58,14 +6,21 @@
     
     <div class="mid_content_general">
         <div class="right_nav_general">
-            <div class="nav_element_default">
-                <label>Student</label>
+            <div id="right_nav_general">
+                <div class="nav_element_default">
+                    <label>Student</label>
+                </div>
+                <div class="nav_element">
+                    <label>Teacher</label>
+                </div>
+                <div class="nav_element_bottom">
+                    <label>Password Requests</label>
+                </div>
             </div>
-            <div class="nav_element">
-                <label>Teacher</label>
-            </div>
-            <div class="nav_element">
-                <label>Password Requests</label>
+            <div id="right_nav_general_anim">
+                <div class="right_nav_anim">
+                    <label>Menu</label>
+                </div>
             </div>
         </div>
         
@@ -212,3 +167,76 @@
         <br/><br/>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function() {
+        $("body").click(function(e) {
+            if (e.target.id == "right_nav_general" || $(e.target).parents("#right_nav_general").size()) { 
+
+            } 
+            else if (e.target.id == "right_nav_general_anim" || $(e.target).parents("#right_nav_general_anim").size())
+            {}
+            else { 
+                $('#right_nav_general_anim').show();
+                $('#right_nav_general').hide();
+            }
+        });
+    })
+    $(document).ready(function() {
+        $('#right_nav_general_anim').click(function(){
+            $('#right_nav_general_anim').hide();
+            $('#right_nav_general').show();
+        }); 
+    });   
+    
+    function AddStudent()
+    {
+        $("#add_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
+        $("#add_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");
+        
+        $("#delete_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
+        $("#delete_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
+        
+        $("#edit_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
+        $("#edit_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
+        $("#delete_student").hide();
+        $("#edit_student").hide();
+        $("#add_student").show();
+        $("#search_general").hide();
+        $("#main_form").show();
+    }
+
+    function EditStudent()
+    {
+        $("#edit_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
+        $("#edit_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");
+        
+        $("#delete_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
+        $("#delete_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
+        
+        $("#add_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
+        $("#add_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
+        $("#add_student").hide();
+        $("#delete_student").hide();
+        $("#edit_student").show();
+        $("#search_general").show();
+        $("#main_form").hide();
+    }
+
+    function DeleteStudent()
+    {
+        $("#delete_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
+        $("#delete_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");
+        
+        $("#edit_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
+        $("#edit_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
+        
+        $("#add_student_class").addClass("top_tabs_element").removeClass('top_tabs_element_default');
+        $("#add_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
+        $("#add_student").hide();
+        $("#edit_student").hide();
+        $("#delete_student").show();
+        $("#search_general").show();
+        $("#main_form").hide();
+    }
+</script>
