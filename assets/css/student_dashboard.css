@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "myriad-pro";
+    src: url(../fonts/myriad-pro/MYRIADPRO-REGULAR.OTF) format("truetype");
+}
+
 .student_dashboard_body{
     width:100%;
     height:auto;
@@ -129,20 +139,28 @@ margin-top: -25%;
 
 /* DRILLS PAGE CSS */
 .drills-content{
-    background-color: #666981;
+    background-color: #1E2935;
     width: auto;
 }
 
 .leftpane
 {
-    width:250px;
+    width:230px;
     height:400px;
     padding:20px;
     float: left;
+    margin-left: 100px;
+    margin-top: -2px;
 }
 
 .topicsbox{
-    background-color: #C0C0C0;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -webkit-box-shadow:0 0 20px #FFFFFF; 
+    -moz-box-shadow: 0 0 20px #FFFFFF;  
+    box-shadow:0 0 20px #FFFFFF;
+    background-color: #FFFFFF;
     padding:20px;
     font-size:18px;
     color:#444444;
@@ -153,19 +171,40 @@ margin-top: -25%;
 {
     margin-bottom: 5px;
 }
-.leftpane label
+
+.topicsBoxLabel
 {
-    font-size: 28px;
-    color:white;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 8px;
+}
+
+.topicsbox label
+{
+    font-size: 22px;
+    color:#595959;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-family:  Montserrat;
+}
+
+#radioButtons span
+{
+    font-size: 18px;
+    color:#595959;
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    font-family:  myriad-pro;
 }
 
 .rightpane
 {
-    
-    padding-top:21px;
+    padding-top:1px;
     padding-bottom:21px;
-    padding-left:400px;
-    width:700px;
+    padding-left:370px;
+    width:820px;
+    
 }
 
 .rightpane label
@@ -175,41 +214,33 @@ margin-top: -25%;
 }
 
 .gamebox{
-    overflow: auto;
-    background-color: #C0C0C0;
-    padding:30px;
     font-size:18px;
     color:#444444;
-    margin-top: 10px;
+    margin-top: 5px;
+    min-height: 500px;
 }
 
-.gamerow img{
-    width:250px;
-    height:250px;
+.goback_fixed_button img
+{
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
 }
-
 .goback_fixed_button
 {
-    width:250px;
-    height:83px;
+    width:220px;
+    height:75px;
     margin: auto;
-    padding: 0;
-}
-.goback_fixed_button
-{
-    display:block;
-    overflow:hidden;
-    position:fixed; 
-    top:520px;
-    left:50px;
-    z-index:20000;
+    float: left;
+    margin-left: 120px;
+    margin-top: -30%;
     cursor: pointer;
     border-radius: 15px;
     -moz-border-radius: 15px;
     border: #bbbbbb ridge medium;
-    -webkit-box-shadow:0 0 20px #0088cc; 
-    -moz-box-shadow: 0 0 20px #0088cc;  
-    box-shadow:0 0 20px #0088cc;
+    -webkit-box-shadow:0 0 8px #FFFFFF; 
+    -moz-box-shadow: 0 0 8px #FFFFFF;  
+    box-shadow:0 0 8px #FFFFFF;
     -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -222,21 +253,40 @@ margin-top: -25%;
     box-shadow:0 0 20px cornsilk;
 }
 
-.gamelabel{
-    float:top;
-    text-align: center;
-    height:25px;
-}
-.gamelabel label{
-    color:black;
-    font-size: 24px;
+.game_row img
+{
+    width:820px;
+    height:210px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: #bbbbbb ridge medium;
+    margin-top: 20px;
 }
 
-.gamecontainer{
-    display:block;
-    float:left;
-    height: 275px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
+.game_row_labels
+{
+    width:825px;
+    background-color: #FFFFFF;
+    height: 50px;
+    margin-top: -7px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: .75em;
+    text-align: center;
+}
+
+.game_row_labels label
+{
+    font-size: 1.2em;
+    color:#595959;
+    font-weight: 700;
+    font-family: Montserrat;
+}
+
+.game_row_labels_description{
+    font-size:12px !important;
+    color:#595959;
+    font-weight: 700;
+    font-family: Montserrat;
+    margin-top:-2px;
 }
