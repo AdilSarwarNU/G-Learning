@@ -71,14 +71,14 @@ body {
     font: 14px/24px Tahoma, Geneva, sans-serif !important;
     width:1340px ;
     margin:auto !important;
-    background: #D0D0D0;
+    background: whitesmoke;
     
 }
 
 .main {
     width:inherit;
     margin:auto !important;
-    background:white;   
+    background:white ;   
     height:80px;
     overflow:hidden;
 }
