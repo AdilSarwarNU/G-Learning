@@ -9,7 +9,9 @@ class home extends CI_Controller{
     
     public function index()
     {
-          $this->load->view('login_view');
+        $data['page_title'] = 'G-Learning | Student';
+        $this->load->view('main_header',$data);
+        $this->load->view('homepage_view');
     }
     
     public function student_dashboard()

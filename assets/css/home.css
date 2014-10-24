@@ -1,5 +1,6 @@
 /* Global properties ======================================================== */
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,6 +22,16 @@ time, mark, audio, video ,header {
 	vertical-align: baseline ;
 }
 /* HTML5 display-role reset for older browsers */
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "myriad-pro";
+    src: url(../fonts/myriad-pro/MYRIADPRO-REGULAR.OTF) format("truetype");
+}
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -204,7 +215,7 @@ pointer:cursor;
 }
     
 #myContainerRight {
-  width:500px;
+  width:400px;
   margin:auto;
   height:100%;
   display:inline-block;
