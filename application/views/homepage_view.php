@@ -6,7 +6,7 @@
     $('#team42').slideUp();
     
     $('#team li').hover(function(){
-        alert("HEHE");
+       //alert("HEHE");
     },function(){
         
     });
