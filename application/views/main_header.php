@@ -20,7 +20,25 @@
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap-select.js"></script>
        <script>
              $(document).ready(function() {
-                                 
+                 
+                
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	
+});
+                           if ( "<?php echo $page_title; ?>" == 'G-Learning')
+                           {
+                               
+                           }
                              
                            
                              
@@ -74,7 +92,6 @@
                         </script>
 </head>
 <body>
-    
     <header class="main">
       
             <span class="logo_span left">
@@ -86,32 +103,33 @@
                     <div id="myContainerRight">
 
 
-                         <div class="green_icon_nav">
+                        <a>  <div class="green_icon_nav">
                             <div class="navbar-images-container green_icon_img">
                                 <img class="navbar-images" src="<?php echo base_url();?>/assets/images/docs_nav.png"/>
                             </div>
                              <div id="green_icon_desc" class="navbar_img_desc"> CONTACT US</div>
-                        </div>
+                        </div></a>
                         
-                           <div class="grey_icon_nav">
+                          <a href='#team-info'> <div class="grey_icon_nav">
                             <div class="navbar-images-container grey_icon_img">
                                 <img class="navbar-images" src="<?php echo base_url();?>/assets/images/who_nav.png"/>
                             </div>
                              <div id="grey_icon_desc" class="navbar_img_desc"> WHO WE ARE</div>
-                        </div>
+                        </div></a>
                        
-                        <div class="blue_icon_nav">
+                        <a><div class="blue_icon_nav">
                             <div class="navbar-images-container blue_icon_img">
                                 <img class="navbar-images" src="<?php echo base_url();?>/assets/images/features_nav.png"/>
                             </div>
                              <div id="blue_icon_desc" class="navbar_img_desc"> FEATURES</div>
-                        </div>
+                        </div></a>
+                        <a>
                         <div class="pink_icon_nav">
                             <div class="navbar-images-container pink_icon_img">
                                 <img class="navbar-images" src="<?php echo base_url();?>/assets/images/questionmark_nav.png"/>
                             </div>  
                             <div id="pink_icon_desc" class="navbar_img_desc"> WHAT <Br/> IS <br/> G-LEARNING </div>
-                        </div>
+                        </div></a>
 
                      
                          <div class="grey_icon_nav"> <img src="<?php echo base_url();?>/assets/images/who_nav.png"/></div>
