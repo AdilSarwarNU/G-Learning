@@ -8,24 +8,15 @@
     src: url(../fonts/myriad-pro/MYRIADPRO-REGULAR.OTF) format("truetype");
 }
 
+@font-face {
+    font-family: "jango";
+    src: url(../fonts/jango/Always_In_My_Heart.ttf) format("truetype");
+}
+
 .student_dashboard_body{
     width:100%;
     height:auto;
     margin:auto;
-}
-
-.student_dashboard_tips{
-    background-color: #CCEFE1;
-    width:100%;
-    height:auto;
-    padding-top:15px;
-    padding-bottom:15px;
-}
-
-.student_dashboard_tips label{
-    text-align: center;
-    font-size: 30px;
-    color: black;
 }
 
 .student_dashboard_video{
@@ -33,108 +24,187 @@
     margin: auto;
 }
 
-.fixed_buttons
+.student_dashboard_video video
 {
-    width:200px;
-    height: 200px;
-    margin: auto;
-    padding: 0;
-}
-
-.left_fixed_button
-{
-    display:block;
-    overflow:hidden;
-    position:absolute; 
-    top:425px;
-    left:50px;
-    z-index:20000;
-    cursor: pointer;
+    border: 5px solid #E25982;
     border-radius: 15px;
     -moz-border-radius: 15px;
-    border: #bbbbbb ridge medium;
-    -webkit-box-shadow:0 0 20px #0088cc; 
-    -moz-box-shadow: 0 0 20px #0088cc;  
-    box-shadow:0 0 20px #0088cc;
-    -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+    -webkit-border-radius: 15px;
+    box-shadow: 0px 0px 20px black;
+    -moz-box-shadow: 0px 0px 20px black;
+    -webkit-box-shadow: 0px 0px 20px black;
 }
 
-.left_fixed_button:hover label{
-    color:white;
+ .student_menu_tab_body img:hover {
+  /* Webkit for Chrome and Safari */
+  -webkit-transform: scale(1.1, 1.1); // This is the enlarged size scale of the image.
+  -webkit-transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-out;
+ 
+  /* Webkit for Mozila Firefox */
+  -moz-transform: scale(1.1, 1.1);
+  -moz-transition-duration: 500ms;
+  -moz-transition-timing-function: ease-out;
+ 
+  /* Webkit for IE( Version: 11, 10 ) */
+  -ms-transform: scale(1.10, 1.10);
+  -ms-transition-duration: 500ms;
+  -ms-transition-timing-function: ease-out;
 }
 
-.left_fixed_button:hover
-{
-    -webkit-box-shadow:0 0 20px cornsilk; 
-    -moz-box-shadow: 0 0 20px cornsilk;  
-    box-shadow:0 0 20px cornsilk;
+.student_menu_tab_body img {
+  /* Webkit for Chrome and Safari */
+  -webkit-transform: scale(1, 1); // This is the scale for the normal size of the image.
+  -webkit-transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-out;
+ 
+  /* Webkit for Mozila Firefox */
+  -moz-transform: scale(1, 1);
+  -moz-transition-duration: 500ms;
+  -moz-transition-timing-function: ease-out;
+ 
+  /* Webkit for IE( Version: 11, 10 ) */
+  -ms-transform: scale(1, 1);
+  -ms-transition-duration: 500ms;
+  -ms-transition-timing-function: ease-out;
 }
 
-.left_fixed_button label
-{
-    font-size:32px;
-    color:#d3c70c;
-    margin-top: -25%;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 10px;
+
+.welcome_cloud:hover {
+  /* Webkit for Chrome and Safari */
+  -webkit-transform: scale(1.1, 1.1); // This is the enlarged size scale of the image.
+  -webkit-transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-out;
+ 
+  /* Webkit for Mozila Firefox */
+  -moz-transform: scale(1.1, 1.1);
+  -moz-transition-duration: 500ms;
+  -moz-transition-timing-function: ease-out;
+ 
+  /* Webkit for IE( Version: 11, 10 ) */
+  -ms-transform: scale(1.10, 1.10);
+  -ms-transition-duration: 500ms;
+  -ms-transition-timing-function: ease-out;
 }
 
-.right_fixed_button
-{
-    display:block;
-    overflow:hidden;
-    position:absolute; 
-    top:425px;
-    left:1085px;
-    z-index:20000;
-    cursor: pointer;
-    border-radius: 15px;
-    -moz-border-radius: 15px;
-    border: #bbbbbb ridge medium;
-    -webkit-box-shadow:0 0 20px #0088cc; 
-    -moz-box-shadow: 0 0 20px #0088cc;  
-    box-shadow:0 0 20px #0088cc;
-    -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+.welcome_cloud{
+  /* Webkit for Chrome and Safari */
+  -webkit-transform: scale(1, 1); // This is the scale for the normal size of the image.
+  -webkit-transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-out;
+ 
+  /* Webkit for Mozila Firefox */
+  -moz-transform: scale(1, 1);
+  -moz-transition-duration: 500ms;
+  -moz-transition-timing-function: ease-out;
+ 
+  /* Webkit for IE( Version: 11, 10 ) */
+  -ms-transform: scale(1, 1);
+  -ms-transition-duration: 500ms;
+  -ms-transition-timing-function: ease-out;
 }
 
-.right_fixed_button:hover
-{
-    -webkit-box-shadow:0 0 20px cornsilk; 
-    -moz-box-shadow: 0 0 20px cornsilk;  
-    box-shadow:0 0 20px cornsilk;
-}
-
-.right_fixed_button label
-{
-    font-size:32px;
-    color:#d3c70c;
-margin-top: -25%;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
 
 .mid-content{
-    background-color: #68CAB6;
+    position: relative;
+    z-index:1;
+    overflow:hidden; /*if you want to crop the image*/
+    min-height: 890px;
+    text-align: center;
 }
 
-.right_fixed_button:hover label{
-    color:white;
-}
-
-.right_fixed_button:hover
+.mid_images_container
 {
-    -webkit-box-shadow:0 0 20px cornsilk; 
-    -moz-box-shadow: 0 0 20px cornsilk;  
-    box-shadow:0 0 20px cornsilk;
+    margin-top: 30px;
 }
+
+.mid-content:before{
+    z-index:-1;
+    position:absolute;
+    left:0;
+    top:0;
+    content: url(../images/Bg.png);
+    opacity:0.5;
+}
+
+.student_top_menu
+{
+    margin: auto;
+    width:1000px;
+    height: auto;
+}
+
+.student_menu_tabs
+{
+    display: table;
+    margin-top: 20px;
+    margin-left: -20px;
+}
+
+.student_menu_tab
+{
+    display: table-cell;
+}
+.student_menu_tab a
+{
+    text-decoration: none;
+}
+
+.student_menu_tab_body
+{
+    margin-left:150px;
+}
+
+.student_menu_tab_body label
+{
+    font-size: 24px;
+    text-align: center;
+    color: #003399;
+    text-shadow: 2px 2px 6px #949494;
+    font-weight: 600;
+    margin-top: -7px;
+}
+
+.student_menu_tabs img
+{
+    width: 160px;
+    height:160px;
+}
+
+.student_mid_image
+{
+    text-align: center;
+}
+
+.student_mid_image img
+{
+    width: 400px;
+    height: 350px;
+}
+
+.welcome_cloud
+{
+    float:right;
+    width: 300px;
+    height: 300px;
+    margin-top: -380px;
+    margin-right: 140px;
+}
+
+.welcome_cloud label
+{
+    font-size: 36px;
+    font-weight: 600;
+    color:whitesmoke;
+    margin-top: -140px;
+    font-family: jango;
+}
+
+.welcome_cloud label:hover
+{
+    cursor: pointer;
+}
+
 
 
 /* DRILLS PAGE CSS */
@@ -220,6 +290,11 @@ margin-top: -25%;
     min-height: 500px;
 }
 
+
+.gamebox a
+{
+    text-decoration: none;
+}
 .goback_fixed_button img
 {
     border-radius: 15px;
@@ -232,8 +307,7 @@ margin-top: -25%;
     height:75px;
     margin: auto;
     float: left;
-    margin-left: 120px;
-    margin-top: -30%;
+    margin-top: 100%;
     cursor: pointer;
     border-radius: 15px;
     -moz-border-radius: 15px;
