@@ -36,31 +36,31 @@
               <a href="#">
                 <h2>Adil Sarwar</h2>
                
-                <img id="team11" src='<?php echo base_url();?>assets/images/adi1.png' class='portfolio_pic'/>
-                <img id="team12" src='<?php echo base_url();?>assets/images/adi2.png' class='portfolio_pic'/>
+<!--                <img id="team11" src='<?php echo base_url();?>assets/images/adi1.png' class='portfolio_pic'/>
+                <img id="team12" src='<?php echo base_url();?>assets/images/adi2.png' class='portfolio_pic'/>-->
               </a>
             </li>
             <li>
               <a href="#">
                 <h2>Zain Malik</h2>
-                <img id="team21" src='<?php echo base_url();?>assets/images/zain1.png' class='portfolio_pic'/>
-                <img id="team22" src='<?php echo base_url();?>assets/images/zain2.png' class='portfolio_pic'/>
+<!--                <img id="team21" src='<?php echo base_url();?>assets/images/zain1.png' class='portfolio_pic'/>
+                <img id="team22" src='<?php echo base_url();?>assets/images/zain2.png' class='portfolio_pic'/>-->
               </a>
             </li>
             <li>
               <a href="#">
                 <h2>Haider Rasool</h2>
                
-                <img id="team31" src='<?php echo base_url();?>assets/images/haider1.png' class='portfolio_pic'/>
-                <img id="team32" src='<?php echo base_url();?>assets/images/haider2.png' class='portfolio_pic'/>
+<!--                <img id="team31" src='<?php echo base_url();?>assets/images/haider1.png' class='portfolio_pic'/>
+                <img id="team32" src='<?php echo base_url();?>assets/images/haider2.png' class='portfolio_pic'/>-->
               </a>
             </li>
             <li>
               <a href="#">
                 <h2>Talha Naveed</h2>
                
-                <img id="team41" src='<?php echo base_url();?>assets/images/talha1.png' class='portfolio_pic'/>
-                <img id="team42" src='<?php echo base_url();?>assets/images/talha2.png' class='portfolio_pic'/>
+<!--                <img id="team41" src='<?php echo base_url();?>assets/images/talha1.png' class='portfolio_pic'/>
+                <img id="team42" src='<?php echo base_url();?>assets/images/talha2.png' class='portfolio_pic'/>-->
               </a>
             </li>
     </ul>
