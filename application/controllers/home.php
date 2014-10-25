@@ -17,7 +17,7 @@ class home extends CI_Controller{
     public function student_dashboard()
     {
         $data['page_title'] = 'G-Learning | Student';
-        $this->load->view('main_header',$data);
+        $this->load->view('student_header',$data);
         $this->load->view('student_dashboard');
         $this->load->view('footer');
     }
@@ -29,12 +29,6 @@ class home extends CI_Controller{
         $this->load->view('drills_view');
         $this->load->view('footer');
     }
-    public function playcatchy()
-    {
-        $data['page_title'] = 'G-Learning | Catchy';
-        $this->load->view('main_header',$data);
-        $this->load->view('webcatchy');
-        $this->load->view('footer');
-    }
+    
 }
 ?>
