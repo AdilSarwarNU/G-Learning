@@ -31,7 +31,10 @@ time, mark, audio, video ,header {
     font-family: "myriad-pro";
     src: url(../fonts/myriad-pro/MYRIADPRO-REGULAR.OTF) format("truetype");
 }
-
+@font-face {
+    font-family: "Rennie Beanie";
+    src: url(../fonts/reenie/ReenieBeanie.ttf) format("truetype");
+}
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -717,4 +720,180 @@ div.fieldgroup
 #delete_student
 {
     display: none;
+}
+
+
+.team{
+    display:inline-table;
+}
+
+#team-info {
+    
+  margin:0;
+  padding:0;
+  font-family:"Rennie Beanie";
+  font-size:150%;
+  text-align:center;
+  background:#E8E8E8;
+ 
+}
+
+#team-info h2,p{
+  font-size:120%;
+  font-weight:normal;
+   color:#333333;
+   font-weight:800;
+}
+#team-info ul,li{
+  list-style:none;
+  
+}
+#team-info ul{
+  overflow:hidden; 
+  padding-top:3em;
+     display: inline-block;
+    margin: 0;
+width:100%;
+padding-left:10%
+
+}
+#team-info ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc ;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+}
+#team-info ul li{
+ transition:ease-in-out all 0.7s;
+  -moz-transition:ease-in-out all 0.7s;
+  -webkit-transition:ease-in-out all 0.7s;
+  float:left;
+ 
+}
+
+#team-info ul li:nth-child(odd) a{
+ 
+  position:relative;
+  top:5px;
+       -o-transform:rotate(15deg);
+      -webkit-transform:rotate(15deg);
+      -moz-transform:rotate(15deg);
+ 
+}
+#team-info ul li:nth-child(3n) a{
+  -o-transform:rotate(-8deg);
+  -webkit-transform:rotate(-8deg);
+  -moz-transform:rotate(-8deg);
+  position:relative;
+  top:-5px;
+  width:50%;
+ width: 60%;
+  margin:2em;
+  z-index:500;
+   -o-transform:rotate(-5deg);
+  -webkit-transform:rotate(-5deg);
+  -moz-transform:rotate(-5deg);
+
+}
+#team-info ul li:nth-child(5n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+  width:130%; margin:2em;
+
+}
+    
+
+
+#team-info ul li a:hover,ul li a:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+  
+  transition:ease-in-out all 0.7s;
+  -moz-transition:ease-in-out all 0.7s;
+  -webkit-transition:ease-in-out all 0.7s;
+}
+
+.top-border{
+    border-top:1px solid #aaa;
+}
+
+.bottom-border{
+    border-bottom:1px solid #aaa;
+}
+
+.homepage-headers
+{
+    //color:#E6E6E6;
+    font-family: consolas, monaco, "Lucida Console", monospace;
+    color: #FFFFFF;
+    font-size: 50px;
+    padding: 8px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #211919;
+    text-align: left;
+   // margin-left:5%;
+    background: inherit;
+    
+    width:100%;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    
+}
+
+.gif-headers
+{
+  
+  height:inherit;
+  width:10%;
+    vertical-align: middle !important;
+}
+
+
+#intro
+{
+    background:#aaa;
+}
+
+#features
+{
+    background:#ccc;
+    
+}
+
+.features_thumbnail
+{
+    height:80px;
+    width:80px;
+}
+
+.intro_thumbnail
+{
+    height:80px;
+    width:80px;
+}
+
+.team_thumbnail{
+    height:50px;
+    width:80px;
+}
+
+
+
+.portfolio_pic
+{
+    height:200px;
+    width:200px
 }
