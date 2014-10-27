@@ -7,13 +7,13 @@
     <div class="mid_content_general">
         <div class="right_nav_general">
             <div id="right_nav_general">
-                <a href='#'>
-                    <div class="nav_element_top nav_element_default">
+                <a href='<?php echo base_url();?>admin/student'>
+                    <div class="nav_element_top">
                         <label>Student</label>
                     </div>
                 </a>
-                <a href='<?php echo base_url();?>admin/teacher'>
-                    <div class="nav_element">
+                <a href='#'>
+                    <div class="nav_element nav_element_default">
                         <label>Teacher</label>
                     </div>
                 </a>
@@ -31,19 +31,19 @@
         </div>
         
         <div class="top_tabs_general">
-            <div class="top_tabs_element_default" onclick="return AddStudent();" id="add_student_class">
+            <div class="top_tabs_element_default" onclick="return AddTeacher();" id="add_student_class">
                 <div class="top_tabs_inside_default" id="add_student_inside_class">
-                    <label>Add Student</label>
+                    <label>Add Teacher</label>
                 </div>
             </div>
-            <div class="top_tabs_element" onclick="return EditStudent();" id="edit_student_class">
+            <div class="top_tabs_element" onclick="return EditTeacher();" id="edit_student_class">
                 <div class="top_tabs_inside" id="edit_student_inside_class">
-                    <label>Edit Student</label>
+                    <label>Edit Teacher</label>
                 </div>
             </div>
-            <div class="top_tabs_element" onclick="return DeleteStudent();" id="delete_student_class">
+            <div class="top_tabs_element" onclick="return DeleteTeacher();" id="delete_student_class">
                 <div class="top_tabs_inside" id="delete_student_inside_class">
-                    <label>Delete Student</label>
+                    <label>Delete Teacher</label>
                 </div>
             </div>
         </div>
@@ -52,17 +52,17 @@
             <div class="mid_forms_body">
                 <div id="add_student">
                     <div class="forms_heading">
-                        <label>Add Student</label>
+                        <label>Add Teacher</label>
                     </div>
                 </div>
                 <div id="edit_student">
                     <div class="forms_heading">
-                        <label>Edit Student</label>
+                        <label>Edit Teacher</label>
                     </div>
                 </div>
                 <div id="delete_student">
                     <div class="forms_heading">
-                        <label>Delete Student</label>
+                        <label>Delete Teacher</label>
                     </div>
                 </div>
                 <div class="search_general" id="search_general">
@@ -80,13 +80,13 @@
                                 <td  class="inputField" ></td>
                                 <td class="input">
                                       <div class="fieldgroup">
-                                        <input type="submit" value='Search Student'><br/><br/>
+                                        <input type="submit" value='Search Teacher'><br/><br/>
                                       </div>
                                 </td>
                             </tr>
                         </table>
                     </form>
-                </div>
+                </div>            
                 <div id="main_form">
                     <form type="submit" method="POST" action="#">
                         <table>
@@ -150,14 +150,6 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td  class="inputField" >Parent Password:</td>
-                                <td class="input">
-                                      <div class="fieldgroup">
-                                        <input type="text" name="Parentpassword" id="Parentpassword" maxlength="128" placeholder="Enter Parent Password">
-                                      </div>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td  class="inputField" ></td>
                                 <td class="input">
                                       <div class="fieldgroup">
@@ -195,7 +187,7 @@
         }); 
     });   
     
-    function AddStudent()
+    function AddTeacher()
     {
         $("#add_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
         $("#add_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");
@@ -212,7 +204,7 @@
         $("#main_form").show();
     }
 
-    function EditStudent()
+    function EditTeacher()
     {
         $("#edit_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
         $("#edit_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");
@@ -229,7 +221,7 @@
         $("#main_form").hide();
     }
 
-    function DeleteStudent()
+    function DeleteTeacher()
     {
         $("#delete_student_class").addClass("top_tabs_element_default").removeClass("top_tabs_element");
         $("#delete_student_inside_class").addClass("top_tabs_inside_default").removeClass("top_tabs_inside");

@@ -1,5 +1,15 @@
+<script>
+$(document).ready(function(){
+    $("#myTip").animate({ 
+        top: "+=150px",
+      }, 2800 );
+});
+</script>
 <div class="student_dashboard_body">
     <div class="drills-content">
+        <div class="student_top_quote">
+            <label id='myTip'>You can't score a goal if you don't take a shot</label>
+        </div>
         <div class="leftpane">
             <div class="topicsbox">
                 <div class="topicsBoxLabel">
@@ -23,33 +33,36 @@
 
         <div class="rightpane">
             <div class="gamebox">
-                <a href="<?php echo base_url();?>games/play_cachy_even_odd">
-                    <div class="game_row">
-                        <img src="<?php echo base_url();?>assets/images/catchy-tile.png"/>
-                        <div class="game_row_labels">
-                            <label>Catchy</label>
-                            <label class="game_row_labels_description">Teaches the concept of Even / Odd numbers</label>
-                        </div>
-                    </div>
-                </a>
-                <a href="<?php echo base_url();?>games/balloon_party">
-                    <div class="game_row">
-                        <img src="<?php echo base_url();?>assets/images/BalloonParty_tile.png"/>
-                        <div class="game_row_labels">
-                            <label>Balloon Party</label>
-                            <label class="game_row_labels_description">Teaches the concept of Highest / Lowest numbers</label>
-                        </div>
-                    </div>
-                </a>
-                <a href="<?php echo base_url();?>games/play_cachy_multiples_of_5">
-                    <div class="game_row">
-                        <img src="<?php echo base_url();?>assets/images/catchy-tile-2.png"/>
-                        <div class="game_row_labels">
-                            <label>Catchy</label>
-                            <label class="game_row_labels_description">Teaches the concept of multiples of a number</label>
-                        </div>
-                    </div>
-                </a>
+                <div class="game_row">
+                    <figure>
+                        <img alt="Catchy" src="<?php echo base_url();?>assets/images/catchy-tile.png"/>
+                        <figcaption>
+                            <h3>Catchy</h3>
+                            <p>Teaches the concept of Even / Odd numbers</p>
+                            <p><a href="<?php echo base_url();?>games/play_cachy_even_odd">Play Game</a></p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="game_row">
+                    <figure>
+                        <img alt="Catchy" src="<?php echo base_url();?>assets/images/BalloonParty_tile.png"/>
+                        <figcaption>
+                            <h3>Balloon Party</h3>
+                            <p>Teaches the concept of Highest / Lowest numbers</p>
+                            <p><a href="<?php echo base_url();?>games/balloon_party">Play Game</a></p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="game_row">
+                    <figure>
+                        <img alt="Catchy" src="<?php echo base_url();?>assets/images/catchy-tile-2.png"/>
+                        <figcaption>
+                            <h3>Catchy</h3>
+                            <p>Teaches the concept of multiples of a number</p>
+                            <p><a href="<?php echo base_url();?>games/play_cachy_multiples_of_5">Play Game</a></p>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
     </div>
