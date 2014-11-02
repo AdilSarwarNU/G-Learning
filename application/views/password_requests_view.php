@@ -1,5 +1,4 @@
-
-<div class="main_container_general">
+    <div class="main_container_general">
     <div class="main_heading_general">
         <label>Admin Portal</label>
     </div>
@@ -35,48 +34,50 @@
                 <div class='password_request_heading'>
                     <label>Password Requests</label>
                 </div>
-                <div class='password_request_row_container'>
-                    <div class='password_request_row'>
-                        <div class="password_request_date"><label>28-10-2014</label></div>
-                        <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
-                        <form method="post" action="#">
-                            <div class="password_request_input">
-                                <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
-                            </div>
-                            <div class="password_request_buttons">
-                                <input type="submit" value="Change Password"/>
-                                <br/>
-                                <input type="button" value="Delete Request"/>
-                            </div>
-                        </form>
-                    </div>
-                    <div class='password_request_row'>
-                        <div class="password_request_date"><label>28-10-2014</label></div>
-                        <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
-                        <form method="post" action="#">
-                            <div class="password_request_input">
-                                <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
-                            </div>
-                            <div class="password_request_buttons">
-                                <input type="submit" value="Change Password"/>
-                                <br/>
-                                <input type="button" value="Delete Request"/>
-                            </div>
-                        </form>
-                    </div>
-                    <div class='password_request_row'>
-                        <div class="password_request_date"><label>28-10-2014</label></div>
-                        <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
-                        <form method="post" action="#">
-                            <div class="password_request_input">
-                                <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
-                            </div>
-                            <div class="password_request_buttons">
-                                <input type="submit" value="Change Password"/>
-                                <br/>
-                                <input type="button" value="Delete Request"/>
-                            </div>
-                        </form>
+                <div class="scroll_content mCustomScrollbar">
+                    <div class='password_request_row_container'>
+                        <div class='password_request_row'>
+                            <div class="password_request_date"><label>28-10-2014</label></div>
+                            <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
+                            <form method="post" action="#">
+                                <div class="password_request_input">
+                                    <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
+                                </div>
+                                <div class="password_request_buttons">
+                                    <input type="submit" value="Change Password"/>
+                                    <br/>
+                                    <input type="button" value="Delete Request"/>
+                                </div>
+                            </form>
+                        </div>
+                        <div class='password_request_row'>
+                            <div class="password_request_date"><label>28-10-2014</label></div>
+                            <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
+                            <form method="post" action="#">
+                                <div class="password_request_input">
+                                    <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
+                                </div>
+                                <div class="password_request_buttons">
+                                    <input type="submit" value="Change Password"/>
+                                    <br/>
+                                    <input type="button" value="Delete Request"/>
+                                </div>
+                            </form>
+                        </div>
+                        <div class='password_request_row'>
+                            <div class="password_request_date"><label>28-10-2014</label></div>
+                            <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
+                            <form method="post" action="#">
+                                <div class="password_request_input">
+                                    <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
+                                </div>
+                                <div class="password_request_buttons">
+                                    <input type="submit" value="Change Password"/>
+                                    <br/>
+                                    <input type="button" value="Delete Request"/>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

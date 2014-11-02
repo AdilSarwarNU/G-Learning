@@ -11,6 +11,14 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/grid_12.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery.mCustomScrollbar.css" type="text/css" media="screen">
+    
+    <script src="<?php echo base_url(); ?>/assets/js/Chart.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.min.1.7.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/modernizr.2.5.3.min.js"></script>
+    <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>/assets/js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-ui.js"></script>
@@ -19,84 +27,79 @@
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap-select.js"></script>
        <script>
-             $(document).ready(function() {
-                 
-                
-	$('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
+             $(document).ready(function() {                
+                $('a[href^="#"]').on('click',function (e) {
+                        e.preventDefault();
 
-	    var target = this.hash;
-	    $target = $(target);
+                        var target = this.hash;
+                        $target = $(target);
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	
-});
-                           if ( "<?php echo $page_title; ?>" == 'G-Learning')
-                           {
-                               
-                           }
-                             
-                           
-                             
-                            $(".pink_icon_nav").hover(
-                                function(){
-                                    $(".pink_icon_img").slideUp();
-                                    
-                                       $("#pink_icon_desc").slideDown();
-                                },
-                                function(){
-                                     $(".pink_icon_img").slideDown();
-                                       $("#pink_icon_desc").slideUp();
-                                }
-                            );     
-                           
-                           $(".blue_icon_nav").hover(
-                                function(){
-                                    $(".blue_icon_img").slideUp();
-                                       $("#blue_icon_desc").slideDown()();
-                                },
-                                function(){
-                                     $(".blue_icon_img").slideDown();
-                                       $("#blue_icon_desc").slideUp();
-                                }
-                            );     
+                        $('html, body').stop().animate({
+                            'scrollTop': $target.offset().top
+                        }, 900, 'swing', function () {
+                            window.location.hash = target;
+                        });
 
-                            $(".grey_icon_nav").hover(
-                                        function(){
-                                            $(".grey_icon_img").slideUp();
-                                               $("#grey_icon_desc").slideDown();
-                                        },
-                                        function(){
-                                             $(".grey_icon_img").slideDown();
-                                               $("#grey_icon_desc").slideUp();
-                                        }
-                                    );     
+                });
+                if ( "<?php echo $page_title; ?>" == 'G-Learning')
+                {
 
-                            $(".green_icon_nav").hover(
-                                        function(){
-                                            $(".green_icon_img").slideUp();
-                                               $("#green_icon_desc").slideDown();
-                                        },
-                                        function(){
-                                             $(".green_icon_img").slideDown();
-                                               $("#green_icon_desc").slideUp();
-                                        }
-                                    );     
+                }
+                $(".pink_icon_nav").hover(
+                    function(){
+                        $(".pink_icon_img").slideUp();
 
+                           $("#pink_icon_desc").slideDown();
+                    },
+                    function(){
+                         $(".pink_icon_img").slideDown();
+                           $("#pink_icon_desc").slideUp();
+                    }
+                );     
 
-                            });
-                        </script>
+               $(".blue_icon_nav").hover(
+                    function(){
+                        $(".blue_icon_img").slideUp();
+                           $("#blue_icon_desc").slideDown()();
+                    },
+                    function(){
+                         $(".blue_icon_img").slideDown();
+                           $("#blue_icon_desc").slideUp();
+                    }
+                );     
+
+                $(".grey_icon_nav").hover(
+                            function(){
+                                $(".grey_icon_img").slideUp();
+                                   $("#grey_icon_desc").slideDown();
+                            },
+                            function(){
+                                 $(".grey_icon_img").slideDown();
+                                   $("#grey_icon_desc").slideUp();
+                            }
+                        );     
+
+                $(".green_icon_nav").hover(
+                            function(){
+                                $(".green_icon_img").slideUp();
+                                   $("#green_icon_desc").slideDown();
+                            },
+                            function(){
+                                 $(".green_icon_img").slideDown();
+                                   $("#green_icon_desc").slideUp();
+                            }
+                        );     
+                });
+        </script>
 </head>
 <body>
     <header class="main">
       
+        <a href="<?php echo base_url();?>">
             <span class="logo_span left">
-            <img class="logo" src ="<?php echo base_url(); ?>/assets/images/G-Learn.png" width="220" />
+                <img class="logo" src ="<?php echo base_url(); ?>/assets/images/G-Learn.png" width="220" />
             </span>
+        </a>
            
            <div class="pull-right">
           
