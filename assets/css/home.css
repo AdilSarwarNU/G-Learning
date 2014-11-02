@@ -285,6 +285,7 @@ box-shadow: -20px 0 5px 5px #DEDEDE;
 #footer{
     height:100px;
     z-index:40000;
+    position: absolute;
 }
 
 #center_footer{
@@ -348,21 +349,24 @@ box-shadow: -20px 0 5px 5px #DEDEDE;
 
 .main_heading_general
 {
-    height: 40px;
-    border: 1px ridge #dbc59e;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    background-color: #dbc59e;
+    border: 1px solid whitesmoke;
+    height:40px;
     text-align: center;
+    background-color: #D35453;
+    box-shadow: 0px 0px 15px #FFF;
+    -moz-box-shadow: 0px 0px 15px #FFF;
+    -webkit-box-shadow: 0px 0px 15px #FFF;
 }
 
 .main_heading_general label
 {
-    font-size:24px;
-    padding: 10px;
-    font-family: sans-serif;
-    font-weight: 600;
+    text-shadow: 0px 0px 35px #FFF;
+    -moz-text-shadow: 0px 0px 35px #FFF;
+    -webkit-text-shadow: 0px 0px 35px #FFF;
+    font-size: 20px;
+    font-family: Montserrat;
+    padding-top: 10px;
+    color:#CDD5C6;
 }
 
 .mid_content_general
@@ -451,16 +455,22 @@ box-shadow: -20px 0 5px 5px #DEDEDE;
     border-bottom-left-radius: 90px;
 }
 
-.nav_element_default
+.nav_element_top
 {
-    background-color: #343434;
+    background-color: #222222;
     width:120px;
     height: 60px;
     text-align: center;
-    border: 1px solid;
+    border: 1px solid #343434;
     display:table;
     padding:40px;
     border-top-left-radius: 90px;
+}
+
+.nav_element_default
+{
+    background-color: #343434;
+    border: 1px solid #7C8389;
 }
 
 .nav_element label
@@ -483,7 +493,7 @@ box-shadow: -20px 0 5px 5px #DEDEDE;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-.nav_element_default label
+.nav_element_top label
 {
     display: table-cell;
     vertical-align:middle; 
@@ -525,14 +535,19 @@ box-shadow: -20px 0 5px 5px #DEDEDE;
     color: #7C8389;
 }
 
-.nav_element_default:hover
+.nav_element_top:hover
 {
     cursor: pointer;
+    background-color: #343434;
+    color: #7C8389;
+    border: 1px solid;
 }
 
-.nav_element_default:hover label
+.nav_element_top:hover label
 {
     cursor: pointer;
+    background-color: #343434;
+    color: #7C8389;
 }
 
 .top_tabs_general
@@ -587,6 +602,7 @@ box-shadow: -20px 0 5px 5px #DEDEDE;
     font-size: 14px;
     color:#343434;
     font-weight: 600;
+    font-family: myriad-pro;
 }
 
 .top_tabs_inside_default label
@@ -618,11 +634,11 @@ box-shadow: -20px 0 5px 5px #DEDEDE;
     margin: auto;
     width:600px;
     background-color: white;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    margin-top: 15px;
-    border: 1px dotted gray;
+    border: 1px solid brown;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 15px #D1504F;
     margin-top: 35px;
 }
 
@@ -638,9 +654,11 @@ box-shadow: -20px 0 5px 5px #DEDEDE;
 
 .forms_heading label
 {
-    font-size: 20px;
+        font-size: 22px;
+    font-family: myriad-pro;
+    color:#D1504F;
+    font-weight: 600;
     padding-top: 20px;
-    font-weight: bold;
 }
 
 div.fieldgroup
@@ -722,6 +740,149 @@ div.fieldgroup
 #delete_student
 {
     display: none;
+}
+
+.password_request_container
+{    
+    margin: auto;
+    width:550px;
+    padding-top: 40px;
+}
+
+.password_request_body
+{
+    border: 1px solid brown;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 15px #D1504F;
+    margin-bottom: 50px;
+}
+
+.password_request_heading
+{
+    padding-left: 20px;
+    padding-top:10px;
+    padding-bottom: 5px;
+}
+
+.password_request_heading label
+{
+    font-size: 18px;
+    font-family: myriad-pro;
+    color:#D1504F;
+    font-weight: 600;
+}
+
+.password_request_row_container
+{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top:10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.password_request_row
+{
+    position: relative;
+    padding: 8px 8px 32px 8px;
+    background: #CDCEAC;
+    margin-bottom: 25px;
+    height: 160px;
+}
+
+.password_request_date
+{
+    float: right;
+    color:black;
+    font-size: 15px;
+}
+
+.password_request_note label
+{
+    font-size: 18px;
+    color: #FFFFFF;
+    font-family: myriad-pro;
+    padding:10px;
+}
+
+.password_request_note label span
+{
+    color: #000000;
+}
+
+.password_request_input
+{
+    text-align: center;
+}
+
+.password_request_input span
+{
+    font-size: 18px;
+    color:black;
+    font-family: myriad-pro;
+}
+
+.password_request_buttons
+{
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.password_request_buttons input[type="button"]
+{
+    margin-top: 20px;
+    margin-left: -22px;
+}
+
+.password_request_buttons input
+{
+    color:white;
+    background-color: #D35453;
+    width: auto;
+    height: 30px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: #D35453 ridge medium;
+    font-size: 16px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    font-family: myriad-pro;
+}
+
+
+.password_request_buttons input:hover
+{
+    cursor: pointer;
+    color:#212121;
+    background-color: #FFFFFF;
+    -webkit-box-shadow:0 0 8px #555555; 
+    -moz-box-shadow: 0 0 8px #555555;  
+    box-shadow:0 0 8px #555555;
+}
+
+
+.password_request_row:after
+{
+    background: linear-gradient(-45deg, #ffffff 10px, transparent 0), linear-gradient(45deg, #ffffff 10px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 32px 32px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 32px;
 }
 
 
