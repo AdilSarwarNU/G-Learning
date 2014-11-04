@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <link rel="icon" href="<?php echo base_url(); ?>/assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap3.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap3-theme.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap-theme.min.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/student_dashboard.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/responsive.css" type="text/css" media="screen">
@@ -17,14 +19,15 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery.mCustomScrollbar.css" type="text/css" media="screen">
     
     <script src="<?php echo base_url(); ?>/assets/js/Chart.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/jquery.min.1.7.js"></script>
+    
     <script src="<?php echo base_url(); ?>/assets/js/modernizr.2.5.3.min.js"></script>
     <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>/assets/js/jquery-1.11.0.min.js"><\/script>');</script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
+    
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-ui.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/bootstrap3.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-2.0.3.js"></script>
     <!-- <script src="<?php echo base_url(); ?>/assets/js/npm.js"></script>-->
     
@@ -71,10 +74,17 @@
              * If you use your own event management code, change it as required.
              */
         $(document).ready(function() { 
-            
-             setInterval(function(){
-                 $('#tooltip_navbar_container').fadeToggle();
-    }, 3000); 
+            $("body").css("overflow", "hidden");
+            var s = 1;
+             var result = setInterval(function(){
+                 s++;
+                 if (s < 9)
+                 {
+                 $('#tooltip_navbar_container').fadeToggle(); }
+    }, 1500); 
+                
+             
+
 
             if (window.addEventListener)
                   /** DOMMouseScroll is for mozilla. */
@@ -155,7 +165,7 @@
             Use these to navigate
         </span>
         <span id="tooltip_navbar_img">
-            <img src ="<?php echo base_url(); ?>/assets/images/arrow.png" width="100" height="80"/>
+            <img src ="<?php echo base_url(); ?>/assets/images/arrow.png" width="80" height="60"/>
         </span>        
         </span>
             

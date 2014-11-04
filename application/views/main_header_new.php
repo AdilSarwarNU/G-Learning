@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <link rel="icon" href="<?php echo base_url(); ?>/assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap.css" type="text/css" media="screen">
+     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap3.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap3-theme.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap-theme.min.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/student_dashboard.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/responsive.css" type="text/css" media="screen">
@@ -25,6 +27,7 @@
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-ui.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
+     <script src="<?php echo base_url(); ?>/assets/js/bootstrap3.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-2.0.3.js"></script>
     <!-- <script src="<?php echo base_url(); ?>/assets/js/npm.js"></script>-->
     
@@ -93,7 +96,7 @@
             Use these to navigate
         </span>
         <span id="tooltip_navbar_img">
-            <img src ="<?php echo base_url(); ?>/assets/images/arrow.png" width="100" height="80"/>
+          <img src ="<?php echo base_url(); ?>/assets/images/arrow.png" width="80" height="60"/>
         </span>        
         </span>
             
