@@ -33,7 +33,9 @@
     <script>   
   
         $(document).ready(function() { 
-        	
+        	 setInterval(function(){
+                 $('#tooltip_navbar_container').fadeToggle();
+    }, 3000); 
             $(".pink_icon_nav").hover(
                 function(){
                     $(".pink_icon_img").slideUp();
