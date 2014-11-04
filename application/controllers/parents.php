@@ -10,7 +10,7 @@ class Parents extends CI_Controller
     public function index()
     {
         $data['page_title'] = 'G-Learning | Parents';
-        $this->load->view('main_header',$data);
+        $this->load->view('main_header_new',$data);
         $this->load->view('parents_view');
         $this->load->view('footer');
     }

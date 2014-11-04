@@ -19,7 +19,7 @@
     <script src="<?php echo base_url(); ?>/assets/js/Chart.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.1.7.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/modernizr.2.5.3.min.js"></script>
-    <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>/assets/js/jquery-1.11.0.min.js"><\/script>');</script>
+    <script src="<?php echo base_url(); ?>/assets/js/jquery-1.11.0.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
@@ -31,70 +31,9 @@
     <!--<script src="<?php echo base_url(); ?>/assets/js/jquery-qtip.js"></script>-->    
     <!--<script src="<?php echo base_url(); ?>/assets/js/jquery.onepage-scroll.js"></script>-->
     <script>   
-  function handle(delta) {
-                    if (delta != 0)
-                    {
-                    
-                    }
-                    
-            }
-            /** Event handler for mouse wheel event.
-             */
-            function wheel(event){
-                    var delta = 0;
-                    if (!event) /* For IE. */
-                            event = window.event;
-                    if (event.wheelDelta) { /* IE/Opera. */
-                            delta = event.wheelDelta/120;
-                    } else if (event.detail) { /** Mozilla case. */
-                            /** In Mozilla, sign of delta is different than in IE.
-                             * Also, delta is multiple of 3.
-                             */
-                            delta = -event.detail/3;
-                    }
-                    /** If delta is nonzero, handle it.
-                     * Basically, delta is now positive if wheel was scrolled up,
-                     * and negative, if wheel was scrolled down.
-                     */
-                    if (delta)
-                            handle(delta);
-                    /** Prevent default actions caused by mouse wheel.
-                     * That might be ugly, but we handle scrolls somehow
-                     * anyway, so don't bother here..
-                     */
-                    if (event.preventDefault)
-                            event.preventDefault();
-                    event.returnValue = false;
-            }
-
-            /** Initialization code. 
-             * If you use your own event management code, change it as required.
-             */
+  
         $(document).ready(function() { 
-            
-             setInterval(function(){
-                 $('#tooltip_navbar_container').fadeToggle();
-    }, 3000); 
-
-            if (window.addEventListener)
-                  /** DOMMouseScroll is for mozilla. */
-                  window.addEventListener('DOMMouseScroll', wheel, false);
-          /** IE/Opera. */
-            window.onmousewheel = document.onmousewheel = wheel;
-            $('a[href^="#"]').on('click',function (e) {
-        	    e.preventDefault();
-
-                var target = this.hash;
-                $target = $(target);
-
-                $('body').stop().animate({
-    	        'scrollTop': $target.offset().top
-                }, 700, 'swing', function () {
-               
-	        window.location.hash = target;
-	    });
-             
-                });  	
+        	
             $(".pink_icon_nav").hover(
                 function(){
                     $(".pink_icon_img").slideUp();
@@ -138,15 +77,12 @@
                                $("#green_icon_desc").slideUp();
                         }
                     );                                                             
-            $(window).scroll(function() {
-                $('#main-header').delay(1000).css('top', $(this).scrollTop() + "px");
-                });
-            });
-           
+        
+    });
     </script>
 </head>
 <body>
-    <header class="main-header">
+    <header class="main-header_new">
             <span class="logo_span left">
                 <img class="logo" src ="<?php echo base_url(); ?>/assets/images/G-Learn.png" width="220" />
             </span>

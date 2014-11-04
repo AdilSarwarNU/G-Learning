@@ -10,7 +10,7 @@ class games extends CI_Controller{
     public function play_cachy_even_odd()
     {
         $data['page_title'] = 'G-Learning | Catchy';
-        $this->load->view('main_header',$data);
+        $this->load->view('main_header_new',$data);
         $this->load->view('cachy_even_odd_game');
         $this->load->view('footer');
     }
@@ -18,7 +18,7 @@ class games extends CI_Controller{
     public function play_cachy_multiples_of_5()
     {
         $data['page_title'] = 'G-Learning | Catchy';
-        $this->load->view('main_header',$data);
+        $this->load->view('main_header_new',$data);
         $this->load->view('multiple_of_5_game');
         $this->load->view('footer');
     }
@@ -26,7 +26,7 @@ class games extends CI_Controller{
     public function balloon_party()
     {
         $data['page_title'] = 'G-Learning | Catchy';
-        $this->load->view('main_header',$data);
+        $this->load->view('main_header_new',$data);
         $this->load->view('balloon_party_game');
         $this->load->view('footer');
     }
