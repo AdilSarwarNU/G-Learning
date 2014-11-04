@@ -13,6 +13,14 @@
     <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery-qtip.css" type="text/css" media="screen">-->
      <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/onepage-scroll.css" type="text/css" media="screen">-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery.mCustomScrollbar.css" type="text/css" media="screen">
+    
+    <script src="<?php echo base_url(); ?>/assets/js/Chart.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.min.1.7.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/modernizr.2.5.3.min.js"></script>
+    <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>/assets/js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-ui.js"></script>
@@ -140,7 +148,7 @@
 <body>
     <header class="main-header">
             <span class="logo_span left">
-            <img class="logo" src ="<?php echo base_url(); ?>/assets/images/G-Learn.png" width="220" />
+                <img class="logo" src ="<?php echo base_url(); ?>/assets/images/G-Learn.png" width="220" />
             </span>
         <span id="tooltip_navbar_container">
         <span id="tooltip_navbar">
