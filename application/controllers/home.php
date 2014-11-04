@@ -26,7 +26,7 @@ class home extends CI_Controller{
     public function drills()
     {
         $data['page_title'] = 'G-Learning | Drills';
-        $this->load->view('main_header',$data);
+        $this->load->view('main_header_new',$data);
         $this->load->view('drills_view');
         $this->load->view('footer');
     }
