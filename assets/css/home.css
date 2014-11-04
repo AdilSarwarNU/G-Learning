@@ -985,17 +985,6 @@ padding-bottom: 5%;
 }
 
 
-#intro
-{
-    /*background:#E8E8E8;*/
-}
-
-#features
-{
-    /*background:#D1D1D1;*/
-    
-}
-
 .features_thumbnail , .intro_thumbnail , .team_thumbnail , .contactus_thumbnail
 {
     height:80px;
@@ -1163,7 +1152,7 @@ padding-bottom: 5%;
 
 
 #homepage-content{
-    background:#E8E8E8;
+    background: #F1F1F1;
     transition :ease-in-out all 1.5s;
   -moz-transition :ease-in-out all 1.5s;
   -webkit-transition :ease-in-out all 1.5s;
@@ -1175,12 +1164,6 @@ padding-bottom: 5%;
    width: 100%;
 }
 
-#homepage-content:hover{
-     transition :ease-in-out all 0.5s;
-  -moz-transition :ease-in-out all 0.5s;
-  -webkit-transition :ease-in-out all 0.5s;
-  background:#D1D1D1;
-}
 
 #homepage-content h3 {
     text-shadow: 2px 1px 1px #6BE0C3;
