@@ -18,11 +18,10 @@
             </ul>
         </div> 	
         <div id="right_footer">
-           <a href=home.html>HOME</a>
-           <a href=about.html>ABOUT US</a>
-           <a href=services.html>SERVICES</a>
-           <a href=partners.html>PARTNERS</a>
-           <a href=contact.html>CONTACT US</a>
+           <a href="#">HOME</a>
+           <a href="#">ABOUT US</a>
+           <a href="#">SERVICES</a>
+           <a href="#">CONTACT US</a>
            <div class="copyright">© G-Learning 2014</div>
         </div> 
     </div> 

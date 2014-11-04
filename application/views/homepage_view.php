@@ -1,70 +1,174 @@
 <script>
+    
+   
     $(document).ready(function(){
-    $('#team12').slideUp();
-    $('#team22').slideUp();
-    $('#team32').slideUp();
-    $('#team42').slideUp();
+          
+          
+    });
     
-    $('#team li').hover(function(){
-       //alert("HEHE");
-    },function(){
-        
-    });
-    });
+  
+   
     </script>
-<div class="student_dashboard_body center">
-    
-    <div id="homepage-content" class='top-border center'>
-                
+<div class="student_dashboard_body center">  
+    <div id="homepage-content" class='center text_center' >            
                     <!--INTRODUCTION AREA-->
-        <div id="intro" >
-            <p class="homepage-headers left"><img  src='<?php echo base_url();?>assets/images/intro.png' class='gif-headers intro_thumbnail'> What is G-Learning ?
-        </div>
-                    
+        <section>
+            <div id="intro" class=" fullwidth div_center" >
+                <Br/><br/><br/><br/><br/><br/>
+                <p class="homepage-headers left"><img  src='<?php echo base_url();?>assets/images/intro.png' class='gif-headers intro_thumbnail'> What is G-Learning ?</p>
+                <div class="intro_text_container ">
+                    <p class="intro_text">" G-learning is a modern project to cope up with the need of integrating computing with education 
+                        and using the ultimate advantage of games pleasure to teach students their concepts.
+                        This project is comprised of various interactive games which will help the student understand specific topics. Initially, the project will focus on Mathematics of grade 2.
+                        Topics will be chosen from Oxford Countdown Mathematics for grade II. "
+                    </p>
+                </div>
+            </div>
+        </section>
+              <br/>         
                     <!--FEATURES--> 
-         <div id="features" >
-            <p class="homepage-headers left"><img src='<?php echo base_url();?>assets/images/features_h.png' class='gif-headers features_thumbnail'> Features
+        <section>
+             <div id="features" class="fullwidth div_center" >
+             <Br/><br/><br/><br/><br/><br/>
+            <p class="homepage-headers left"><img src='<?php echo base_url();?>assets/images/features_h.png' class='gif-headers features_thumbnail'> What Makes It Useful ?
+            <div id="features_list">
+                <ul>
+                     <li>
+                        <div>
+                            <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/techf" alt="Picture">
+                        </div>
+                        <div>
+                            <h3> Using the right technology</h3>
+                            <p>Detail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureatureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the feature</p>
+                        </div>
+                    </li>
+                     <li>
+                        <div>
+                            <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/wwwf.png" alt="Picture">
+                        </div>
+                        <div>
+                            <h3> Worldwide access</h3>
+                            <p>Detail of the feature</p>
+                        </div>
+                    </li>
+                     <li>
+                        <div>
+                            <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/gamesf.png" alt="Picture">
+                        </div>
+                        <div>
+                            <h3>Interactive Games</h3>
+                            <p>Detail of the feature</p>
+                        </div>
+                    </li>
+                     <li>
+                        <div>
+                            <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/testf.png" alt="Picture">
+                        </div>
+                        <div>
+                            <h3>In game response to student </h3>
+                            <p>Detail of the feature</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/reportsf.png" alt="Picture">
+                        </div>
+                        <div>
+                            <h3>Detailed Progress reports and global standings</h3>
+                            <p>Detail of the feature</p>
+                        </div>
+                    </li>
+                </ul>
+           </div>
         </div>           
-                    
-                    
-        
+        </section>          
                 <!--  TEAM CONTAINER !-->
-        <div id="team-info" class='top-border '>
-            <p class='homepage-headers left'><img src='<?php echo base_url();?>assets/images/23.gif' class='gif-headers team_thumbnail'> Our Team</p>
+        <section>
+             <div id="team-info" class='fullwidth div_center'>
+            <Br/><br/><br/><br/><br/><br/>
+            <p class='homepage-headers left'><img src='<?php echo base_url();?>assets/images/23.png' class='gif-headers team_thumbnail'> Our Team</p>
         <ul class='team center' id="team_thumbnails">
+            
             <li>
-              <a href="#">
-                <h2>Adil Sarwar</h2>
-               
-<!--                <img id="team11" src='<?php echo base_url();?>assets/images/adi1.png' class='portfolio_pic'/>
-                <img id="team12" src='<?php echo base_url();?>assets/images/adi2.png' class='portfolio_pic'/>-->
-              </a>
-            </li>
-            <li>
-              <a href="#">
                 <h2>Zain Malik</h2>
-<!--                <img id="team21" src='<?php echo base_url();?>assets/images/zain1.png' class='portfolio_pic'/>
-                <img id="team22" src='<?php echo base_url();?>assets/images/zain2.png' class='portfolio_pic'/>-->
+              <a href="#">
+                <img id="team21" src='<?php echo base_url();?>assets/images/zain1.png' class='portfolio_pic'/>
+              
+              </a>
+            </li>
+             <li>
+                 <h2>Adil Sarwar</h2>
+              <a href="#">
+                <img id="team11" src='<?php echo base_url();?>assets/images/adi1.png' class='portfolio_pic'/>
+              
               </a>
             </li>
             <li>
-              <a href="#">
                 <h2>Haider Rasool</h2>
-               
-<!--                <img id="team31" src='<?php echo base_url();?>assets/images/haider1.png' class='portfolio_pic'/>
-                <img id="team32" src='<?php echo base_url();?>assets/images/haider2.png' class='portfolio_pic'/>-->
+              <a href="#">
+                <img id="team31" src='<?php echo base_url();?>assets/images/haider1.png' class='portfolio_pic'/>
+              
               </a>
             </li>
             <li>
-              <a href="#">
                 <h2>Talha Naveed</h2>
-               
-<!--                <img id="team41" src='<?php echo base_url();?>assets/images/talha1.png' class='portfolio_pic'/>
-                <img id="team42" src='<?php echo base_url();?>assets/images/talha2.png' class='portfolio_pic'/>-->
+              <a href="#">
+                <img id="team41" src='<?php echo base_url();?>assets/images/talha1.png' class='portfolio_pic'/>
+              
               </a>
             </li>
-    </ul>
+        </ul>
+            
         </div>
+        </section>
+                <!--CONTACT US FORM-->
+        <section>
+            <div id="contactus" class='fullwidth div_center'>
+                <Br/><br/><br/><br/><br/><br/>
+                <p class='homepage-headers left'><img src='<?php echo base_url();?>assets/images/contactus_thumb.png' class='gif-headers contactus_thumbnail'> Need Our help ?</p>
+                <div class="container">
+                    <div class="row">
+                  <div class="col-md-12">
+                    <div id="contact_feedback_success" class="alert alert-success "><strong><span class="glyphicon glyphicon-send"></span> Message sent Successfully.</strong></div>	  
+                    <div id="contact_feedback_error" class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs.</strong></div>
+                  </div>
+                  <form role="form" action="" method="post" >
+                    <div class="col-lg-6 col-md-push-1">
 
+                      <div class="form-group">
+                        <label for="InputName">Your Name</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+                      </div>
+                      <div class="form-group">
+                        <label for="InputEmail">Your Email</label>
+                        <div class="input-group">
+                          <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+                      </div>
+                      <div class="form-group">
+                        <label for="InputMessage">Message</label>
+                        <div class="input-group">
+                          <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+                          <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+                      </div>
+
+                      <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+                    </div>
+                  </form>
+                  <hr class="featurette-divider hidden-lg">
+                  <div class="col-lg-5 col-md-push-1">
+                    <address>
+                    <h3 class="office_info_heading"> </h3>
+                    <p class="lead"><a href="#">    <br>
+                     Email : support@glearning.com</p>
+                    </address>
+                  </div>
+                </div>
+                </div>
+                <br/><br/><br/><br/><br/><br/><br/><br/>
+            </div>  
+        </section>
     </div>
 </div>

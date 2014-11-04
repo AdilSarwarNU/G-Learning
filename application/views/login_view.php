@@ -3,8 +3,15 @@
     <title>G-Learning | Login</title>
      <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/login.css" type="text/css">
      <script src="<?php echo base_url();?>/assets/js/jquery.min.js"></script>
+     <script>
+         $(document).ready(function(){    
+          $("body").delay(800).animate({ opacity:'1'
+          } , {duration: 1500});
+    });
+
+     </script>
 </head>
-<body>
+<body >
 <div class="login-page-container" id="login-page-container">
     <div class="tool-tip-right-container">
         <div class="tool-tip-right" id="tool-tip-right-container">
@@ -36,7 +43,7 @@
             </div>
             <div class="form-field" id="bottom">
                 <div class="field">
-                    <button type="submit">SIGN IN</button>
+                    <button type="submit">Sign in</button>
                 </div>
             </div>
         </form>

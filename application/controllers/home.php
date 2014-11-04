@@ -9,9 +9,10 @@ class home extends CI_Controller{
     
     public function index()
     {
-        $data['page_title'] = 'G-Learning | Student';
+        $data['page_title'] = 'G-Learning ';
         $this->load->view('main_header',$data);
         $this->load->view('homepage_view');
+         $this->load->view('footer');
     }
     
     public function student_dashboard()
@@ -19,7 +20,7 @@ class home extends CI_Controller{
         $data['page_title'] = 'G-Learning | Student';
         $this->load->view('student_header',$data);
         $this->load->view('student_dashboard');
-        $this->load->view('footer');
+        
     }
 	
     public function drills()
