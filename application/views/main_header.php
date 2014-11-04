@@ -5,30 +5,75 @@
     <meta charset="utf-8">
     <link rel="icon" href="<?php echo base_url(); ?>/assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap.css" type="text/css" media="screen">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap-theme.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap-theme.min.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/student_dashboard.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/responsive.css" type="text/css" media="screen">
-    
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/grid_12.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css" type="text/css" media="screen">
     <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery-qtip.css" type="text/css" media="screen">-->
-<!--    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/onepage-scroll.css" type="text/css" media="screen">-->
+     <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/onepage-scroll.css" type="text/css" media="screen">-->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css" type="text/css" media="screen">
     <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-ui.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/npm.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-2.0.3.js"></script>
-<!--<script src="<?php echo base_url(); ?>/assets/js/jquery-qtip.js"></script>-->    
-    <!--<script src="<?php echo base_url(); ?>/assets/js/jquery.onepage-scroll.js"></script>-->
+    <!-- <script src="<?php echo base_url(); ?>/assets/js/npm.js"></script>-->
     
-     
-       <script>
-        
-             $(document).ready(function() {          
-                 
-                $('a[href^="#"]').on('click',function (e) {
+    <!--<script src="<?php echo base_url(); ?>/assets/js/jquery-qtip.js"></script>-->    
+    <!--<script src="<?php echo base_url(); ?>/assets/js/jquery.onepage-scroll.js"></script>-->
+    <script>   
+  function handle(delta) {
+                    if (delta != 0)
+                    {
+                    
+                    }
+                    
+            }
+            /** Event handler for mouse wheel event.
+             */
+            function wheel(event){
+                    var delta = 0;
+                    if (!event) /* For IE. */
+                            event = window.event;
+                    if (event.wheelDelta) { /* IE/Opera. */
+                            delta = event.wheelDelta/120;
+                    } else if (event.detail) { /** Mozilla case. */
+                            /** In Mozilla, sign of delta is different than in IE.
+                             * Also, delta is multiple of 3.
+                             */
+                            delta = -event.detail/3;
+                    }
+                    /** If delta is nonzero, handle it.
+                     * Basically, delta is now positive if wheel was scrolled up,
+                     * and negative, if wheel was scrolled down.
+                     */
+                    if (delta)
+                            handle(delta);
+                    /** Prevent default actions caused by mouse wheel.
+                     * That might be ugly, but we handle scrolls somehow
+                     * anyway, so don't bother here..
+                     */
+                    if (event.preventDefault)
+                            event.preventDefault();
+                    event.returnValue = false;
+            }
+
+            /** Initialization code. 
+             * If you use your own event management code, change it as required.
+             */
+        $(document).ready(function() { 
+            
+             setInterval(function(){
+                 $('#tooltip_navbar_container').fadeToggle();
+    }, 3000); 
+
+            if (window.addEventListener)
+                  /** DOMMouseScroll is for mozilla. */
+                  window.addEventListener('DOMMouseScroll', wheel, false);
+          /** IE/Opera. */
+            window.onmousewheel = document.onmousewheel = wheel;
+            $('a[href^="#"]').on('click',function (e) {
         	    e.preventDefault();
 
                 var target = this.hash;
@@ -41,72 +86,74 @@
 	        window.location.hash = target;
 	    });
              
-                });  
-	
+                });  	
+            $(".pink_icon_nav").hover(
+                function(){
+                    $(".pink_icon_img").slideUp();
 
-                            $(".pink_icon_nav").hover(
-                                function(){
-                                    $(".pink_icon_img").slideUp();
-                                    
-                                       $("#pink_icon_desc").slideDown();
-                                },
-                                function(){
-                                     $(".pink_icon_img").slideDown();
-                                       $("#pink_icon_desc").slideUp();
-                                }
-                            );     
-                           
-                           $(".blue_icon_nav").hover(
-                                function(){
-                                    $(".blue_icon_img").slideUp();
-                                       $("#blue_icon_desc").slideDown();
-                                },
-                                function(){
-                                     $(".blue_icon_img").slideDown();
-                                       $("#blue_icon_desc").slideUp();
-                                }
-                            );     
+                       $("#pink_icon_desc").slideDown();
+                },
+                function(){
+                     $(".pink_icon_img").slideDown();
+                       $("#pink_icon_desc").slideUp();
+                }
+            );     
+           $(".blue_icon_nav").hover(
+                function(){
+                    $(".blue_icon_img").slideUp();
+                       $("#blue_icon_desc").slideDown();
+                },
+                function(){
+                     $(".blue_icon_img").slideDown();
+                       $("#blue_icon_desc").slideUp();
+                }
+            );     
 
-                            $(".grey_icon_nav").hover(
-                                        function(){
-                                            $(".grey_icon_img").slideUp();
-                                               $("#grey_icon_desc").slideDown();
-                                        },
-                                        function(){
-                                             $(".grey_icon_img").slideDown();
-                                               $("#grey_icon_desc").slideUp();
-                                        }
-                                    );     
+            $(".grey_icon_nav").hover(
+                        function(){
+                            $(".grey_icon_img").slideUp();
+                               $("#grey_icon_desc").slideDown();
+                        },
+                        function(){
+                             $(".grey_icon_img").slideDown();
+                               $("#grey_icon_desc").slideUp();
+                        }
+                    );     
 
-                            $(".green_icon_nav").hover(
-                                        function(){
-                                            $(".green_icon_img").slideUp();
-                                               $("#green_icon_desc").slideDown();
-                                        },
-                                        function(){
-                                             $(".green_icon_img").slideDown();
-                                               $("#green_icon_desc").slideUp();
-                                        }
-                                    );     
-                            
-                            
-                            $(window).scroll(function() {
-                                $('#main-header').css('top', $(this).scrollTop() + "px");
-                                });
-                            });
-                            
-                            
-                        </script>
+            $(".green_icon_nav").hover(
+                        function(){
+                            $(".green_icon_img").slideUp();
+                               $("#green_icon_desc").slideDown();
+                        },
+                        function(){
+                             $(".green_icon_img").slideDown();
+                               $("#green_icon_desc").slideUp();
+                        }
+                    );                                                             
+            $(window).scroll(function() {
+                $('#main-header').delay(1000).css('top', $(this).scrollTop() + "px");
+                });
+            });
+           
+    </script>
 </head>
 <body>
     <header class="main-header">
-      
             <span class="logo_span left">
             <img class="logo" src ="<?php echo base_url(); ?>/assets/images/G-Learn.png" width="220" />
             </span>
-           
+        <span id="tooltip_navbar_container">
+        <span id="tooltip_navbar">
+            Use these to navigate
+        </span>
+        <span id="tooltip_navbar_img">
+            <img src ="<?php echo base_url(); ?>/assets/images/arrow.png" width="100" height="80"/>
+        </span>        
+        </span>
+            
            <div class="pull-right">
-                    <div id="myContainerRight">
+               
+                <div id="myContainerRight">
                         <a href='#contactus'>  
                             <div class="green_icon_nav">
                                 <div class="navbar-images-container green_icon_img">
@@ -139,16 +186,9 @@
                                 <div id="pink_icon_desc" class="navbar_img_desc"> WHAT <Br/> IS <br/> G-LEARNING </div>
                             </div>
                         </a>
+                        
                       
                      </div> 
-<!--               <div > <a title="What is G-Learning" > </a> </div>
-                   <div class="navbar_icons"> <a title="Why G-Learning" > </a>  </div>
-                   <div class="navbar_icons"> <a title="Features" >  </a>    </div>
-                   <div class="navbar_icons"    > <a title="Team" >  </a>   </div>
-               -->
-              
-              
             </div>
-        
-    </header>
+</header>
 
