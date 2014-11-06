@@ -34,7 +34,7 @@
                 <ul>
                      <li>
                         <div>
-                            <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/techf" alt="Picture">
+                            <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/techf.png" alt="Picture">
                         </div>
                         <div>
                             <h3> Using the right technology</h3>
