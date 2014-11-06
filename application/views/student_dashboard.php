@@ -35,6 +35,14 @@
         <div class="student_top_menu">
             <div class="student_menu_tabs">
                 <div class="student_menu_tab">
+                    <a href="<?php echo base_url();?>parents/index/">
+                        <div class="student_menu_tab_body">
+                            <img src="<?php echo base_url();?>assets/images/galley.png"/>
+                            <label>Parents</label>
+                        </div>
+                    </a>
+                </div>
+                <div class="student_menu_tab">
                     <a href="#ranks">
                         <div class="student_menu_tab_body">
                             <img src="<?php echo base_url();?>assets/images/galley.png"/>
