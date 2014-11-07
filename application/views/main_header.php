@@ -74,23 +74,25 @@
              * If you use your own event management code, change it as required.
              */
         $(document).ready(function() { 
-            $("body").css("overflow", "hidden");
-            var s = 1;
-             var result = setInterval(function(){
-                 s++;
-                 if (s < 9)
-                 {
-                 $('#tooltip_navbar_container').fadeToggle(); }
-    }, 1500); 
+                            
+
+           // $("body").css("overflow", "hidden");
+//            var s = 1;
+//             var result = setInterval(function(){
+//                 s++;
+//                 if (s < 9)
+//                 {
+//                 $('#tooltip_navbar_container').fadeToggle(); }
+//    }, 1500); 
                 
              
 
 
-            if (window.addEventListener)
-                  /** DOMMouseScroll is for mozilla. */
-                  window.addEventListener('DOMMouseScroll', wheel, false);
-          /** IE/Opera. */
-            window.onmousewheel = document.onmousewheel = wheel;
+//            if (window.addEventListener)
+//                  /** DOMMouseScroll is for mozilla. */
+//                  window.addEventListener('DOMMouseScroll', wheel, false);
+//          /** IE/Opera. */
+//            window.onmousewheel = document.onmousewheel = wheel;
             $('a[href^="#"]').on('click',function (e) {
         	    e.preventDefault();
 
@@ -160,14 +162,6 @@
             <span class="logo_span left">
                 <img class="logo" src ="<?php echo base_url(); ?>/assets/images/G-Learn.png" width="220" />
             </span>
-        <span id="tooltip_navbar_container">
-        <span id="tooltip_navbar">
-            Use these to navigate
-        </span>
-        <span id="tooltip_navbar_img">
-            <img src ="<?php echo base_url(); ?>/assets/images/arrow.png" width="80" height="60"/>
-        </span>        
-        </span>
             
            <div class="pull-right">
                
