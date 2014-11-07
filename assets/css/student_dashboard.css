@@ -517,7 +517,7 @@ figcaption {
 }
 
 figcaption h3 {
-    font-family: 'Open sans';
+    font-family: 'myriad-pro';
     font-weight: 800;
     color: #D04C4C;
     padding: 10px 20px;
@@ -539,7 +539,7 @@ figcaption h3 {
 }
 
 figcaption p {
-    font-family: 'Open sans';
+    font-family: 'myriad-pro';
     padding: 10px 20px;
     margin-bottom: 20px;
     position: relative;
