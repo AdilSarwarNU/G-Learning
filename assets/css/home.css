@@ -898,8 +898,8 @@ div.fieldgroup
 #team-info h2{
   font-size:200%;
   font-weight:normal;
- text-shadow: 1px 1px 1px black;
- color:#FFEE00;
+ /*text-shadow: 1px 1px 1px black;*/
+ color:#000000;
  padding:10px;
    font-weight:800;
 }
@@ -922,7 +922,7 @@ padding-bottom: 5%;
   background:#ffc ;
   display:block;
   height:12em;
-  width:12em;
+  width:13em;
   //padding:1em;
 }
 #team-info ul li{
@@ -961,11 +961,11 @@ padding-bottom: 5%;
 {
     //color:#E6E6E6;
     font-family: consolas, monaco, "Lucida Console", monospace;
-    color: #FFFFFF;
+    color: #000000;
     font-size: 50px;
     padding: 8px;
     margin-left:10% ;
-    text-shadow: 2px 1px 1px #6BE0C3;
+ /*   text-shadow: 2px 1px 1px #6BE0C3;*/
     -moz-text-shadow: 2px 1px 1px #6BE0C3;
     -webkit-text-shadow: 2px 1px 1px #6BE0C3;
     text-align: left;
@@ -1096,7 +1096,7 @@ padding-bottom: 5%;
  
 #features_list h3 {
   font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
-  color:White;
+  color:rgb(32, 32, 32);
 }
  
 #features_list li img {
@@ -1183,7 +1183,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffee72', end
 
 
 #homepage-content h3 {
-    text-shadow: 2px 1px 1px #6BE0C3;
+ /*   text-shadow: 2px 1px 1px #6BE0C3;*/
         -moz-text-shadow: 2px 1px 1px #6BE0C3;
         -webkit-text-shadow: 2px 1px 1px #6BE0C3;
 }

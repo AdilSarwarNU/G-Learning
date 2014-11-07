@@ -17,8 +17,8 @@
                 <p class="homepage-headers left"><img  src='<?php echo base_url();?>assets/images/intro.png' class='gif-headers intro_thumbnail'> What is G-Learning ?</p>
                 <div class="intro_text_container ">
                     <p class="intro_text">" G-learning is a modern project to cope up with the need of integrating computing with education 
-                        and using the ultimate advantage of games pleasure to teach students their concepts.
-                        This project is comprised of various interactive games which will help the student understand specific topics. Initially, the project will focus on Mathematics of grade 2.
+                        and using the ultimate advantage of games pleasure to teach various concepts to the students.
+                        This project comprises of different interactive games which will help the student learn. Initially, the project will focus on Mathematics of grade 2.
                         Topics will be chosen from Oxford Countdown Mathematics for grade II. "
                     </p>
                 </div>
@@ -37,8 +37,8 @@
                             <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/techf.png" alt="Picture">
                         </div>
                         <div>
-                            <h3> Using the right technology</h3>
-                            <p>Detail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureatureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the featureDetail of the feature</p>
+                            <h3> Easily Accessbile</h3>
+                            <p>G-Learning uses easily accessible and affordable technology to facilitate the students in learning. They can use the system in the school lab, on their home computer and on their mobile device. </p>
                         </div>
                     </li>
                      <li>
@@ -46,8 +46,8 @@
                             <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/wwwf.png" alt="Picture">
                         </div>
                         <div>
-                            <h3> Worldwide access</h3>
-                            <p>Detail of the feature</p>
+                            <h3> Worldwide Access</h3>
+                            <p>G-Learning is deployed on the cloud. Which means that the user can access it from any where in the world.</p>
                         </div>
                     </li>
                      <li>
@@ -56,16 +56,7 @@
                         </div>
                         <div>
                             <h3>Interactive Games</h3>
-                            <p>Detail of the feature</p>
-                        </div>
-                    </li>
-                     <li>
-                        <div>
-                            <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/testf.png" alt="Picture">
-                        </div>
-                        <div>
-                            <h3>In game response to student </h3>
-                            <p>Detail of the feature</p>
+                            <p>Our key focus is on making the games as interactive as possible. We intend to kill your boredom while feeding some knowledge to your brain.</p>
                         </div>
                     </li>
                     <li>
@@ -73,8 +64,8 @@
                             <img width="100" height="100" src="<?php echo base_url(); ?>/assets/images/reportsf.png" alt="Picture">
                         </div>
                         <div>
-                            <h3>Detailed Progress reports and global standings</h3>
-                            <p>Detail of the feature</p>
+                            <h3>Detailed Progress Reports</h3>
+                            <p>Who doesn't like a little competition? G-Learning intends to create a spirit of competition among its users. Detailed progress reports as well as a highly specialized Ranking System has been introduce to promote a healthy competition.</p>
                         </div>
                     </li>
                 </ul>
