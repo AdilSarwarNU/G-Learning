@@ -48,6 +48,34 @@
             </div>
         </div>
         
+        <?php if(!$this->session->userdata('errorFlag') && $this->session->userdata('errorMessage')){?>
+        <div class="error-div">
+            <div class="failure"> <?php echo $this->session->userdata('errorMessage');?> </div>
+            <script>
+                setTimeout(function(){
+                    $('.error-div').fadeTo("slow",1.0);
+                }, 500);
+                
+                setTimeout(function(){
+                    $('.error-div').fadeOut("slow");
+                }, 4000);
+            </script>
+        </div>
+        <?php }else if($this->session->userdata('errorFlag') && $this->session->userdata('errorMessage')){?>
+        <div class="error-div">
+            <div class="success"> <?php echo $this->session->userdata('errorMessage');?> </div>
+            <script>
+                setTimeout(function(){
+                    $('.error-div').fadeTo("slow",1.0);
+                }, 500);
+                
+                setTimeout(function(){
+                    $('.error-div').fadeOut("slow");
+                }, 4000);
+            </script>
+        </div>
+        <?php }?>
+        
         <div class="mid_forms_general">
             <div class="mid_forms_body">
                 <div id="add_student">
@@ -88,15 +116,15 @@
                     </form>
                 </div>            
                 <div id="main_form">
-                    <form type="submit" method="POST" action="#">
+                    <form type="submit" method="POST" action="<?php echo base_url()?>admin/addTeacher">
                         <table>
                             <tr>
                                 <td  class="inputField" >School:</td>
                                 <td class="input">
                                     <div class="fieldgroup">
-                                        <select>
-                                            <option>Educators</option>
-                                            <option>Beaconhouse</option>
+                                        <select name="school">
+                                            <option value="Educators">Educators</option>
+                                            <option value="BeaconHouse">Beaconhouse</option>
                                         </select>
                                     </div>
                                 </td>

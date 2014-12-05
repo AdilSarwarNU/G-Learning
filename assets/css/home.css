@@ -729,7 +729,12 @@ div.fieldgroup
     display: none;
 }
 
-#search_general
+#search_general_edit
+{
+    display: none;
+}
+
+#search_general_delete
 {
     display: none;
 }
@@ -1264,4 +1269,53 @@ z-index:1000;
 	text-shadow: 2px 1px 1px #F0F0F0;
         -moz-text-shadow: 2px 1px 1px #F0F0F0;
         -webkit-text-shadow: 2px 1px 1px #F0F0F0;   
+}
+
+
+.error-div-success
+{
+    margin: auto;
+    text-align: center;
+    width:490px;
+    margin-top: 20px;
+    border: 1px solid black;
+    display: none;
+}
+
+.error-div-failure
+{
+    margin: auto;
+    text-align: center;
+    width:490px;
+    margin-top: 20px;
+    border: 1px solid black;
+    display: none;
+}
+
+#js-error-block
+{
+    display: none;
+}
+
+#delete_button{
+    display: none;
+}
+
+#edit_main_form
+{
+    display: none;
+}
+
+.success
+{
+    background-color: #99CC66;
+    color: black;
+    padding:5px;
+}
+
+.failure
+{
+    background-color: #D35453;
+    color: white;
+    padding:5px;
 }

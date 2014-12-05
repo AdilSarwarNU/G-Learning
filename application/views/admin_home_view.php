@@ -1,3 +1,43 @@
+<script>
+    $(document).ready(function(){
+        $('#searchStudentForm').on('submit',function(e) {
+        var query = document.getElementById('Searchusername').value;
+        var baseurl = "<?php print base_url(); ?>";
+        $.ajax({
+            url:  baseurl +"/admin/searchStudent",
+            type:'POST',
+            cache:false,
+            dataType: 'html',
+            data: { query : query },
+            success:function(data){
+                if(data === "success")
+                {
+                    $('#edit_main_form').show();
+                    $('#delete_button').show();
+                }
+                else
+                {
+                    $('#edit_main_form').hide();
+                    $('#js-error-block-message').text("Username Not Found");
+                    $('#js-error-block').show();
+                    setTimeout(function(){
+                        $('#js-error-block').fadeTo("slow",1.0);
+                    }, 500);
+                    
+                    setTimeout(function(){
+                        $('#js-error-block').fadeTo("slow",0.0);
+                        $('#js-error-block').hide();
+                    }, 2500);
+                }
+            },
+            error:function(x,e){
+            }
+        });
+        e.preventDefault(); //=== To Avoid Page Refresh and Fire the Event "Click"===
+        });
+    });
+</script>
+
 
 <div class="main_container_general">
     <div class="main_heading_general">
@@ -48,6 +88,38 @@
             </div>
         </div>
         
+        <div class="error-div-failure" id="js-error-block">
+            <div class="failure" id="js-error-block-message"></div>
+        </div>
+        
+        <?php if(!$this->session->userdata('errorFlag') && $this->session->userdata('errorMessage')){?>
+        <div class="error-div-failure">
+            <div class="failure"> <?php echo $this->session->userdata('errorMessage');?> </div>
+            <script>
+                setTimeout(function(){
+                    $('.error-div').fadeTo("slow",1.0);
+                }, 500);
+                
+                setTimeout(function(){
+                    $('.error-div').fadeOut("slow");
+                }, 4000);
+            </script>
+        </div>
+        <?php }else if($this->session->userdata('errorFlag') && $this->session->userdata('errorMessage')){?>
+        <div class="error-div-success">
+            <div class="success"> <?php echo $this->session->userdata('errorMessage');?> </div>
+            <script>
+                setTimeout(function(){
+                    $('.error-div').fadeTo("slow",1.0);
+                }, 500);
+                
+                setTimeout(function(){
+                    $('.error-div').fadeOut("slow");
+                }, 4000);
+            </script>
+        </div>
+        <?php }?>
+        
         <div class="mid_forms_general">
             <div class="mid_forms_body">
                 <div id="add_student">
@@ -65,14 +137,15 @@
                         <label>Delete Student</label>
                     </div>
                 </div>
-                <div class="search_general" id="search_general">
-                    <form type="submit" method="POST" action="#">
+                
+                <div class="search_general" id="search_general_edit">
+                    <form id ="searchStudentForm" type="submit">
                         <table>
                             <tr>
                                 <td  class="inputField" >Username:</td>
                                 <td class="input">
                                       <div class="fieldgroup">
-                                        <input type="text" name="Searchusername" value="" id="SearchfirstName" maxlength="20" placeholder="Enter Username">
+                                        <input type="text" name="Searchusername" value="" id="Searchusername" maxlength="20" placeholder="Enter Username">
                                       </div>
                                 </td>
                             </tr>
@@ -80,23 +153,24 @@
                                 <td  class="inputField" ></td>
                                 <td class="input">
                                       <div class="fieldgroup">
-                                        <input type="submit" value='Search Student'><br/><br/>
+                                        <input type="submit" value='Search Student' onclick="searchStudent();"><br/><br/>
                                       </div>
                                 </td>
                             </tr>
                         </table>
                     </form>
                 </div>
+                
                 <div id="main_form">
-                    <form type="submit" method="POST" action="#">
+                    <form type="submit" method="POST" action="<?php echo base_url()?>admin/addStudent">
                         <table>
                             <tr>
                                 <td  class="inputField" >School:</td>
                                 <td class="input">
                                     <div class="fieldgroup">
-                                        <select>
-                                            <option>Educators</option>
-                                            <option>Beaconhouse</option>
+                                        <select name="school">
+                                            <option value="Educators">Educators</option>
+                                            <option value="BeaconHouse">BeaconHouse</option>
                                         </select>
                                     </div>
                                 </td>
@@ -153,7 +227,7 @@
                                 <td  class="inputField" >Parent Password:</td>
                                 <td class="input">
                                       <div class="fieldgroup">
-                                        <input type="text" name="Parentpassword" id="Parentpassword" maxlength="128" placeholder="Enter Parent Password">
+                                        <input type="password" name="Parentpassword" id="Parentpassword" maxlength="128" placeholder="Enter Parent Password">
                                       </div>
                                 </td>
                             </tr>
@@ -162,6 +236,89 @@
                                 <td class="input">
                                       <div class="fieldgroup">
                                         <input type="submit" value='Submit'><br/><br/>
+                                      </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                
+                <div id="edit_main_form">
+                    <form type="submit" method="POST" action="<?php echo base_url()?>admin/addStudent">
+                        <table>
+                            <tr>
+                                <td  class="inputField" >School:</td>
+                                <td class="input">
+                                    <div class="fieldgroup">
+                                        <select name="school">
+                                            <option value="Educators">Educators</option>
+                                            <option value="BeaconHouse">BeaconHouse</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="inputField" >First Name:</td>
+                                <td class="input">
+                                      <div class="fieldgroup">
+                                        <input type="text" name="firstName" value="" id="firstName" maxlength="20" placeholder="Enter First Name">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="inputField" >Last Name:</td>
+                                <td class="input">
+                                      <div class="fieldgroup">
+                                        <input type="text" name="lastName" value="" id="lastName" maxlength="40" placeholder="Enter Last Name">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="inputField" >Home Address:</td>
+                                <td class="input">
+                                      <div class="fieldgroup">
+                                        <input type="text" name="HomeAddress" id="HomeAddress" maxlength="128" placeholder="Enter Home Address">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="inputField" >Email Address:</td>
+                                <td class="input">
+                                      <div class="fieldgroup">
+                                        <input type="email" name="email" id="email" maxlength="128" placeholder="Enter Email Address">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="inputField" >Username:</td>
+                                <td class="input">
+                                      <div class="fieldgroup">
+                                        <input type="text" name="username" id="username" maxlength="120" placeholder="Enter Username">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="inputField" >Password:</td>
+                                <td class="input">
+                                      <div class="fieldgroup">
+                                        <input type="password" name="password" id="password" maxlength="128" placeholder="Enter Password">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="inputField" >Parent Password:</td>
+                                <td class="input">
+                                      <div class="fieldgroup">
+                                        <input type="password" name="Parentpassword" id="Parentpassword" maxlength="128" placeholder="Enter Parent Password">
+                                      </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="inputField" ></td>
+                                <td class="input">
+                                      <div class="fieldgroup">
+                                        <input type="submit" value='Submit'>
+                                        <input type="submit" value='Delete' id="delete_button"><br/><br/>
                                       </div>
                                 </td>
                             </tr>
@@ -210,6 +367,8 @@
         $("#add_student").show();
         $("#search_general").hide();
         $("#main_form").show();
+        $("#search_general_edit").hide();
+        $("#edit_main_form").hide();
     }
 
     function EditStudent()
@@ -224,9 +383,10 @@
         $("#add_student_inside_class").addClass("top_tabs_inside").removeClass('top_tabs_inside_default');
         $("#add_student").hide();
         $("#delete_student").hide();
-        $("#edit_student").show();
-        $("#search_general").show();
+        $("#edit_student").show();        
         $("#main_form").hide();
+        $("#search_general_edit").show();
+        $("#edit_main_form").hide();
     }
 
     function DeleteStudent()
@@ -242,7 +402,8 @@
         $("#add_student").hide();
         $("#edit_student").hide();
         $("#delete_student").show();
-        $("#search_general").show();
         $("#main_form").hide();
+        $("#search_general_edit").show();
+        $("#edit_main_form").hide();
     }
 </script>
