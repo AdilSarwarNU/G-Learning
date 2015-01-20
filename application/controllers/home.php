@@ -19,10 +19,16 @@ class home extends CI_Controller{
     {
         $data['page_title'] = 'G-Learning | Student';
         $this->load->view('student_header',$data);
-        $this->load->view('student_dashboard');
-        
+        $this->load->view('student_dashboard');  
     }
-	
+    public function intitial_test() 
+    {
+        $data['page_title'] = 'G-Learning | Drills';
+        $this->load->view('main_header_new',$data);
+        $this->load->view('Initial_Test');
+        $this->load->view('footer');
+    }
+    
     public function drills()
     {
         $data['page_title'] = 'G-Learning | Drills';

@@ -35,6 +35,7 @@ time, mark, audio, video ,header {
     font-family: "Rennie Beanie";
     src: url(../fonts/reenie/ReenieBeanie.ttf) format("truetype");
 }
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -667,7 +668,8 @@ div.fieldgroup
 {
   margin-left:5px;
   width:240px;
-        margin-top: 13px;
+margin-top: 13px;
+background: white;
 }
 
 .fieldgroup select
@@ -729,7 +731,12 @@ div.fieldgroup
     display: none;
 }
 
-#search_general
+#search_general_edit
+{
+    display: none;
+}
+
+#search_general_delete
 {
     display: none;
 }
@@ -743,9 +750,15 @@ div.fieldgroup
 {    
     margin: auto;
     width:550px;
-    padding-top: 40px;
+    padding-top: 40px;    
 }
 
+.password-note label
+{
+    margin-left: 20px;
+    font-size: 20px;
+    margin-top: 20px;
+}
 .password_request_body
 {
     border: 1px solid brown;
@@ -1265,3 +1278,452 @@ z-index:1000;
         -moz-text-shadow: 2px 1px 1px #F0F0F0;
         -webkit-text-shadow: 2px 1px 1px #F0F0F0;   
 }
+
+
+.error-div-success
+{
+    margin: auto;
+    text-align: center;
+    width:490px;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.error-div-failure
+{
+    margin: auto;
+    text-align: center;
+    width:490px;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+#js-error-block
+{
+    display: none;
+}
+
+#delete_button{
+    display: none;
+}
+
+#edit_main_form
+{
+    display: none;
+}
+
+.success
+{
+    background-color: #99CC66;
+    color: black;
+    padding:5px;
+}
+
+.failure
+{
+    background-color: #D35453;
+    color: white;
+    padding:5px;
+}
+
+// Teacher Portal
+
+.top_container_teacher      //Note: it is also inlined in teacher_home.php page
+{
+    height:400px ;
+    background-color: #9BBA1F;
+    text-decoration: none;
+}
+.top_container_teacher h1
+{
+    font-size: 60px;
+    font-weight: bold;
+     color:white;
+}
+.top_container_teacher h2
+{
+    font-size: 35px;
+    color:white;
+}
+.top_container_teacher text
+{
+    font-size: 25px;
+    color:white;
+}
+.span_left_heading{
+    margin:30px;
+}
+
+.left_heading_half
+{
+    float: left;
+    text-align: center;
+    margin-top: 20px;
+    width : 50%;
+    display:inline;
+    margin-top: 50px;
+    vertical-align: middle;
+}
+.right_heading_half{
+    float: left;
+    width : 50%;
+    text-align: center;
+    display:inline;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.right_heading_half img{
+    height: 320px !important;
+}
+
+.start_work_teacher{
+    height: 130px;
+    vertical-align: middle;
+    background-color: #9BBA1F;
+}
+.btn_teacher {
+  font-family: cursive;
+  color: #ffffff;
+  background: #f73f3f;
+  padding: 40px 35px 55px 35px;
+  text-decoration: none;
+  margin: auto;
+  display: table;
+  cursor: pointer;
+  font-size: 26px;
+  border:none;
+  font-weight: bold;
+  //line-height: 70px;
+  height: 70px;
+}
+
+.btn_teacher:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.mid_content_teacher
+{
+    margin-top: 40px;
+    background-color: #f73f3f;
+    min-height: 670px;
+    width:1340px;
+}
+.teacher_mid_left{
+    height: 670px;
+    width:25%;
+    float:left;
+    display: inline;
+}
+.teacher_mid_right{
+    float:left;
+    margin-top: 5px;
+    height: 650px;
+    max-height:650px;
+    display: inline-block;
+    width:74%;
+    border-top: #f73f3f solid thick;
+    border-bottom : #f73f3f solid thick;
+    background-color:#fceabb;
+    overflow: auto;
+}
+.no_option_seleted{
+    height:60px;
+    width:100%;
+    margin-top:28%;
+    
+}
+.no_option_seleted label{
+    text-align: center;
+    margin-left:25px;
+    margin-right:25px;
+    font-size: 35px;
+    font-weight:bold;
+    line-height: 60px;
+    color:grey;
+}
+.teacher_option_tab{
+    width:fit-content;
+    height:142px;
+    margin:20px;
+    cursor: pointer;
+    background-color: #ffa200;
+     /* Webkit for Chrome and Safari */
+  -webkit-transform: scale(1, 1); // This is the scale for the normal size of the image.
+  -webkit-transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-out;
+ 
+  /* Webkit for Mozila Firefox */
+  -moz-transform: scale(1, 1);
+  -moz-transition-duration: 500ms;
+  -moz-transition-timing-function: ease-out;
+ 
+  /* Webkit for IE( Version: 11, 10 ) */
+  -ms-transform: scale(1, 1);
+  -ms-transition-duration: 500ms;
+  -ms-transition-timing-function: ease-out;
+}
+.teacher_option_tab label{
+    font-family: cursive;
+    font-size: 30px;
+    line-height: 150px;
+    text-align: center;
+    font-weight: normal;
+    color:#ffffff;
+    cursor: pointer;
+}
+.teacher_option_tab:hover{
+     background: #9bba1f;
+  text-decoration: none;
+    /* Webkit for Chrome and Safari */
+  -webkit-transform: scale(1.1, 1.1); // This is the enlarged size scale of the image.
+  -webkit-transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-out;
+ 
+  /* Webkit for Mozila Firefox */
+  -moz-transform: scale(1.1, 1.1);
+  -moz-transition-duration: 500ms;
+  -moz-transition-timing-function: ease-out;
+ 
+  /* Webkit for IE( Version: 11, 10 ) */
+  -ms-transform: scale(1.1, 1.1);
+  -ms-transition-duration: 500ms;
+  -ms-transition-timing-function: ease-out;
+
+}
+.teacher_option_tab_selected{
+    width:fit-content;
+    height:142px;
+    margin:20px;
+    background: #9bba1f;
+    border-radius: 15px;
+}
+.teacher_option_tab_selected label{
+    font-family: cursive;
+    font-size: 30px;
+    line-height: 150px;
+    text-align: center;
+    font-weight: normal;
+    color:#ffffff;
+}
+//Add Assessment
+.add_assessment_div{
+    height:650px;
+    max-height:650px;
+    display:inline-block;
+    width:100%;
+   // word-wrap:break-word;
+}
+.heading_teacher{
+    width:100%;
+    height:60px;
+    background-color:#9bba1f;
+}
+.heading_teacher h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+ //   color: #f73f3f;
+    font-family:Montserrat;
+    line-height:60px;
+}
+.labelandtextbox{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width:100%;
+    height:40px;
+}
+.labelandtextbox label{
+    margin-left: 25%;
+    float:left;
+    font-size: 22px;
+    display:inline;
+    font-family:cursive;
+    font-weight:bolder;
+    line-height:40px;
+}
+.labelandtextbox [type="text"]{
+   float:left;
+   width:300px;
+   font-size: 22px;
+   display:inline;
+   margin-left: 10px;
+   height:30px;
+   font-family:cursive;
+   //border:#f73f3f medium groove;
+}
+.subheading_teacher{
+    width:100%;
+    height:50px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+.subheading_teacher h1{
+    font-family:Montserrat;
+    color:#f73f3f;
+    font-size:40px;
+    font-weight:bolder;
+    float:left;
+    margin-left:40px;
+}
+.questions_wrapper{
+    width:100%;
+    height:auto;
+}
+.add_question_teacher{
+    height:120px;
+    width:100%;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.question_leftside{
+    width:55%;
+    height:100%;
+    float:left;
+    display:inline;
+}
+.question_leftside h1{
+    float:left;
+    display:inline;
+    font-size:25px;
+    font-weight: bolder;
+    margin-left:100px;
+    font-family:cursive;
+    color:#f73f3f;
+}
+.question_leftside textarea{
+    float:left;
+    display:inline;
+    font-size:17px;
+    font-weight: normal;
+    margin-left:25px;
+    font-family:cursive;
+    width:350px;
+}
+.correctoption{
+    border: #9bba1f 2px solid !important;
+}
+.question_rightside{
+    width:45%;
+    height:100%;
+    float:left;
+    display:inline;
+}
+.question_rightside [type="text"]{
+    font-weight: normal;
+    margin-left:5px;
+    width:160px;
+    font-family:cursive;
+    font-size:15px;
+}
+.submit_button_teacher{
+    height:100px;
+    width:280px;
+    margin:20px auto 20px auto;
+}
+
+.submit_button_teacher [type="submit"]{
+    padding-bottom: 17px;
+    padding-top:0px;
+    padding-left: 25px;
+    padding-right:25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-color: #f73f3f;
+    width:280px;
+    height:80px;
+    line-height:80px;
+    font-family:Montserrat;
+    font-size:23px;
+    color:white;
+    background-color: #f73f3f;
+}
+.Add_another_question_tab{
+    
+    height:50px;
+    width:auto;
+    margin:20px auto 20px 151px;
+}
+.Add_another_question_tab [type="button"]{
+    float:left;
+    display:inline-block;
+    padding:5px;
+    height:40px;
+    width:364px;
+    font-family:cursive;
+    font-weight: normal;
+    font-size:18px;
+    color:white;
+    background-color:#9bba1f;
+    border-color: #9bba1f;
+}
+.Add_another_question_tab label{
+    float:left;
+    display:inline-block;
+    visibility: hidden;
+    padding:5px;
+    height:40px;
+    margin-left:30px;
+    width:364px;
+    font-family:cursive;
+    font-weight: bolder;
+    font-size:18px;
+    color:#f73f3f;
+}
+//----------------
+.edit_assessment_div{
+    height:650px;
+    max-height:650px;
+    display:inline-block;
+    width:100%;
+}
+.delete_assessment_div{
+    height:650px;
+    max-height:650px;
+    display:inline-block;
+    width:100%;
+}
+.view_students_div{
+    height:650px;
+    max-height:650px;
+    display:inline-block;
+    width:100%;
+}
+table.view_students_table {
+    margin: 1em auto;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .view_students_table th, .view_students_table td {
+    padding: 4px 8px;
+  }
+  .view_students_table thead th {
+    background: #4f81bd;
+    text-transform: lowercase;
+    text-align: left;
+    font-size: 15px;
+    color: #fff;
+  }
+  .view_students_table tr {
+    border-right: 1px solid #95b3d7;
+  }
+  .view_students_table tbody tr {
+    border-bottom: 1px solid #95b3d7;
+  }
+  .view_students_table tbody tr:nth-child(odd) {
+    background: #dbe5f0;
+  }
+  .view_students_table tbody th, .view_students_table tbody tr:nth-child(even) td {
+    border-right: 1px solid #95b3d7;
+  }
+  .view_students_table tfoot th {
+    background: #4f81bd;
+    text-align: left;
+    font-weight: normal;
+    font-size: 10px;
+    color: #fff;
+  }
+  .view_students_table tr *:nth-child(3), .view_students_table tr *:nth-child(4) {
+    text-align: right;
+  }

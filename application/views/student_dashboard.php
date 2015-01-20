@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
 <script type="text/javascript">
     function drawCircle(selector, center, radius, angle, x, y) {
       var total = $(selector).length;
@@ -14,6 +18,23 @@
     });
    }
    
+   function showDialog()
+   {
+        $( "#dialog-confirm" ).dialog({
+        resizable: false,
+        height:140,
+        modal: true,
+        buttons: {
+          "Start Test": function() {
+            window.location.href = "<?php echo base_url();?>"+"home/intitial_test/";
+          },
+          Cancel: function() {
+            $( this ).dialog( "close" );
+          }
+        }
+      });
+   }
+   
   $(document).ready(function() {
     var angle = 90;
     drawCircle('.box', 50, 195, angle, 310, 220);
@@ -26,9 +47,12 @@
 //      drawCircle('.box', 50, 200, angle, 310, 220);
 //    });
 
-  });
-  
+  });  
 </script>
+
+<div id="dialog-confirm" title="Get Started..." style='height: 50px !important;'>
+  <p>Since it's your first time, You must give Initial Test.</p>
+</div>
 
 <div class="student_dashboard_body">
     <div class="mid-content">
@@ -74,7 +98,8 @@
                 <br/><br/>
                 <img src="<?php echo base_url();?>assets/images/doggy.png"/>
             </div>
-            <a href="<?php echo base_url();?>home/drills/">
+             
+            <a href="#" onclick="showDialog();">
                 <div class="welcome_cloud">
                     <img src="<?php echo base_url();?>assets/images/cloud2.png"/>
                     <label>Let's Play Friend</label>

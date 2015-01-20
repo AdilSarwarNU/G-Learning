@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/responsive.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/grid_12.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/jquery-ui.css">
-    <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery-qtip.css" type="text/css" media="screen">-->
-     <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/onepage-scroll.css" type="text/css" media="screen">-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery.mCustomScrollbar.css" type="text/css" media="screen">
@@ -29,6 +27,8 @@
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
      <script src="<?php echo base_url(); ?>/assets/js/bootstrap3.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-2.0.3.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/jquery-2.1.1.min.js"></script>
+    
     <!-- <script src="<?php echo base_url(); ?>/assets/js/npm.js"></script>-->
     
     <!--<script src="<?php echo base_url(); ?>/assets/js/jquery-qtip.js"></script>-->    

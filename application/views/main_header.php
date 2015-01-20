@@ -12,18 +12,14 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/responsive.css" type="text/css" media="screen">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/grid_12.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/jquery-ui.css">
-    <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery-qtip.css" type="text/css" media="screen">-->
-     <!--<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/onepage-scroll.css" type="text/css" media="screen">-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery.mCustomScrollbar.css" type="text/css" media="screen">
     
     <script src="<?php echo base_url(); ?>/assets/js/Chart.js"></script>
-    
     <script src="<?php echo base_url(); ?>/assets/js/modernizr.2.5.3.min.js"></script>
     <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>/assets/js/jquery-1.11.0.min.js"><\/script>');</script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery-ui.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>

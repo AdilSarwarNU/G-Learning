@@ -1,4 +1,27 @@
-    <div class="main_container_general">
+<script>
+    function validatePassword()
+    {
+        var password = document.getElementById('password').value;
+        if(password == "")
+        {
+            $('#js-error-block-message').text("Please Enter Password");
+            $('#js-error-block').show();
+            setTimeout(function(){
+                $('#js-error-block').fadeTo("slow",1.0);
+            }, 500);
+
+            setTimeout(function(){
+                $('#js-error-block').fadeTo("slow",0.0);
+                $('#js-error-block').hide();
+            }, 2500);
+            return false;
+        }
+        else
+            return true;
+    }
+</script>    
+
+<div class="main_container_general">
     <div class="main_heading_general">
         <label>Admin Portal</label>
     </div>
@@ -29,55 +52,77 @@
             </div>
         </div>
         
+        <div class="error-div-failure" id="js-error-block">
+            <div class="failure" id="js-error-block-message"></div>
+        </div>
+        
+        <?php if(!$this->session->userdata('errorFlag') && $this->session->userdata('errorMessage'))
+            {?>
+        <div class="error-div-failure">
+            <div class="failure"> 
+                <?php echo $this->session->userdata('errorMessage');?> 
+                <script>
+                    setTimeout(function(){
+                        $('.failure').fadeTo("slow",1.0);
+                    }, 500);
+
+                    setTimeout(function(){
+                        $('.failure').fadeOut("slow");
+                        $('.error-div-failure').hide();
+                    }, 3000);
+                </script>
+            </div>
+        </div>
+        <?php }else if($this->session->userdata('errorFlag') && $this->session->userdata('errorMessage')){?>
+        <div class="error-div-success">
+            <div class="success"> 
+                <?php echo $this->session->userdata('errorMessage');?> 
+                <script>
+                    setTimeout(function(){
+                        $('.success').fadeTo("slow",1.0);
+                    }, 500);
+
+                    setTimeout(function(){
+                        $('.success').fadeOut("slow");
+                        $('.error-div-success').hide();
+                    }, 3000);
+                </script>
+            </div>
+        </div>
+        <?php }?>
+        
         <div class='password_request_container'>
             <div class='password_request_body'>
                 <div class='password_request_heading'>
                     <label>Password Requests</label>
                 </div>
+                <?php if($result_count == 0){?>
+                    <div class="password-note">
+                        <label>No Requests</label>
+                    </div>
+                <?php } ?>
                 <div class="scroll_content mCustomScrollbar">
                     <div class='password_request_row_container'>
+                        <?php for($i= $result_count-1; $i >= 0; $i--){?>
                         <div class='password_request_row'>
-                            <div class="password_request_date"><label>28-10-2014</label></div>
-                            <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
-                            <form method="post" action="#">
+                            <div class="password_request_date"><label><?php echo date('d-m-Y',strtotime($result['date'.$i])); ?></label></div>
+                            <div class="password_request_note"><label><span><?php echo $result['username'.$i]; ?>:</span> Please update my password</label></div>
+                            <form method="post" action="<?php echo base_url(); ?>admin/updatePassword" onsubmit="return validatePassword();">
                                 <div class="password_request_input">
-                                    <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
+                                    <span>
+                                        New Password: 
+                                        <input type="password" name="password" placeholder="Enter New Password" id="password"/>
+                                        <input type="hidden" name="username" value="<?php echo $result['username'.$i]; ?>"/>
+                                    </span>
                                 </div>
                                 <div class="password_request_buttons">
                                     <input type="submit" value="Change Password"/>
                                     <br/>
-                                    <input type="button" value="Delete Request"/>
+                                    <a href="<?php echo base_url();?>admin/deleteRequest?requestID=<?php echo $result['request_id'.$i]; ?>" style="text-decoration: none;"><input type="button" value="Delete Request"/></a>
                                 </div>
                             </form>
                         </div>
-                        <div class='password_request_row'>
-                            <div class="password_request_date"><label>28-10-2014</label></div>
-                            <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
-                            <form method="post" action="#">
-                                <div class="password_request_input">
-                                    <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
-                                </div>
-                                <div class="password_request_buttons">
-                                    <input type="submit" value="Change Password"/>
-                                    <br/>
-                                    <input type="button" value="Delete Request"/>
-                                </div>
-                            </form>
-                        </div>
-                        <div class='password_request_row'>
-                            <div class="password_request_date"><label>28-10-2014</label></div>
-                            <div class="password_request_note"><label><span>Username:</span> Please update my password</label></div>
-                            <form method="post" action="#">
-                                <div class="password_request_input">
-                                    <span>New Password: <input type="password" required="true" name="password" placeholder="Enter New Password" /></span>
-                                </div>
-                                <div class="password_request_buttons">
-                                    <input type="submit" value="Change Password"/>
-                                    <br/>
-                                    <input type="button" value="Delete Request"/>
-                                </div>
-                            </form>
-                        </div>
+                        <?php }?>
                     </div>
                 </div>
             </div>
