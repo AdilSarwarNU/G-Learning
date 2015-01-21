@@ -10,10 +10,9 @@ class teacher extends CI_Controller {
     public function index()
     {
         $school_id=1;
-        $i = 0;
-        
+        $j = 0;
         $this->load->model('Teacher_Model');
-        $data['result'] = $this->Teacher_Model->get_all_students($school_id,$i);
+        $data['result'] = $this->Teacher_Model->get_all_students($school_id,$j);
         
         if ( $data['result']['feedback']==0) //insertion failed
         {
@@ -22,7 +21,7 @@ class teacher extends CI_Controller {
         }else
         {
             $data['scroll_to_div'] = 'view_student';
-            $data['no_of_students'] = $i;
+            $data['no_of_students'] = $j;
             $data['page_title'] = 'G-Learning | Teacher';
             $this->load->view('main_header_new',$data);
             $this->load->view('teacher_home');

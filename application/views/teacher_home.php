@@ -54,6 +54,16 @@
                         <label>Assessment Name:</label>
                         <input type="text" name="AddAssessment_name" value="" id="AddAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
                     </div>
+                   <div class="drill_box">
+                       <input type="hidden" name="hidden_drill_id" id="hidden_drill_id" value="Addition" />
+                        <label>Select Drill:</label>
+                        <select id="drill_select" onchange="updatehiddenselect();" required="required">
+                            <option value="1" selected>Addition</option>
+                                <option value="2">Even/Odd</option>
+                                <option value="3">Highest/Lowest</option>
+                                <option value="4">Multiples</option>
+                        </select>
+                   </div>
                     <div class="subheading_teacher">
                         <h1>Questions:</h1>
                     </div>
@@ -87,15 +97,48 @@
                 <div class="heading_teacher">
                     <h1>Edit Assessment</h1>
                 </div>
-                <form id="edit_assessment_form" name="edit_assessment_form" method="POST" action="<?php echo base_url();?>/G-Learning/DataEntry/add_assessment">
+                
+                <form id="edit_assessment_form" name="edit_assessment_form" method="POST" action="<?php echo base_url();?>DataEntry/edit_assessment">
                     <div class="labelandtextbox">
-                        <label>Edit Assessment:</label>
-                        <input type="text" name="EditAssessment_name" value="" id="EditAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
+                        <label>Search Assessment:</label>
+                        <input type="text" name="EditAssessment_name" value="<?php if($scroll_to_div== "edit_assess_search_no_match" || $scroll_to_div== "edit_assess_search_match"){  echo $searched_assessment;  }?>" id="EditAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
                     </div>
                     <div class="submit_button_teacher">
                         <input type="submit" value='Search Assessment'>
                     </div>
                 </form>
+                <?php if($scroll_to_div== "edit_assess_search_match") 
+                    { ?>
+                <form id="update_assessment_form" name="update_assessment_form" method="POST" action= "<?php echo base_url();?>DataEntry/update_assessment">
+                   
+                   <!--hidden field-->
+                   <input type="hidden" name="update_hiddenfield_noofqs" id="update_hiddenfield_noofqs" value="<?php echo $no_of_questions ?>" />
+                    <div class="subheading_teacher">
+                        <h1>Questions:</h1>
+                    </div>
+                    <div class="questions_wrapper_update">
+                    <?php for($i=0 ;$i<$no_of_questions;$i++)
+                        { ?>
+                        <div class="add_question_teacher">
+                            <input type="hidden" name="update_hiddenfield_qid_<?php echo $i; ?>" id="update_hiddenfield_qid_<?php echo $i; ?>" value="<?php echo $questions['question_id'.$i] ?>" />
+                            <div class="question_leftside">
+                                <h1>    <?php echo $i+1; ?>    :</h1>
+                                <textarea draggable="false" name="update_question_<?php echo $i; ?>" id="update_question_<?php echo $i; ?>" rows="5" required="required" placeholder="Write your question here..."><?php echo $questions['statement'.$i] ?></textarea>
+                            </div>
+                            <div class="question_rightside">
+                                <input type="text" name="update_CorrectOption1_<?php echo $i; ?>" value="<?php echo $questions['answer'.$i] ?>" id="update_CorrectOption1_<?php echo $i; ?>" maxlength="20" placeholder="Correct Option" required="required" class="correctoption">
+                                <input type="text" name="update_QuestionOption2_<?php echo $i; ?>" value="<?php echo $questions['option1'.$i] ?>" id="update_QuestionOption2_<?php echo $i; ?>" maxlength="20" placeholder="Wrong Option" required="required">
+                                <input type="text" name="update_QuestionOption3_<?php echo $i; ?>" value="<?php echo $questions['option2'.$i] ?>" id="update_QuestionOption3_<?php echo $i; ?>" maxlength="20" placeholder="Wrong Option" required="required">
+                                <input type="text" name="update_QuestionOption4_<?php echo $i; ?>" value="<?php echo $questions['option3'.$i] ?>" id="update_QuestionOption4_<?php echo $i; ?>" maxlength="20" placeholder="Wrong Option" required="required">
+                            </div>
+                        </div>
+                    <?php } ?>
+                    </div>
+                    <div id="submit_button" class="submit_button_teacher">
+                        <input type="submit" value='Update Assessment' >
+                    </div>
+                </form>
+                <?php } ?>
             </div>
             <div id="delete_assessment_div" class="delete_assessment_div">
                 <div class="heading_teacher">
@@ -122,36 +165,34 @@
                         <div class="student_block">
                             <h1>Ranking</h1>
                         </div>
-                        <div class="student_block">
+                        <div class="student_block_long">
                             <h1>Name</h1>
                         </div>
-                        <div class="student_block">
-                            <h1>Contact #</h1>
+                        <div class="student_block_long">
+                            <h1>Email</h1>
                         </div>
                         <div class="student_block">
                             <h1>Score</h1>
                         </div>
                     </div>
-                    <?php if($scroll_to_div== "view_student") 
-                        {
-                        for($i=0 ;$i<$no_of_students;$i++)
+                    <?php    for($k=0 ;$k<$no_of_students;$k++)
                             { ?>
                             <div class="student_view_tab">
                                 <div class="student_block">
-                                    <label><?php echo $result['rank'.$i] ?><label>
+                                    <label><?php echo $result['rank'.$k] ?><label>
+                                </div>
+                                <div class="student_block_long">
+                                    <label><?php echo $result['student_name'.$k] ?><label>
+                                </div>
+                                <div class="student_block_long">
+                                    <label><?php echo $result['student_contact'.$k] ?><label>
                                 </div>
                                 <div class="student_block">
-                                    <label><?php echo $result['student_name'.$i] ?><label>
-                                </div>
-                                <div class="student_block">
-                                    <label><?php echo $result['student_contact'.$i] ?><label>
-                                </div>
-                                <div class="student_block">
-                                    <label><?php echo $result['score'.$i] ?><label>
+                                    <label><?php echo $result['score'.$k] ?><label>
                                 </div>
                             </div>
                     
-                      <?php }
+                      <?php 
                         } ?>
                 </div>
             </div>
@@ -172,9 +213,46 @@
         $("#delete_assessment_div").hide();
         $("#view_students_div").hide();
         addassess_addquestion();
-        <?php if($scroll_to_div != "start"){ ?>
+        <?php if($scroll_to_div == "add_assess")
+                { ?>
+                alertify.error("Assessment Added");
                 start_work_click();
-        <?php }?>
+                AddAssessment();
+
+        <?php }else if($scroll_to_div == "edit_assess")
+                {?>
+                alertify.error("Assessment Updated");
+                EditAssessment();
+
+        <?php }else if($scroll_to_div == "delete_assess")
+                 { ?>
+                alertify.error("Assessment Deleted");
+                start_work_click();
+                DeleteAssessment();
+            
+        <?php }else if($scroll_to_div == "edit_assess_search_match")
+                 { ?>
+                alertify.error("Assessment Found");
+                start_work_click();
+                EditAssessment();
+        <?php }else if($scroll_to_div == "edit_assess_search_no_match")
+                 { ?>
+                alertify.error("Assessment name not found");
+                start_work_click();
+                EditAssessment();
+        <?php }else if($scroll_to_div == "update_assess")
+                 { ?>
+                alertify.error("Assessment updated");
+                start_work_click();
+                EditAssessment();
+        <?php }else if($scroll_to_div == "update_assess_updation_error")
+                 { ?>
+                alertify.error("Assessment not updated");
+                start_work_click();
+                EditAssessment();
+        <?php } ?>
+            
+            
         return true;
     }
     window.onload = codeAddress;    //runs on start
@@ -268,7 +346,10 @@
         }, 'slow');
         return true;
     }
-    
-    
+    function updatehiddenselect()
+    {
+        var element = document.getElementById("hidden_drill_id");
+        element.value = $( "#drill_select option:selected" ).text();
+    }
 </script>
 

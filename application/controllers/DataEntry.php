@@ -7,16 +7,30 @@ class DataEntry extends CI_Controller{
     
     public function add_assessment()
     {
+        $assess_name  = $this->security->xss_clean($this->input->post('AddAssessment_name')); //name
+        $i  = $this->security->xss_clean($this->input->post('Add_hiddenfield'));
+        
         //dummydata
-        $total_marks=10;
-        $drill_id =1;
         $teacher_id=33;
         $school_id=1;
         //---------
-        $assess_name  = $this->security->xss_clean($this->input->post('AddAssessment_name')); //name
-        $i  = $this->security->xss_clean($this->input->post('Add_hiddenfield'));
-        echo $assess_name;
+        $drill_id=0;
+        $total_marks=10*$i;
+        $drill_name  = $this->security->xss_clean($this->input->post('hidden_drill_id')); //drill 
+        
+        if($drill_name== "Addition")
+        {   $drill_id=1;    }
+        else if($drill_name== "Even/Odd")
+        {   $drill_id=2;    }
+        else if($drill_name== "Highest/Lowest")
+        {   $drill_id=3;    }
+        else if($drill_name== "Multiples")
+        {   $drill_id=4;    }
+        
+        
         $this->load->model('Teacher_Model');
+        
+        
         $result = $this->Teacher_Model->insert_new_assessment($assess_name,$total_marks,$drill_id,$teacher_id,$school_id);
         if ( $result==0) //insertion failed
         {
@@ -30,13 +44,29 @@ class DataEntry extends CI_Controller{
             {
                 $check = $this->add_question($assess_id,$i);
             }
-            $data['page_title'] = 'G-Learning | Teacher';
-            $data['scroll_to_div'] = 'workstation';
-            $this->load->view('main_header_new',$data);
-            $this->load->view('teacher_home');
-            $this->load->view('footer');
+            
+            //loading students
+            $school_id=1;
+            $j = 0;
+
+            $data['result'] = $this->Teacher_Model->get_all_students($school_id,$j);
+
+            if ( $data['result']['feedback']==0) //insertion failed
+            {
+                echo student_view_failed_to_load;
+                return false;
+            }else
+            {
+                $data['no_of_students'] = $j;
+                
+            //loading add_view
+                $data['page_title'] = 'G-Learning | Teacher';
+                $data['scroll_to_div'] = 'add_assess';
+                $this->load->view('main_header_new',$data);
+                $this->load->view('teacher_home');
+                $this->load->view('footer');
+            }
         }
-        
     }
     //helping funtion for AddAssessment
     public function add_question($assess_id,$i)
@@ -64,8 +94,145 @@ class DataEntry extends CI_Controller{
     
     public function edit_assessment()
     {
+        $assess_name  = $this->security->xss_clean($this->input->post('EditAssessment_name')); //name
         
+        //dummydata
+        $school_id=1;
+        //---------
+        
+        $this->load->model('Teacher_Model');
+        
+        $searched_id = $this->Teacher_Model->search_assessment($assess_name,$school_id);
+        if($searched_id==-1)    //error
+        {
+                //loading students
+                $school_id=1;
+                $j = 0;
+
+                $data['result'] = $this->Teacher_Model->get_all_students($school_id,$j);
+
+                if ( $data['result']['feedback']==0) //insertion failed
+                {
+                    echo student_view_failed_to_load;
+                    return false;
+                }else
+                {
+                    $data['no_of_students'] = $j;
+                    
+                //  loading view
+                   $data['scroll_to_div'] = 'edit_assess_search_no_match';
+                   $data['searched_assessment']= $assess_name;
+                   $data['page_title'] = 'G-Learning | Teacher';
+                   $this->load->view('main_header_new',$data);
+                   $this->load->view('teacher_home');
+                   $this->load->view('footer');
+                }
+        }else{
+            $i = 0;
+            
+            $data['questions'] = $this->Teacher_Model->give_assessment_questions($searched_id,$i);
+
+            if ( $data['questions']['feedback']==0) //insertion failed
+            {
+                echo student_view_failed_to_load;
+                return false;
+            }else
+            {
+                //loading students
+                $school_id=1;
+                $j = 0;
+
+                $data['result'] = $this->Teacher_Model->get_all_students($school_id,$j);
+
+                if ( $data['result']['feedback']==0) //insertion failed
+                {
+                    echo student_view_failed_to_load;
+                    return false;
+                }else
+                {
+                    $data['no_of_students'] = $j;
+                
+                    //loading questions
+                //    echo "edit_assess_search_match";
+                    
+                    $data['scroll_to_div'] = 'edit_assess_search_match';
+                    $data['searched_assessment']= $assess_name;
+                    $data['no_of_questions'] = $i;
+                    $data['page_title'] = 'G-Learning | Teacher';
+                    $this->load->view('main_header_new',$data);
+                    $this->load->view('teacher_home');
+                    $this->load->view('footer');
+                }
+            }
+        }
     }
+    
+    public function update_assessment()
+    {
+        $no_of_questions   = $this->security->xss_clean($this->input->post('update_hiddenfield_noofqs'));
+        
+        $this->load->model('Teacher_Model');
+        
+        for( $z=0; $z<$no_of_questions; $z++)
+        {
+            $q_id   = $this->security->xss_clean($this->input->post('update_hiddenfield_qid_' . $z));
+            $statement  = $this->security->xss_clean($this->input->post('update_question_' . $z));
+            $answer   = $this->security->xss_clean($this->input->post('update_CorrectOption1_' . $z));
+            $option1   = $this->security->xss_clean($this->input->post('update_QuestionOption2_' . $z));
+            $option2   = $this->security->xss_clean($this->input->post('update_QuestionOption2_' . $z));
+            $option3   = $this->security->xss_clean($this->input->post('update_QuestionOption3_' . $z));
+            
+            $result = $this->Teacher_Model->update_assessment_question($q_id,$statement,$answer,$option1,$option2,$option3);
+           if($result==0)
+           {
+               //loading students
+                $school_id=1;
+                $j = 0;
+
+                $data['result'] = $this->Teacher_Model->get_all_students($school_id,$j);
+
+                if ( $data['result']['feedback']==0) //insertion failed
+                {
+                    echo student_view_failed_to_load;
+                    return false;
+                }else
+                {
+                    $data['no_of_students'] = $j;
+                    
+                //  loading view
+                   $data['scroll_to_div'] = 'update_assess_updation_error';
+                   $data['searched_assessment']= $assess_name;
+                   $data['page_title'] = 'G-Learning | Teacher';
+                   $this->load->view('main_header_new',$data);
+                   $this->load->view('teacher_home');
+                   $this->load->view('footer');
+                }
+               return 0;
+           }
+        }
+                //loading students
+                $school_id=1;
+                $j = 0;
+
+                $data['result'] = $this->Teacher_Model->get_all_students($school_id,$j);
+
+                if ( $data['result']['feedback']==0) //insertion failed
+                {
+                    echo student_view_failed_to_load;
+                    return false;
+                }else
+                {
+                    $data['no_of_students'] = $j;
+
+                //loading add_view
+                    $data['page_title'] = 'G-Learning | Teacher';
+                    $data['scroll_to_div'] = 'update_assess';
+                    $this->load->view('main_header_new',$data);
+                    $this->load->view('teacher_home');
+                    $this->load->view('footer');
+                }
+    }
+    
     public function delete_assessment()
     {
         $assess_name  = $this->security->xss_clean($this->input->post('DeleteAssessment_name'));
@@ -77,13 +244,32 @@ class DataEntry extends CI_Controller{
             return false;
         }else
         {
-            $data['page_title'] = 'G-Learning | Teacher';
-            $data['scroll_to_div'] = 'workstation';
-            $this->load->view('main_header_new',$data);
-            $this->load->view('teacher_home');
-            $this->load->view('footer');
+            
+            //loading students
+            $school_id=1;
+            $j = 0;
+
+            $data['result'] = $this->Teacher_Model->get_all_students($school_id,$j);
+
+            if ( $data['result']['feedback']==0) //insertion failed
+            {
+                echo student_view_failed_to_load;
+                return false;
+            }else
+            {
+                $data['no_of_students'] = $j;
+                
+                //loading delete_assess
+                $data['page_title'] = 'G-Learning | Teacher';
+                $data['scroll_to_div'] = 'delete_assess';
+                $this->load->view('main_header_new',$data);
+                $this->load->view('teacher_home');
+                $this->load->view('footer');
+            }
         }
     }
+    
+    //view student is in teacher controller
     
     function checkLevel()
     {

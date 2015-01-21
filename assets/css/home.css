@@ -1534,7 +1534,6 @@ z-index:1000;
 }
 .labelandtextbox{
     margin-top: 30px;
-    margin-bottom: 20px;
     width:100%;
     height:40px;
 }
@@ -1557,6 +1556,32 @@ z-index:1000;
    font-family:cursive;
    //border:#f73f3f medium groove;
 }
+.drill_box{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left:30px;
+    width:80%;
+    height:44px;
+}
+.drill_box label{
+    margin-left: 36%;
+    float:left;
+    font-size: 22px;
+    display:inline;
+    font-family:cursive;
+    font-weight:bolder;
+    line-height:40px;
+}
+.drill_box select{
+   float:left;
+   width:300px;
+   font-size: 20px;
+   display:inline;
+   margin-left: 10px;
+   height: 40px;
+   font-family:cursive;
+   //border:#f73f3f medium groove;
+}
 .subheading_teacher{
     width:100%;
     height:50px;
@@ -1572,6 +1597,11 @@ z-index:1000;
     margin-left:40px;
 }
 .questions_wrapper{
+    width:100%;
+    height:auto;
+}
+
+.questions_wrapper_update{
     width:100%;
     height:auto;
 }
@@ -1712,7 +1742,7 @@ z-index:1000;
     height:80px;
     float:left;
     display:inline-block;
-    width:220px;
+    width:180px;
     border: #f73f3f solid thin;
     background-color: #9bba1f;
     text-align: center;
@@ -1728,7 +1758,32 @@ z-index:1000;
 }
 .student_block label{
     line-height:80px;
+    font-size: 22px;
+    font-weight: normal;
+    color:#000;
+    font-family: cursive;
+}
+
+.student_block_long{
+    height:80px;
+    float:left;
+    display:inline-block;
+    width:270px;
+    border: #f73f3f solid thin;
+    background-color: #9bba1f;
+    text-align: center;
+}
+.student_block_long h1{
     
+    line-height:80px;
+    font-size: 30px;
+    font-weight: bolder;
+    color:#fafafa;
+    background-color: #f73f3f;
+    font-family: Montserrat;
+}
+.student_block_long label{
+    line-height:80px;
     font-size: 22px;
     font-weight: normal;
     color:#000;

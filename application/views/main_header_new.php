@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/initial_test.css" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/jquery.mCustomScrollbar.css" type="text/css" media="screen">
     
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/alertify.core.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/alertify.default.css">
+    <script src="<?php echo base_url(); ?>/assets/js/alertify.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/alertify.min.js"></script>
+    
+    
     <script src="<?php echo base_url(); ?>/assets/js/Chart.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/jquery.min.1.7.js"></script>
     <script src="<?php echo base_url(); ?>/assets/js/modernizr.2.5.3.min.js"></script>

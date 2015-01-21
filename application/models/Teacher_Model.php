@@ -46,30 +46,11 @@ class Teacher_Model extends CI_Model {
             $question_id = $this->db->insert_id();
             if($query)
             {
-//                $result = $this->insert_in_assessment_question($assess_id,$question_id);
-//                if($result)
                     return 1;
-//                else{
-//                    echo insertion_failed_in_Assessment_Question;
-//                    return 0;
-//                }
             }else{
                 return 0;
             }
     }
-//    function insert_in_assessment_question($assess_id,$question_id)
-//    {
-//        // Preparing the Array to be inserted into Assessment_Question Table
-//        $assessment_question = array(
-//            'assessment_id' => $assess_id,
-//            'question_id' => $question_id
-//        );
-//        $query = $this->db->insert('assessment_question',$assessment_question);
-//        if ($query)
-//            return 1; 
-//        else
-//            return 0;
-//    }
     function delete_assessment($assess_name)    //Note: remember to put cascading option in db
     {
             $this->db->where('assessment_name', $assess_name);
@@ -80,9 +61,9 @@ class Teacher_Model extends CI_Model {
             else
                 return 0;
     }
-    function get_all_students($school_id , &$i)
+    function get_all_students($school_id , &$j)
     {
-       $this->db->select('person.person_id,first_name,last_name,ContactNumber, SUM(marks_obtained) AS score');
+       $this->db->select('person.person_id,first_name,last_name,email, SUM(marks_obtained) AS score');
        $this->db->where('school_id', $school_id);
         $this->db->where('type', "student");
         $this->db->from('login');
@@ -100,10 +81,56 @@ class Teacher_Model extends CI_Model {
         {
             foreach ($results->result() as $row)
             {
-                $array['rank'.$i] = $i+1;
-                $array['student_name'.$i] = $row->first_name . $row->last_name;// $row['first_name'].$row['last_name'];
-                $array['student_contact'.$i] = $row->ContactNumber;
-                $array['score'.$i] = $row->score;
+                $array['rank'.$j] = $j+1;
+                $array['student_name'.$j] = $row->first_name . $row->last_name;// $row['first_name'].$row['last_name'];
+                $array['student_contact'.$j] = $row->email;
+                $array['score'.$j] = $row->score;
+                $j++;
+            }
+            $array['feedback']=1;
+            return $array;
+        }else{
+            $array['feedback']=0;
+            return $array;
+        }
+        
+    }
+    
+    function search_assessment($assess_name,$school_id)
+    {
+        $this->db->where('assessment_name', $assess_name);
+        $this->db->where('school_id', $school_id);
+        $this->db->from('assessment');
+        $query = $this->db->get();
+        
+        if($query->num_rows == 1)
+        {
+            $row = $query->row();
+            return $row->assessment_id;
+        }else{
+            return -1;
+        }
+    }
+    
+    function give_assessment_questions($assess_id,&$i)
+    {
+       $this->db->where('assessment_id', $assess_id);
+        $this->db->from('question');
+        $results = $this->db->get();
+    //    print_r($results->result_array());  //very helpfull
+        $array = array();
+        
+        if($results)
+        {
+            foreach ($results->result() as $row)
+            {
+                $array['question_id'.$i] = $row->question_id;
+                $array['statement'.$i] = $row->statement;// $row['first_name'].$row['last_name'];
+                $array['answer'.$i] = $row->answer;
+                $array['option1'.$i] = $row->option1;
+                $array['option2'.$i] = $row->option2;
+                $array['option3'.$i] = $row->option3;
+            //    $array['option1'.$i] = $row->score;
                 $i++;
             }
             $array['feedback']=1;
@@ -113,5 +140,25 @@ class Teacher_Model extends CI_Model {
             return $array;
         }
         
+    }
+    function update_assessment_question($q_id,$statement,$answer,$option1,$option2,$option3)
+    {
+        
+        $questionData = array(
+            'statement' => $statement,
+            'answer' => $answer,
+            'option1' => $option1,
+            'option2' => $option2,
+            'option3' => $option3
+        );
+
+        $this->db->where('question_id', $q_id);
+        $query = $this->db->update('question',$questionData);
+        if($query)
+        {
+            return 1;
+        }else{
+            return 0;
+        }
     }
 }
