@@ -89,7 +89,7 @@
                 </div>
                 <form id="edit_assessment_form" name="edit_assessment_form" method="POST" action="<?php echo base_url();?>/G-Learning/DataEntry/add_assessment">
                     <div class="labelandtextbox">
-                        <label>Search Assessment:</label>
+                        <label>Edit Assessment:</label>
                         <input type="text" name="EditAssessment_name" value="" id="EditAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
                     </div>
                     <div class="submit_button_teacher">
@@ -117,12 +117,6 @@
                 <div class="heading_teacher">
                     <h1>Viewing Students</h1>
                 </div>
-                <form id="view_student_form" name="view_student_form" method="POST" action= "<?php echo base_url();?>DataEntry/view_student">
-                
-                    <div class="submit_button_teacher">
-                        <input type="submit" value='Fetch Students'>
-                    </div>
-                </form>
                 <div class="view_result_container">
                     <div class="student_view_tab">
                         <div class="student_block">
@@ -138,25 +132,27 @@
                             <h1>Score</h1>
                         </div>
                     </div>
-                    <?php if(scroll_to_div== "view_student") 
-                        for($i=0 ;$i<no_of_students;$i++)
+                    <?php if($scroll_to_div== "view_student") 
+                        {
+                        for($i=0 ;$i<$no_of_students;$i++)
                             { ?>
                             <div class="student_view_tab">
                                 <div class="student_block">
-                                    <label><?php Rank.$i ?><label>
+                                    <label><?php echo $result['rank'.$i] ?><label>
                                 </div>
                                 <div class="student_block">
-                                    <label><?php student_name.$i ?><label>
+                                    <label><?php echo $result['student_name'.$i] ?><label>
                                 </div>
                                 <div class="student_block">
-                                    <label><?php student_contact.$i ?><label>
+                                    <label><?php echo $result['student_contact'.$i] ?><label>
                                 </div>
                                 <div class="student_block">
-                                    <label><?php score.$i ?><label>
+                                    <label><?php echo $result['score'.$i] ?><label>
                                 </div>
                             </div>
                     
-                    <?php } ?>
+                      <?php }
+                        } ?>
                 </div>
             </div>
         </div>

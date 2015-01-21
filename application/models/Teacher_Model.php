@@ -20,7 +20,6 @@ class Teacher_Model extends CI_Model {
                 'school_id' => $school_id
             );
             $query = $this->db->insert('assessment',$new_assessment);
-            echo "This is q_result:".$query;
             $assess_id = $this->db->insert_id();
             if($query)
             {
@@ -84,7 +83,6 @@ class Teacher_Model extends CI_Model {
     function get_all_students($school_id , &$i)
     {
        $this->db->select('person.person_id,first_name,last_name,ContactNumber, SUM(marks_obtained) AS score');
-     //     $this->db->select('*');
        $this->db->where('school_id', $school_id);
         $this->db->where('type', "student");
         $this->db->from('login');
@@ -102,7 +100,7 @@ class Teacher_Model extends CI_Model {
         {
             foreach ($results->result() as $row)
             {
-                $array['Rank'.$i] = $i;
+                $array['rank'.$i] = $i+1;
                 $array['student_name'.$i] = $row->first_name . $row->last_name;// $row['first_name'].$row['last_name'];
                 $array['student_contact'.$i] = $row->ContactNumber;
                 $array['score'.$i] = $row->score;

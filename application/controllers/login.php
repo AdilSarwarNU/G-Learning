@@ -42,8 +42,8 @@ class login extends CI_Controller{
             $this->load->view('login_view');
         }
         else if($result == "teacher"){
-            $data['page_title'] = 'G-Learning | Teacher';
             $data['scroll_to_div'] = 'start';
+            $data['page_title'] = 'G-Learning | Teacher';
             $this->load->view('main_header_new',$data);
             $this->load->view('teacher_home');
             $this->load->view('footer');

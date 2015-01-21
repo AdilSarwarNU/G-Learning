@@ -6,13 +6,37 @@ class teacher extends CI_Controller {
         $this->load->helper('asset');
     }
     
-    function home()
+    
+    public function index()
     {
-        $data['page_title'] = 'G-Learning | Teacher';
-        $data['scroll_to_div'] = 'start';
-        $this->load->view('main_header_new',$data);
-        $this->load->view('teacher_home',$data);
-        $this->load->view('footer');
+        $school_id=1;
+        $i = 0;
+        
+        $this->load->model('Teacher_Model');
+        $data['result'] = $this->Teacher_Model->get_all_students($school_id,$i);
+        
+        if ( $data['result']['feedback']==0) //insertion failed
+        {
+            echo student_view_failed_to_load;
+            return false;
+        }else
+        {
+            $data['scroll_to_div'] = 'view_student';
+            $data['no_of_students'] = $i;
+            $data['page_title'] = 'G-Learning | Teacher';
+            $this->load->view('main_header_new',$data);
+            $this->load->view('teacher_home');
+            $this->load->view('footer');
+        }
+        
     }
+//    function index()
+//    {
+//        $data['page_title'] = 'G-Learning | Teacher';
+//        $data['scroll_to_div'] = 'start';
+//        $this->load->view('main_header_new',$data);
+//        $this->load->view('teacher_home');
+//        $this->load->view('footer');
+//    }
 }
 ?>
