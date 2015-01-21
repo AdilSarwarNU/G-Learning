@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/jquery-ui.css">
+<script src="<?php echo base_url(); ?>/assets/js/jquery-1.10.2.js"></script>
+<script src="<?php echo base_url(); ?>/assets/js/jquery-ui.js"></script>
 
 <script type="text/javascript">
     function drawCircle(selector, center, radius, angle, x, y) {
@@ -26,13 +26,33 @@
         modal: true,
         buttons: {
           "Start Test": function() {
-            window.location.href = "<?php echo base_url();?>"+"home/intitial_test/";
+            window.location.href = "<?php echo base_url();?>"+"home/intitial_test";
           },
           Cancel: function() {
             $( this ).dialog( "close" );
           }
         }
       });
+   }
+   
+   function checkLevel()
+   {
+       var baseurl = "<?php print base_url(); ?>";
+        $.ajax({
+            url:  baseurl +"DataEntry/checkLevel",
+            type:'POST',
+            cache:false,
+            dataType: 'html',
+            data: {},
+            success:function(data){
+                if(data == 0)
+                    showDialog();
+                else
+                    window.location.href = "<?php echo base_url();?>"+"home/drills";
+            },
+            error:function(x,e){
+            }
+        }); 
    }
    
   $(document).ready(function() {
@@ -50,7 +70,7 @@
   });  
 </script>
 
-<div id="dialog-confirm" title="Get Started..." style='height: 50px !important;'>
+<div id="dialog-confirm" title="Get Started..." style='height: 50px !important; display: none;'>
   <p>Since it's your first time, You must give Initial Test.</p>
 </div>
 
@@ -83,10 +103,10 @@
                     </a>
                 </div>
                 <div class="student_menu_tab">
-                    <a href="<?php echo base_url();?>home/drills/">
+                    <a href="<?php echo base_url();?>login/logout">
                         <div class="student_menu_tab_body">
                             <img src="<?php echo base_url();?>assets/images/games.png"/>
-                            <label>Games</label>
+                            <label>Logout</label>
                         </div>
                     </a>
                 </div>
@@ -99,7 +119,7 @@
                 <img src="<?php echo base_url();?>assets/images/doggy.png"/>
             </div>
              
-            <a href="#" onclick="showDialog();">
+            <a href="#" id="playButton" onclick="checkLevel();">
                 <div class="welcome_cloud">
                     <img src="<?php echo base_url();?>assets/images/cloud2.png"/>
                     <label>Let's Play Friend</label>

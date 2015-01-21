@@ -1,9 +1,41 @@
 <script>
-$(document).ready(function(){
-    $("#myTip").animate({ 
-        top: "+=150px",
-      }, 2800 );
-});
+    function hideAll()
+      {
+          $('#addition').hide();
+          $('#even').hide();
+          $('#highest').hide();
+          $('#multiples').hide();
+      }
+      
+      function addition()
+      {
+          hideAll();
+          $('#addition').show();
+      }
+      
+      function even()
+      {
+          hideAll();
+          $('#even').show();
+      }
+      
+      function multiples()
+      {
+          hideAll();
+          $('#multiples').show();
+      }
+      
+      function highest()
+      {
+          hideAll();
+          $('#highest').show();
+      }
+      
+        $(document).ready(function(){
+            $("#myTip").animate({ 
+                top: "+=150px",
+              }, 2800 );
+        });
 </script>
 <div class="student_dashboard_body">
     <div class="drills-content">
@@ -16,12 +48,10 @@ $(document).ready(function(){
                     <label>Topics</label>
                 </div>
                 <div id="radioButtons">
-                    <input type="radio" checked="checked" name="topic"/> <span>Even / Odd</span><br/>
-                    <input type="radio" name="topic"/> <span>Arithmatic</span><br/>
-                    <input type="radio" name="topic"/> <span>Shapes</span><br/>
-                    <input type="radio" name="topic"/> <span>Equations</span> <br/>
-                    <input type="radio" name="topic"/> <span>Multiplication</span> <br/>
-                    <input type="radio" name="topic"/> <span>Addition</span>
+                    <input type="radio" checked="checked" name="topic" onclick="addition();"/> <span>Addition</span><br/>
+                    <input type="radio" name="topic" onclick="even();"/> <span>Even / Odd</span><br/>
+                    <input type="radio" name="topic" onclick="highest();"/> <span>Highest/Lowest</span> <br/>
+                    <input type="radio" name="topic" onclick="multiples();"/> <span>Multiples of Number</span>
                 </div>
             </div>
             <div class="goback_fixed_button">
@@ -33,7 +63,17 @@ $(document).ready(function(){
 
         <div class="rightpane">
             <div class="gamebox">
-                <div class="game_row">
+                <div class="game_row" id="addition">
+                    <figure>
+                        <img alt="Runner" src="<?php echo base_url();?>assets/images/runner_banner.jpg"/>
+                        <figcaption>
+                            <h3>Endless Adder</h3>
+                            <p>Teaches the concept of Addition</p>
+                            <p><a href="<?php echo base_url();?>games/runner">Play Game</a></p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="game_row" id="even">
                     <figure>
                         <img alt="Catchy" src="<?php echo base_url();?>assets/images/catchy-tile.png"/>
                         <figcaption>
@@ -43,7 +83,7 @@ $(document).ready(function(){
                         </figcaption>
                     </figure>
                 </div>
-                <div class="game_row">
+                <div class="game_row" id="highest">
                     <figure>
                         <img alt="Catchy" src="<?php echo base_url();?>assets/images/BalloonParty_tile.png"/>
                         <figcaption>
@@ -53,7 +93,7 @@ $(document).ready(function(){
                         </figcaption>
                     </figure>
                 </div>
-                <div class="game_row">
+                <div class="game_row" id="multiples">
                     <figure>
                         <img alt="Catchy" src="<?php echo base_url();?>assets/images/catchy-tile-2.png"/>
                         <figcaption>
@@ -63,6 +103,7 @@ $(document).ready(function(){
                         </figcaption>
                     </figure>
                 </div>
+                
             </div>
         </div>
     </div>

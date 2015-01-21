@@ -9,7 +9,7 @@ class Teacher_Model extends CI_Model {
     }
     public function insert_new_assessment($assess_name,$total_marks,$drill_id,$teacher_id,$school_id)
     {
-        $assess_status=false;
+        $assess_status=0;
         // Preparing the Array to be inserted into Assessment Table
             $new_assessment = array(
                 'assessment_name' => $assess_name,
@@ -20,6 +20,7 @@ class Teacher_Model extends CI_Model {
                 'school_id' => $school_id
             );
             $query = $this->db->insert('assessment',$new_assessment);
+            echo "This is q_result:".$query;
             $assess_id = $this->db->insert_id();
             if($query)
             {
@@ -33,14 +34,14 @@ class Teacher_Model extends CI_Model {
         $question_status=false;
         // Preparing the Array to be inserted into Question Table
             $new_question = array(
-                'assessment_id' => $assess_id,
                 'statement' => $question_staement,
                 'answer' => $question_answer,
                 'option1' => $question_option1,
                 'option2' => $question_option2,
                 'option3' => $question_option3,
                 'complexity_level' => $complexity_level,
-                'question_status' => $question_status
+                'question_status' => $question_status,
+                'assessment_id' => $assess_id
             );
             $query = $this->db->insert('question',$new_question);
             $question_id = $this->db->insert_id();
@@ -79,5 +80,40 @@ class Teacher_Model extends CI_Model {
                 return 1;
             else
                 return 0;
+    }
+    function get_all_students($school_id , &$i)
+    {
+       $this->db->select('person.person_id,first_name,last_name,ContactNumber, SUM(marks_obtained) AS score');
+     //     $this->db->select('*');
+       $this->db->where('school_id', $school_id);
+        $this->db->where('type', "student");
+        $this->db->from('login');
+        $this->db->join('person', 'person.person_id = login.person_id');
+        $this->db->join('gradesheet', 'gradesheet.student_id = login.person_id');
+        $this->db->group_by('person.person_id');
+        $this->db->order_by('score', 'desc');
+        $results = $this->db->get();
+        
+    //    print_r($results->result_array());  //very helpfull
+        
+        $array = array();
+        
+        if($results)
+        {
+            foreach ($results->result() as $row)
+            {
+                $array['Rank'.$i] = $i;
+                $array['student_name'.$i] = $row->first_name . $row->last_name;// $row['first_name'].$row['last_name'];
+                $array['student_contact'.$i] = $row->ContactNumber;
+                $array['score'.$i] = $row->score;
+                $i++;
+            }
+            $array['feedback']=1;
+            return $array;
+        }else{
+            $array['feedback']=0;
+            return $array;
+        }
+        
     }
 }

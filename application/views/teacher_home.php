@@ -45,7 +45,7 @@
                     <h1>Add Assessment</h1>
                 </div>
                 <!--type="submit" enctype="multipart/form-data" -->
-               <form id="add_assessment_form" name="add_assessment_form" method="POST" action= "<?php echo base_url();?>/G-Learning/DataEntry/add_assessment">
+               <form id="add_assessment_form" name="add_assessment_form" method="POST" action= "<?php echo base_url();?>DataEntry/add_assessment">
                    
                    <!--hidden field-->
                    <input type="hidden" name="Add_hiddenfield" id="Add_hiddenfield" value="0" />
@@ -75,7 +75,7 @@
                        
                     </div>
                     <div class="Add_another_question_tab">
-                        <button type="button" onclick=" return addassess_addquestion();">Add Another Question</button>
+                        <button id="add_question_button" type="button" onclick=" return addassess_addquestion();">Add Another Question</button>
                         <label id="question_limit">Question Limit Reached</label>
                     </div>
                     <div id="submit_button" class="submit_button_teacher">
@@ -101,7 +101,7 @@
                 <div class="heading_teacher">
                     <h1>Delete Assessment</h1>
                 </div>
-                <form id="delete_assessment_form" name="delete_assessment_form" method="POST" action= "<?php echo base_url();?>/G-Learning/DataEntry/delete_assessment">
+                <form id="delete_assessment_form" name="delete_assessment_form" method="POST" action= "<?php echo base_url();?>DataEntry/delete_assessment">
                     <div class="labelandtextbox">
                         <label>Assessment Name:</label>
                         <input type="text" name="DeleteAssessment_name" value="" id="DeleteAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
@@ -112,31 +112,52 @@
                     
                 </form>
             </div>
+            
             <div id="view_students_div" class="view_students_div">
                 <div class="heading_teacher">
-                    <h1>View Students</h1>
+                    <h1>Viewing Students</h1>
                 </div>
-                <form type="submit" method="POST" action="#">
+                <form id="view_student_form" name="view_student_form" method="POST" action= "<?php echo base_url();?>DataEntry/view_student">
+                
                     <div class="submit_button_teacher">
                         <input type="submit" value='Fetch Students'>
                     </div>
                 </form>
-                    <table id="view_students_table">
-                        <tr>
-                          <th>Rank</th>
-                          <th>Student Name</th>
-                          <th>Obtained Points</th>
-                          <th>Email Address</th>
-                        </tr>
-                        <tr>
-                          <td>January</td>
-                          <td>$100</td>
-                        </tr>
-                        <tr>
-                          <td>February</td>
-                          <td>$50</td>
-                        </tr>
-                    </table>
+                <div class="view_result_container">
+                    <div class="student_view_tab">
+                        <div class="student_block">
+                            <h1>Ranking</h1>
+                        </div>
+                        <div class="student_block">
+                            <h1>Name</h1>
+                        </div>
+                        <div class="student_block">
+                            <h1>Contact #</h1>
+                        </div>
+                        <div class="student_block">
+                            <h1>Score</h1>
+                        </div>
+                    </div>
+                    <?php if(scroll_to_div== "view_student") 
+                        for($i=0 ;$i<no_of_students;$i++)
+                            { ?>
+                            <div class="student_view_tab">
+                                <div class="student_block">
+                                    <label><?php Rank.$i ?><label>
+                                </div>
+                                <div class="student_block">
+                                    <label><?php student_name.$i ?><label>
+                                </div>
+                                <div class="student_block">
+                                    <label><?php student_contact.$i ?><label>
+                                </div>
+                                <div class="student_block">
+                                    <label><?php score.$i ?><label>
+                                </div>
+                            </div>
+                    
+                    <?php } ?>
+                </div>
             </div>
         </div>
     </div>
@@ -232,10 +253,15 @@
             var wrapper = $(".questions_wrapper");
             //to remove a row you can place a cross button with all questions
             $(wrapper).append('<div class="add_question_teacher"><div class="question_leftside"><h1>'+i+':</h1><textarea draggable="false" name="question_'+i+'" id="question_'+i+'" rows="5" required="required" placeholder="Write your question here..."></textarea></div><div class="question_rightside"><input type="text" name="CorrectOption1_'+i+'" value="" id="CorrectOption1_'+i+'" maxlength="20" placeholder="Correct Option" required="required" class="correctoption"><input type="text" name="QuestionOption2_'+i+'" value="" id="QuestionOption2_'+i+'" maxlength="20" placeholder="Wrong Option 1" required="required"><input type="text" name="QuestionOption3_'+i+'" value="" id="QuestionOption3_'+i+'" maxlength="20" placeholder="Wrong Option 2" required="required"><input type="text" name="QuestionOption4_'+i+'" value="" id="QuestionOption4_'+i+'" maxlength="20" placeholder="Wrong Option 3" required="required"></div></div>');
+            if(question_number==question_limit)
+            {
+                var element = document.getElementById("question_limit");
+                element.style.visibility="visible";
+                var element = document.getElementById("add_question_button");
+                element.style.visibility="hidden";
+            }
             return true;   //to cancel submission of form
         }else{
-            var element = document.getElementById("question_limit");
-            element.style.visibility="visible";
             return false;
         }
     }

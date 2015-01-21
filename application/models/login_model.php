@@ -24,6 +24,7 @@ class login_model extends CI_Model {
             if($password == $NewPassword)
             {
                 $type = $row->type;
+                $this->session->set_userdata('person_id',$row->person_id);
                 if($type == "student")
                     return "student";
                 else if($type == "teacher")

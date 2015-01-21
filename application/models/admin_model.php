@@ -267,7 +267,7 @@ class admin_model extends CI_Model {
                         $loginData = array(
                             'person_id' => $personID,
                             'username' => $username,
-                            'password' => MD5($password),
+                            'password' => $this->encrypt->encode($password),
                             'type' =>  "teacher",
                             'school_id' => $schoolID
                         );

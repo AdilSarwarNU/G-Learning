@@ -9,12 +9,13 @@ class DataEntry extends CI_Controller{
     {
         //dummydata
         $total_marks=10;
-        $drill_id =7;
-        $teacher_id=5;
-        $school_id=3;
+        $drill_id =1;
+        $teacher_id=33;
+        $school_id=1;
         //---------
         $assess_name  = $this->security->xss_clean($this->input->post('AddAssessment_name')); //name
         $i  = $this->security->xss_clean($this->input->post('Add_hiddenfield'));
+        echo $assess_name;
         $this->load->model('Teacher_Model');
         $result = $this->Teacher_Model->insert_new_assessment($assess_name,$total_marks,$drill_id,$teacher_id,$school_id);
         if ( $result==0) //insertion failed
@@ -32,7 +33,7 @@ class DataEntry extends CI_Controller{
             $data['page_title'] = 'G-Learning | Teacher';
             $data['scroll_to_div'] = 'workstation';
             $this->load->view('main_header_new',$data);
-            $this->load->view('teacher_home');
+            $this->load->view('teacher_home',$data);
             $this->load->view('footer');
         }
         
@@ -79,12 +80,52 @@ class DataEntry extends CI_Controller{
             $data['page_title'] = 'G-Learning | Teacher';
             $data['scroll_to_div'] = 'workstation';
             $this->load->view('main_header_new',$data);
-            $this->load->view('teacher_home');
+            $this->load->view('teacher_home',$data);
             $this->load->view('footer');
         }
     }
     public function view_student()
     {
-    
+        $school_id=1;
+        $i = 0;
+        
+        $this->load->model('Teacher_Model');
+        $data = $this->Teacher_Model->get_all_students($school_id,$i);
+        
+        if ( $data['feedback']==0) //insertion failed
+        {
+            echo student_view_failed_to_load;
+            return false;
+        }else
+        {
+            $data['scroll_to_div'] = 'view_student';
+            $data['no_of_students'] = $i;
+            $data['page_title'] = 'G-Learning | Teacher';
+            $this->load->view('main_header_new',$data);
+            $this->load->view('teacher_home',$data);
+            $this->load->view('footer');
+        }
+        
     }
+    
+    function checkLevel()
+    {
+        $this->load->model('levels_model');
+        $person_id = $this->session->userdata['person_id'];
+        $result = $this->levels_model->checkLevel($person_id);
+        echo $result;
+    }
+    
+    function updateLevel()
+    {
+        $this->load->model('levels_model');
+        $person_id = $this->session->userdata['person_id'];
+        $newLevel = $this->input->post('Level');
+        $result = $this->levels_model->updateLevel($person_id, $newLevel);
+        if($result == true)
+            echo "success";
+        else
+            echo "failed";
+    }
+    
 }

@@ -287,7 +287,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4d6db', end
 }
 
 #center_footer{
-    background:#FFF;
+    background:#000;
     height: 130px;
     width: 1340px;
     margin:0 auto;
@@ -1447,6 +1447,7 @@ z-index:1000;
     width:fit-content;
     height:142px;
     margin:20px;
+    text-align: center;
     cursor: pointer;
     background-color: #ffa200;
      /* Webkit for Chrome and Safari */
@@ -1475,6 +1476,7 @@ z-index:1000;
 }
 .teacher_option_tab:hover{
      background: #9bba1f;
+     text-align: center;
   text-decoration: none;
     /* Webkit for Chrome and Safari */
   -webkit-transform: scale(1.1, 1.1); // This is the enlarged size scale of the image.
@@ -1495,6 +1497,7 @@ z-index:1000;
 .teacher_option_tab_selected{
     width:fit-content;
     height:142px;
+    text-align: center;
     margin:20px;
     background: #9bba1f;
     border-radius: 15px;
@@ -1503,6 +1506,7 @@ z-index:1000;
     font-family: cursive;
     font-size: 30px;
     line-height: 150px;
+    text-align: center;
     text-align: center;
     font-weight: normal;
     color:#ffffff;
@@ -1549,7 +1553,7 @@ z-index:1000;
    font-size: 22px;
    display:inline;
    margin-left: 10px;
-   height:30px;
+   height: 35px;
    font-family:cursive;
    //border:#f73f3f medium groove;
 }
@@ -1614,6 +1618,7 @@ z-index:1000;
     font-weight: normal;
     margin-left:5px;
     width:160px;
+    height: 30px;
     font-family:cursive;
     font-size:15px;
 }
@@ -1664,7 +1669,7 @@ z-index:1000;
     visibility: hidden;
     padding:5px;
     height:40px;
-    margin-left:30px;
+    margin-left:-290px;
     width:364px;
     font-family:cursive;
     font-weight: bolder;
@@ -1690,40 +1695,42 @@ z-index:1000;
     display:inline-block;
     width:100%;
 }
-table.view_students_table {
-    margin: 1em auto;
-    border-collapse: collapse;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .view_students_table th, .view_students_table td {
-    padding: 4px 8px;
-  }
-  .view_students_table thead th {
-    background: #4f81bd;
-    text-transform: lowercase;
-    text-align: left;
-    font-size: 15px;
-    color: #fff;
-  }
-  .view_students_table tr {
-    border-right: 1px solid #95b3d7;
-  }
-  .view_students_table tbody tr {
-    border-bottom: 1px solid #95b3d7;
-  }
-  .view_students_table tbody tr:nth-child(odd) {
-    background: #dbe5f0;
-  }
-  .view_students_table tbody th, .view_students_table tbody tr:nth-child(even) td {
-    border-right: 1px solid #95b3d7;
-  }
-  .view_students_table tfoot th {
-    background: #4f81bd;
-    text-align: left;
+.view_result_container{
+    width:100%;
+    height:auto;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.student_view_tab
+{
+    margin: auto;
+    width:915px;
+    height:80px;
+    
+}
+.student_block{
+    height:80px;
+    float:left;
+    display:inline-block;
+    width:220px;
+    border: #f73f3f solid thin;
+    background-color: #9bba1f;
+    text-align: center;
+}
+.student_block h1{
+    
+    line-height:80px;
+    font-size: 30px;
+    font-weight: bolder;
+    color:#fafafa;
+    background-color: #f73f3f;
+    font-family: Montserrat;
+}
+.student_block label{
+    line-height:80px;
+    
+    font-size: 22px;
     font-weight: normal;
-    font-size: 10px;
-    color: #fff;
-  }
-  .view_students_table tr *:nth-child(3), .view_students_table tr *:nth-child(4) {
-    text-align: right;
-  }
+    color:#000;
+    font-family: cursive;
+}
