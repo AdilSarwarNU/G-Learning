@@ -39,4 +39,33 @@ class levels_model extends CI_Model {
         else
             return false;
     }
+    
+    public function getAssessmentQuestions()
+    {
+        $query = $this->db->get('assessment');
+        
+        if ($query->num_rows > 0)
+        {
+            $row = $query->row();
+            $id = $row->assessment_id;
+            
+            $this->db->where('assessment_id', $id);
+            $questions = $this->db->get('question');
+            $questionArray = array(array());
+            $i = 0;
+            foreach ($questions->result() as $row)
+            {
+                $questionArray[$i][0] = $row->statement;
+                $questionArray[$i][1] = $row->option1;
+                $questionArray[$i][2] = $row->option2;
+                $questionArray[$i][3] = $row->option3;
+                $questionArray[$i][4] = $row->answer;
+                $questionArray[$i][5] = $row->answer;
+                $i++;
+            }
+            return $questionArray;
+        }
+        else
+            return -1;
+    }
 }

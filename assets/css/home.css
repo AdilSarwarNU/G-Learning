@@ -1734,7 +1734,8 @@ z-index:1000;
 .student_view_tab
 {
     margin: auto;
-    width:915px;
+//    width:915px;
+    width:600px;
     height:80px;
     
 }

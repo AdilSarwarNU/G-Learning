@@ -5,7 +5,7 @@
         $('#delete_button').on('click', function(e){
            var baseurl = "<?php print base_url(); ?>";
             $.ajax({
-                url:  baseurl +"/admin/deleteStudent",
+                url:  baseurl +"admin/deleteStudent",
                 type:'POST',
                 cache:false,
                 dataType: 'html',
@@ -20,10 +20,10 @@
                             $('#js-error-block').fadeTo("slow",1.0);
                         }, 500);
 
-                        setTimeout(function(){
-                            $('#js-error-block').fadeTo("slow",0.0);
-                            $('#js-error-block').hide();
-                        }, 3500);
+//                        setTimeout(function(){
+//                            $('#js-error-block').fadeTo("slow",0.0);
+//                            $('#js-error-block').hide();
+//                        }, 3500);
                     }
                     else
                     {
@@ -34,10 +34,10 @@
                             $('#js-error-block').fadeTo("slow",1.0);
                         }, 500);
 
-                        setTimeout(function(){
-                            $('#js-error-block').fadeTo("slow",0.0);
-                            $('#js-error-block').hide();
-                        }, 3500);
+//                        setTimeout(function(){
+//                            $('#js-error-block').fadeTo("slow",0.0);
+//                            $('#js-error-block').hide();
+//                        }, 3500);
                     }
                 },
                 error:function(x,e){
@@ -56,16 +56,16 @@
                 $('#js-error-block').fadeTo("slow",1.0);
             }, 500);
 
-            setTimeout(function(){
-                $('#js-error-block').fadeTo("slow",0.0);
-                $('#js-error-block').hide();
-            }, 4500);
+//            setTimeout(function(){
+//                $('#js-error-block').fadeTo("slow",0.0);
+//                $('#js-error-block').hide();
+//            }, 4500);
         }
         else
         {
             var baseurl = "<?php print base_url(); ?>";
             $.ajax({
-                url:  baseurl +"/admin/searchStudent",
+                url:  baseurl +"admin/searchStudent",
                 type:'POST',
                 cache:false,
                 dataType: 'json',
@@ -243,7 +243,7 @@
             </div>
             <div id="right_nav_general_anim">
                 <div class="right_nav_anim">
-                    <label>Menu</label>
+                    <!--<label>Menu</label>-->
                 </div>
             </div>
         </div>

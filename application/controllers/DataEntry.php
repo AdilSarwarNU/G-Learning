@@ -11,7 +11,7 @@ class DataEntry extends CI_Controller{
         $i  = $this->security->xss_clean($this->input->post('Add_hiddenfield'));
         
         //dummydata
-        $teacher_id=33;
+        $teacher_id = $this->session->userdata['person_id'];
         $school_id=1;
         //---------
         $drill_id=0;

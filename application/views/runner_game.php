@@ -15,7 +15,6 @@
 		<script type="text/javascript">
 		<!--
                         var mylevel = <?php echo $level;?>;
-                        alert(mylevel);
 			var config = {
 				width: 960, 
 				height: 540,
@@ -85,7 +84,7 @@
                                 
                                 function endGame( arg )
 				{
-				    window.location.href = "<?php echo base_url();?>"+"games/shootEmUp";
+				    window.location.href = "<?php echo base_url();?>"+"games/topicAssessment";
 				}
 				
 		-->

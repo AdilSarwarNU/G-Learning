@@ -5,7 +5,7 @@
         $('#delete_button').on('click', function(e){
            var baseurl = "<?php print base_url(); ?>";
             $.ajax({
-                url:  baseurl +"/admin/deleteTeacher",
+                url:  baseurl +"admin/deleteTeacher",
                 type:'POST',
                 cache:false,
                 dataType: 'html',
@@ -20,10 +20,10 @@
                             $('#js-error-block').fadeTo("slow",1.0);
                         }, 500);
 
-                        setTimeout(function(){
-                            $('#js-error-block').fadeTo("slow",0.0);
-                            $('#js-error-block').hide();
-                        }, 3500);
+//                        setTimeout(function(){
+//                            $('#js-error-block').fadeTo("slow",0.0);
+//                            $('#js-error-block').hide();
+//                        }, 3500);
                     }
                     else
                     {
@@ -34,10 +34,10 @@
                             $('#js-error-block').fadeTo("slow",1.0);
                         }, 500);
 
-                        setTimeout(function(){
-                            $('#js-error-block').fadeTo("slow",0.0);
-                            $('#js-error-block').hide();
-                        }, 3500);
+//                        setTimeout(function(){
+//                            $('#js-error-block').fadeTo("slow",0.0);
+//                            $('#js-error-block').hide();
+//                        }, 3500);
                     }
                 },
                 error:function(x,e){
@@ -56,16 +56,16 @@
                 $('#js-error-block').fadeTo("slow",1.0);
             }, 500);
 
-            setTimeout(function(){
-                $('#js-error-block').fadeTo("slow",0.0);
-                $('#js-error-block').hide();
-            }, 4500);
+//            setTimeout(function(){
+//                $('#js-error-block').fadeTo("slow",0.0);
+//                $('#js-error-block').hide();
+//            }, 4500);
         }
         else
         {
             var baseurl = "<?php print base_url(); ?>";
             $.ajax({
-                url:  baseurl +"/admin/searchTeacher",
+                url:  baseurl +"admin/searchTeacher",
                 type:'POST',
                 cache:false,
                 dataType: 'json',
@@ -100,10 +100,10 @@
                             $('#js-error-block').fadeTo("slow",1.0);
                         }, 500);
 
-                        setTimeout(function(){
-                            $('#js-error-block').fadeTo("slow",0.0);
-                            $('#js-error-block').hide();
-                        }, 2500);
+//                        setTimeout(function(){
+//                            $('#js-error-block').fadeTo("slow",0.0);
+//                            $('#js-error-block').hide();
+//                        }, 2500);
                     }
                 },
                 error:function(x,e){
@@ -153,10 +153,10 @@
                 $('#js-error-block').fadeTo("slow",1.0);
             }, 500);
 
-            setTimeout(function(){
-                $('#js-error-block').fadeTo("slow",0.0);
-                $('#js-error-block').hide();
-            }, 2500);
+//            setTimeout(function(){
+//                $('#js-error-block').fadeTo("slow",0.0);
+//                $('#js-error-block').hide();
+//            }, 2500);
             return false;
         }
         else

@@ -162,34 +162,34 @@
                 </div>
                 <div class="view_result_container">
                     <div class="student_view_tab">
-                        <div class="student_block">
+<!--                        <div class="student_block">
                             <h1>Ranking</h1>
-                        </div>
+                        </div>-->
                         <div class="student_block_long">
                             <h1>Name</h1>
                         </div>
                         <div class="student_block_long">
                             <h1>Email</h1>
                         </div>
-                        <div class="student_block">
+<!--                        <div class="student_block">
                             <h1>Score</h1>
-                        </div>
+                        </div>-->
                     </div>
                     <?php    for($k=0 ;$k<$no_of_students;$k++)
                             { ?>
                             <div class="student_view_tab">
-                                <div class="student_block">
+<!--                                <div class="student_block">
                                     <label><?php echo $result['rank'.$k] ?><label>
-                                </div>
+                                </div>-->
                                 <div class="student_block_long">
                                     <label><?php echo $result['student_name'.$k] ?><label>
                                 </div>
                                 <div class="student_block_long">
                                     <label><?php echo $result['student_contact'.$k] ?><label>
                                 </div>
-                                <div class="student_block">
+<!--                                <div class="student_block">
                                     <label><?php echo $result['score'.$k] ?><label>
-                                </div>
+                                </div>-->
                             </div>
                     
                       <?php 

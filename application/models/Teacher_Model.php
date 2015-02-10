@@ -63,14 +63,14 @@ class Teacher_Model extends CI_Model {
     }
     function get_all_students($school_id , &$j)
     {
-       $this->db->select('person.person_id,first_name,last_name,email, SUM(marks_obtained) AS score');
+       $this->db->select('person.person_id,first_name,last_name,email');
        $this->db->where('school_id', $school_id);
         $this->db->where('type', "student");
         $this->db->from('login');
         $this->db->join('person', 'person.person_id = login.person_id');
-        $this->db->join('gradesheet', 'gradesheet.student_id = login.person_id');
+      //  $this->db->join('gradesheet', 'gradesheet.student_id = login.person_id');
         $this->db->group_by('person.person_id');
-        $this->db->order_by('score', 'desc');
+       // $this->db->order_by('score', 'desc');
         $results = $this->db->get();
         
     //    print_r($results->result_array());  //very helpfull
@@ -81,10 +81,10 @@ class Teacher_Model extends CI_Model {
         {
             foreach ($results->result() as $row)
             {
-                $array['rank'.$j] = $j+1;
+            //    $array['rank'.$j] = $j+1;
                 $array['student_name'.$j] = $row->first_name . $row->last_name;// $row['first_name'].$row['last_name'];
                 $array['student_contact'.$j] = $row->email;
-                $array['score'.$j] = $row->score;
+         //       $array['score'.$j] = $row->score;
                 $j++;
             }
             $array['feedback']=1;

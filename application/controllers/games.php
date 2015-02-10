@@ -30,7 +30,8 @@ class games extends CI_Controller{
         $this->load->view('balloon_party_game');
         $this->load->view('footer');
     }
-     public function runner()
+    
+    public function runner()
     {
         $this->load->model('levels_model');
         $person_id = $this->session->userdata['person_id'];
@@ -48,6 +49,21 @@ class games extends CI_Controller{
         $data['page_title'] = 'G-Learning | Shoot Em Up';
         $this->load->view('main_header_new',$data);
         $this->load->view('shoot_view');
+        $this->load->view('footer');
+    }
+    
+    public function topicAssessment()
+    {
+        $this->load->model('levels_model');
+        $questionArray = array(array());
+        $questionArray = $this->levels_model->getAssessmentQuestions();
+        
+        $data['page_title'] = 'G-Learning | Runner';
+        $data['questionArray'] = $questionArray;
+        $data['questionCount'] = count($questionArray);
+        
+        $this->load->view('main_header_new',$data);
+        $this->load->view('topicAssessment_view', $data);
         $this->load->view('footer');
     }
     
