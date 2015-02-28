@@ -1,3 +1,5 @@
+<link href="<?php echo base_url();?>assets/css/normalize.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url();?>assets/css/nav_menu.css" rel="stylesheet" type="text/css">
 <script>
     function validatePassword()
     {
@@ -27,30 +29,26 @@
     </div>
     
     <div class="mid_content_general">
-        <div class="right_nav_general">
-            <div id="right_nav_general">
-                <a href='<?php echo base_url();?>admin/student'>
-                    <div class="nav_element_top nav_element_default">
-                        <label>Student</label>
-                    </div>
+        <div class='page'>
+            <div class="navigation" id="navigation">
+                <a class="nav-toggler" href="#" id="navToggler">
+                    <span class="show-nav">&#9776;</span>
+                    <span class="hide-nav">&times;</span>
                 </a>
-                <a href='<?php echo base_url();?>admin/teacher'>
-                    <div class="nav_element">
-                        <label>Teacher</label>
-                    </div>
-                </a>
-                <a href='#'>
-                    <div class="nav_element_bottom">
-                        <label>Password Requests</label>
-                    </div>
-                </a>
-            </div>
-            <div id="right_nav_general_anim">
-                <div class="right_nav_anim">
-                    <label>Menu</label>
+                <div class="navigation__inner">
+                    <ul>
+                        <li>
+                            <h2>Menu</h2>
+                        </li>
+                        <li><a  href="<?php echo base_url();?>admin/student">Student</a></li>
+                        <li><a href="<?php echo base_url();?>admin/teacher">Teacher</a></li>
+                        <li><a class="current" href="#">Requests</a></li>
+                        <!--<li class="separator"></li>-->
+                        <li><a href="<?php echo base_url();?>login/logout">Logout</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
+	</div>
         
         <div class="error-div-failure" id="js-error-block">
             <div class="failure" id="js-error-block-message"></div>
@@ -106,7 +104,7 @@
                         <?php for($i= $result_count-1; $i >= 0; $i--){?>
                         <div class='password_request_row'>
                             <div class="password_request_date"><label><?php echo date('d-m-Y',strtotime($result['date'.$i])); ?></label></div>
-                            <div class="password_request_note"><label><span><?php echo $result['username'.$i]; ?>:</span> Please update my password</label></div>
+                            <div class="password_request_note"><label><span style="color: #6FB89F;"><?php echo $result['username'.$i]; ?>:</span> Please update my password</label></div>
                             <form method="post" action="<?php echo base_url(); ?>admin/updatePassword" onsubmit="return validatePassword();">
                                 <div class="password_request_input">
                                     <span>
@@ -150,4 +148,29 @@
             $('#right_nav_general').show();
         }); 
     });   
+</script>
+
+<script src='<?php echo base_url();?>assets/js/jquery_nav.min.js'></script>
+<script type="text/javascript">
+(function ($, window, document, undefined) {
+    $(function () {
+        var $navigation = $('#navigation'), $navToggler = $('#navToggler');
+        $('#navToggler').on('click', function (e) {
+            e.preventDefault();
+            $navigation.toggleClass('expanded');
+        });
+    });
+}(jQuery, this, this.document));
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
