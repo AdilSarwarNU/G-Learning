@@ -52,7 +52,7 @@ $active_record = TRUE;
    $db['default']['hostname'] = 'localhost';
    $db['default']['username'] = 'root';
    $db['default']['password'] = '';
- $db['default']['database'] = 'g-learning';
+   $db['default']['database'] = 'g-learning';
    $db['default']['dbdriver'] = 'mysql';
    $db['default']['dbprefix'] = '';
    $db['default']['pconnect'] = TRUE;
@@ -63,7 +63,7 @@ $active_record = TRUE;
    $db['default']['dbcollat'] = 'utf8_general_ci';
    $db['default']['swap_pre'] = '';
    $db['default']['autoinit'] = TRUE;
-  $db['default']['stricton'] = FALSE;
+   $db['default']['stricton'] = FALSE;
 
 //
 //$db['default']['hostname'] = 'tcp:glearningtest.database.windows.net';

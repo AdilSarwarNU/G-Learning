@@ -1,3 +1,5 @@
+<link href="<?php echo base_url();?>assets/css/normalize.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url();?>assets/css/nav_menu.css" rel="stylesheet" type="text/css">
 <script>
     $(document).ready(function(){
         var GlobalPersonID = "";
@@ -215,30 +217,26 @@
     </div>
     
     <div class="mid_content_general">
-        <div class="right_nav_general">
-            <div id="right_nav_general">
-                <a href='<?php echo base_url();?>admin/student'>
-                    <div class="nav_element_top">
-                        <label>Student</label>
-                    </div>
+        <div class='page'>
+            <div class="navigation" id="navigation">
+                <a class="nav-toggler" href="#" id="navToggler">
+                    <span class="show-nav">&#9776;</span>
+                    <span class="hide-nav">&times;</span>
                 </a>
-                <a href='#'>
-                    <div class="nav_element nav_element_default">
-                        <label>Teacher</label>
-                    </div>
-                </a>
-                <a href='<?php echo base_url();?>admin/passwordRequests'>
-                    <div class="nav_element_bottom">
-                        <label>Password Requests</label>
-                    </div>
-                </a>
-            </div>
-            <div id="right_nav_general_anim">
-                <div class="right_nav_anim">
-                    <label>Menu</label>
+                <div class="navigation__inner">
+                    <ul>
+                        <li>
+                            <h2>Menu</h2>
+                        </li>
+                        <li><a  href="<?php echo base_url();?>admin/student">Student</a></li>
+                        <li><a class="current" href="#">Teacher</a></li>
+                        <li><a href="<?php echo base_url();?>admin/passwordRequests">Requests</a></li>
+                        <!--<li class="separator"></li>-->
+                        <li><a href="<?php echo base_url();?>login/logout">Logout</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
+	</div>
         
         <div class="top_tabs_general">
             <div class="top_tabs_element_default" onclick="return AddTeacher();" id="add_student_class">
@@ -566,4 +564,29 @@
         $("#main_form").hide();
         $("#edit_main_form").hide();
     }
+</script>
+
+<script src='<?php echo base_url();?>assets/js/jquery_nav.min.js'></script>
+<script type="text/javascript">
+(function ($, window, document, undefined) {
+    $(function () {
+        var $navigation = $('#navigation'), $navToggler = $('#navToggler');
+        $('#navToggler').on('click', function (e) {
+            e.preventDefault();
+            $navigation.toggleClass('expanded');
+        });
+    });
+}(jQuery, this, this.document));
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
