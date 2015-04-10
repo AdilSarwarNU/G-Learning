@@ -109,7 +109,7 @@
                                     for(var j = 1; j<=4;j++){
                                         XMLString = XMLString + "<option>";
                                         XMLString = XMLString + myArray[1][i][j];
-                                        XMLString = XMLString + "<option>\n";
+                                        XMLString = XMLString + "</option>\n";
                                     }
 
                                     XMLString = XMLString + "</options>\n";
@@ -121,7 +121,7 @@
                                     XMLString = XMLString + "</question>\n";
                                 }
                                 XMLString = XMLString + "</assessment>";
-
+                                
                             }
                                     
                                     function log(msg) {
@@ -133,10 +133,9 @@
 
 				function updateRange()
 				{
-                                    //alert(XMLString);
-                                    
+                                   //alert(XMLString);
                                     u.getUnity().SendMessage("Camera", "PopulateQuestions",XMLString);                               
-                                    log('another message');
+                                    //log('another message');
                                 }
 				function SayHello(arg )
 				{
