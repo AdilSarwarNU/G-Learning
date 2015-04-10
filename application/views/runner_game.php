@@ -82,9 +82,8 @@
 				    updateRange();
 				}
                                 
-                                function endGame( arg )
-				{
-				    window.location.href = "<?php echo base_url();?>"+"games/topicAssessment";
+                                function endGame( arg ){
+				    window.location.href = "<?php echo base_url();?>"+"games/assessmentBird";
 				}
 				
 		-->

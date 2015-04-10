@@ -9,25 +9,40 @@ class games extends CI_Controller{
     
     public function play_cachy_even_odd()
     {
+        $this->load->model('levels_model');
+        $person_id = $this->session->userdata['person_id'];
+        $Level = $this->levels_model->checkLevel($person_id);
+        
         $data['page_title'] = 'G-Learning | Catchy';
+        $data['level'] = $Level;
         $this->load->view('main_header_new',$data);
-        $this->load->view('cachy_even_odd_game');
+        $this->load->view('cachy_even_odd_game',$data);
         $this->load->view('footer');
     }
     
     public function play_cachy_multiples_of_5()
     {
+        $this->load->model('levels_model');
+        $person_id = $this->session->userdata['person_id'];
+        $Level = $this->levels_model->checkLevel($person_id);
+        
         $data['page_title'] = 'G-Learning | Catchy';
+        $data['level'] = $Level;
         $this->load->view('main_header_new',$data);
-        $this->load->view('multiple_of_5_game');
+        $this->load->view('multiple_of_5_game',$data);
         $this->load->view('footer');
     }
     
     public function balloon_party()
     {
+        $this->load->model('levels_model');
+        $person_id = $this->session->userdata['person_id'];
+        $Level = $this->levels_model->checkLevel($person_id);
+        
         $data['page_title'] = 'G-Learning | Catchy';
+        $data['level'] = $Level;
         $this->load->view('main_header_new',$data);
-        $this->load->view('balloon_party_game');
+        $this->load->view('balloon_party_game',$data);
         $this->load->view('footer');
     }
     
@@ -41,6 +56,20 @@ class games extends CI_Controller{
         $data['level'] = $Level;
         $this->load->view('main_header_new',$data);
         $this->load->view('runner_game', $data);
+        $this->load->view('footer');
+    }
+    public function assessmentBird()
+    {
+        $data['page_title'] = 'G-Learning | Assessment Bird';
+        $this->load->view('main_header_new',$data);
+        $this->load->view('assessment_bird_game', $data);
+        $this->load->view('footer');
+    }
+    public function racer()
+    {
+        $data['page_title'] = 'G-Learning | Assessment Bird';
+        $this->load->view('main_header_new',$data);
+        $this->load->view('racer_game', $data);
         $this->load->view('footer');
     }
     
