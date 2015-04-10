@@ -58,18 +58,6 @@
             <span class="logo_span left">
                 <img class="logo" src ="<?php echo base_url(); ?>/assets/images/G-Learn.png" width="220" />
             </span>
-            
-           <div class="pull-right">
-                <div id="myContainerRight">
-                    <a href='<?php echo base_url();?>login/logout'> 
-                        <div class="grey_icon_nav">
-                              <div class="navbar-images-container grey_icon_img">
-                                  <img class="navbar-images" src="<?php echo base_url();?>/assets/images/logout.png" />
-                              </div>
-                              <div id="grey_icon_desc" class="navbar_img_desc"> LOGOUT</div>
-                      </div>
-                    </a>
-                </div> 
-            </div>
+        
 </header>
 
