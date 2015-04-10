@@ -73,13 +73,15 @@ class games extends CI_Controller{
         $this->load->view('footer');
     }
     
-    public function shootEmUp()
-    {
-        $data['page_title'] = 'G-Learning | Shoot Em Up';
-        $this->load->view('main_header_new',$data);
-        $this->load->view('shoot_view');
-        $this->load->view('footer');
-    }
+
+    
+
+    
+    
+    
+    
+    
+    
     
     public function topicAssessment()
     {
@@ -97,6 +99,42 @@ class games extends CI_Controller{
     }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public function topicAssessmentGameXML()
+    {
+        $this->load->model('levels_model');
+        $questionArray = array(array());
+        $questionArray = $this->levels_model->getAssessmentQuestions();
+        $array = array(2);
+        $array[0] = count($questionArray);
+        $array[1] = $questionArray;
+        echo json_encode($array);
+    }
+    
+    public function shootEmUp()
+    {   
+        $data['page_title'] = 'G-Learning | Shoot Em Up';
+        $this->load->view('main_header_new',$data);
+        $this->load->view('shootemup_asses_game');
+        $this->load->view('footer');
+    }
     
 }
 ?>
