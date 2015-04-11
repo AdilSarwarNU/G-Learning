@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Unity Web Player | Racer</title>
+		<title>Unity Web Player | Life of a Bug</title>
 		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
 		<script type="text/javascript">
 		<!--
@@ -10,29 +10,25 @@
 		if (document.location.protocol == 'https:')
 			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
 		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
-	
 		-->
 		</script>
 		<script type="text/javascript">
 		<!--
-		    var mylevel = <?php echo $level;?>;
-		    var mode = "<?php echo $mode;?>";
 			var config = {
 				width: 960, 
-				height: 600,
+				height: 540,
 				params: { enableDebugging:"0" }
 				
 			};
-			config.params["disableContextMenu"] = true; //This is the added line
 			var u = new UnityObject2(config);
-
+			
 			jQuery(function() {
 
 				var $missingScreen = jQuery("#unityPlayer").find(".missing");
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
 				$missingScreen.hide();
 				$brokenScreen.hide();
-				
+
 				u.observeProgress(function (progress) {
 					switch(progress.pluginStatus) {
 						case "broken":
@@ -60,56 +56,23 @@
 						break;
 					}
 				});
-				u.initPlugin(jQuery("#unityPlayer")[0], "<?php echo base_url();?>assets/unitygames/Racer.unity3d");
+				u.initPlugin(jQuery("#unityPlayer")[0], "<?php echo base_url();?>assets/unitygames/lifeofbee.unity3d");
 			});
-
-				     function log(msg) {
-                                        setTimeout(function() {
-                                            throw new Error(msg);
-                                        }, 0);
-                                    }
-            function updateRange()
-                {
-
-                  
-                    u.getUnity().SendMessage("NumberManager", "setMode", mode);
-                //  alert("Range")
-                    if(mylevel==1)
-                        u.getUnity().SendMessage("NumberManager", "setRange", "10");
-                    
-                    if(mylevel==2)
-                        u.getUnity().SendMessage("NumberManager", "setRange", "30");
-                    
-                    if(mylevel==3)
-                        u.getUnity().SendMessage("NumberManager", "setRange", "50");    
-
-                
-                 }
-                function SayHello( arg )
-                {
-                    log(arg);
-                    updateRange();
-                }
-                                
-                function endGame( arg )
-                {
-                    window.location.href = "<?php echo base_url();?>"+"games/shootEmUp";
-                }
 		-->
 		</script>
 		<style type="text/css">
 		<!--
 		body {
 			font-family: Helvetica, Verdana, Arial, sans-serif;
-			background-color: white;
-			color: black;
+			background-color: black;
+			color: white;
 			text-align: center;
 		}
 		a:link, a:visited {
-			color: #000;
+			color: #bfbfbf;
 		}
 		a:active, a:hover {
-			color: #666;
+			color: #bfbfbf;
 		}
 		p.header {
 			font-size: small;
@@ -146,24 +109,19 @@
 		}
 		div#unityPlayer {
 			cursor: default;
-			height: 600px;
+			height: 540px;
 			width: 960px;
 		}
 		-->
 		</style>
 	</head>
 	<body>
-		<p class="header"><span>Unity Web Player | </span>Racer</p>
+		<p class="header"><span>Unity Web Player | </span>Life of a Bug</p>
 		<div class="content">
 			<div id="unityPlayer">
 				<div class="missing">
 					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
 						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
-					</a>
-				</div>
-				<div class="broken">
-					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
-						<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
 					</a>
 				</div>
 			</div>
