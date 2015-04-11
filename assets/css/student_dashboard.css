@@ -454,7 +454,9 @@
  //   -moz-border-radius: 15px;
  //   -webkit-border-radius: 15px;
 }
-
+.game_row figure{
+    margin:auto;
+}
 .game_row{
     width:825px;
     height:240px;
