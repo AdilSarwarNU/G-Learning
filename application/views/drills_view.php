@@ -242,7 +242,7 @@
                             <figcaption>
                                 <h3>Racer</h3>
                                 <p>Teaches the concept of Ascending Order of Numbers</p>
-                                <p><a href="<?php echo base_url();?>games/racer">Play Game</a></p>
+                                <p><a href="<?php echo base_url();?>games/racerAscending">Play Game</a></p>
                             </figcaption>
                         </figure>
                         <div class="game_details">
@@ -251,7 +251,7 @@
                             </div>
                             <div class="game_desc">
                                 <p>
-                                Help Sara learn driving by picking up numbers in Ascending order.
+                                Help Flinstone learn driving by picking up numbers in Ascending order.
                                 </p>
                             </div>
                         </div>
@@ -265,7 +265,7 @@
                             <figcaption>
                                 <h3>Racer</h3>
                                 <p>Teaches the concept of Descending Order of Numbers</p>
-                                <p><a href="<?php echo base_url();?>games/racer">Play Game</a></p>
+                                <p><a href="<?php echo base_url();?>games/racerDescending">Play Game</a></p>
                             </figcaption>
                         </figure>
                         <div class="game_details">
@@ -274,7 +274,7 @@
                             </div>
                             <div class="game_desc">
                                 <p>
-                                Help Sara learn driving by picking up numbers in Descending order.
+                                Help Flinstone learn driving by picking up numbers in Descending order.
                                 </p>
                             </div>
                         </div>
