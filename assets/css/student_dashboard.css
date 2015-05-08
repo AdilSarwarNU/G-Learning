@@ -667,3 +667,12 @@ figcaption a:hover {
     width:250px;
     margin-left:50px;
 }
+.drill_text{
+    font-family: jango;
+    font-size:30px;
+    color:#399;
+    height:auto;
+    margin:auto;
+    text-align: center;
+    font-weight: normal;
+}

@@ -5,7 +5,23 @@ class games extends CI_Controller{
         $this->load->helper('url');
         $this->load->helper('asset');
         $this->load->helper(array('form'));
-        if(!$this->session->userdata('validated'))
+        if(strcmp($this->session->userdata('type'),'parent')==0)
+        {
+           redirect('parents');
+        }
+        if(strcmp($this->session->userdata('type'),'teacher')==0)
+        {
+           redirect('teacher');
+        }
+        if(strcmp($this->session->userdata('type'),'admin')==0)
+        {
+            redirect('admin');
+        }
+        if(strcmp($this->session->userdata('type'),'student')==0)
+        {
+          
+        }
+        else
         {
             redirect('login');
         }
