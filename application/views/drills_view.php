@@ -285,16 +285,17 @@
                 <span  id="Subtraction">
                     <div class="game_row">
                         <figure>
+
                             <img alt="Racer" src="<?php echo base_url() . $drills[4]['drill_image'];?>"/>
                             <figcaption>
                                 <h3>Life of a Bee</h3>
                                 <p>Practice your concepts of Subtraction</p>
-                                <p><a href="<?php echo base_url();?>games/LifeofBee">Play Game</a></p>
+                                <p><a href="<?php echo base_url();?>games/racer">Play Game</a></p>
                             </figcaption>
                         </figure>
                         <div class="game_details">
                             <div class="game_caption">
-                                Life of a Bee
+                                Racer
                             </div>
                             <div class="game_desc">
                                 <p>

@@ -111,6 +111,7 @@ class games extends CI_Controller{
         $this->load->view('shootemup_asses_game');
         $this->load->view('footer');
     }
+
     public function LifeofBee()
     {
         $this->load->model('levels_model');
