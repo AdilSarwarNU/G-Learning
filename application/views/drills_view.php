@@ -1,6 +1,6 @@
 <link href="<?php echo base_url();?>assets/css/normalize.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url();?>assets/css/nav_menu.css" rel="stylesheet" type="text/css">
-<?php print_r($drills);?>
+
 <script>
     function hideAll()
       {
@@ -126,186 +126,55 @@
                     <div class="dottedline"></div>
                         Drill Topics
                     <div class="dottedline"></div>
-                    
-                    <div class="drill_radioButtons" id="radioButtons">
-                        <div class="radio_wrapper">
-                            <input type="radio" checked="checked" name="topic" onclick="addition();"/> <span >Addition</span><br/>
-                            <input type="radio" name="topic" onclick="Subtraction();"/> <span>Subtraction</span><br/>
-                            <input type="radio" name="topic" onclick="AOrder();"/> <span>Ascending Order</span><br/>
-                            <input type="radio" name="topic" onclick="DOrder();"/> <span>Descending Order</span><br/>
-                            <input type="radio" name="topic" onclick="even();"/> <span>Even / Odd</span><br/>
-                            <input type="radio" name="topic" onclick="highest();"/> <span>Highest/Lowest</span> <br/>
-                            <input type="radio" name="topic" onclick="multiples();"/> <span>Multiples of Number</span>
-                        </div>
+                    <div class="drill_text">
+                        Following are the available drills. New drills will be unlocked as you progress. 
                     </div>
-                    
+                    <div class="drill_text">
+                        GOOD LUCK!
+                    </div>
+                          
                 </div>
-                <div class="botdotline"></div>
+             <!--    <div class="botdotline"></div> -->
                 
-                <span id="addition">
+           <!--      <span id="addition"> -->
+           <?php 
+           $count = 0;
+
+           foreach($drills as $drill) 
+           { 
+            if($count > $this->session->userdata('drill_level'))
+                {
+                    break;
+                 }
+            ?> 
+                
                     <div class="game_row">
                         <figure>
-                            <img alt="Runner" src="<?php echo base_url() . $drills[0]['drill_image'];?>"/>
+                            <img alt="Runner" src="<?php echo base_url() . $drill['drill_image'];?>"/>
                             <figcaption>
-                                <h3>Endless Adder</h3>
-                                <p>Teaches the concept of Addition</p>
-                                <p><a href="<?php echo base_url();?>games/runner">Play Game</a></p>
+                                <h3><?php echo $drill['drill_name']?></h3>
+                                <p><?php echo $drill['drill_description']?></p>
+                                <p><a href="<?php echo base_url() . $drill['drill_path'];?>">Play Game</a></p>
                             </figcaption>
                         </figure>
                         <div class="game_details">
                             <div class="game_caption">
-                                Endless Adder
+                                <?php echo $drill['drill_name']?>
                             </div>
                             <div class="game_desc">
                                 <p>
-                                Help Mike, the city boy, to master the art of addition by collecting the correct numbers in order to reach the required sum.
+                               <?php echo $drill['drill_story']?>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="botdotline" ></div>
-                </span>
+            <?php 
+                $count++;
+             }?>
+           <!--      </span> -->
                 
-                
-                <span id="even">
-                    <div class="game_row" >
-                        <figure>
-                            <img alt="Catchy" src="<?php echo base_url() . $drills[1]['drill_image'];?>"/>
-                            <figcaption>
-                                <h3>Catchy</h3>
-                                <p>Teaches the concept of Even / Odd numbers</p>
-                                <p><a href="<?php echo base_url();?>games/play_cachy_even_odd">Play Game</a></p>
-                            </figcaption>
-                        </figure>
-                        <div class="game_details">
-                            <div class="game_caption">
-                                Catchy
-                            </div>
-                            <div class="game_desc">
-                                <p>
-                                Hank has been given a task to catch the apples with even numbers on them. Help him master the art of even numbers.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="botdotline"></div>
-                </span>
-                <span id="highest">
-                    <div class="game_row" >
-                        <figure>
-                            <img alt="Catchy" src="<?php echo base_url() . $drills[2]['drill_image'];?>"/>
-                            <figcaption>
-                                <h3>Balloon Party</h3>
-                                <p>Teaches the concept of Highest / Lowest numbers</p>
-                                <p><a href="<?php echo base_url();?>games/balloon_party">Play Game</a></p>
-                            </figcaption>
-                        </figure>
-                        <div class="game_details">
-                            <div class="game_caption">
-                                Balloon Party
-                            </div>
-                            <div class="game_desc">
-                                <p>
-                                This is a simple beach party game, find the required balloon to win as fast as you can.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="botdotline"></div>
-                </span>
-                <span  id="multiples">
-                    <div class="game_row">
-                        <figure>
-                            <img alt="Catchy" src="<?php echo base_url() . $drills[3]['drill_image'];?>"/>
-                            <figcaption>
-                                <h3>Catchy</h3>
-                                <p>Teaches the concept of multiples of a number</p>
-                                <p><a href="<?php echo base_url();?>games/play_cachy_multiples_of_5">Play Game</a></p>
-                            </figcaption>
-                        </figure>
-                        <div class="game_details">
-                            <div class="game_caption">
-                                Endless Adder
-                            </div>
-                            <div class="game_desc">
-                                <p>
-                                Jack loves this game to find multiples of a number. Help him catch the apple having multiple of given number.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="botdotline"></div>
-                </span>
-                <span  id="AscendOrder">
-                    <div class="game_row">
-                        <figure>
-                            <img alt="Racer" src="<?php echo base_url() . $drills[5]['drill_image'];?>"/>
-                            <figcaption>
-                                <h3>Racer</h3>
-                                <p>Teaches the concept of Ascending Order of Numbers</p>
-                                <p><a href="<?php echo base_url();?>games/racerAscending">Play Game</a></p>
-                            </figcaption>
-                        </figure>
-                        <div class="game_details">
-                            <div class="game_caption">
-                                Racer
-                            </div>
-                            <div class="game_desc">
-                                <p>
-                                Help Flinstone learn driving by picking up numbers in Ascending order.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="botdotline"></div>
-                </span>
-                <span  id="DescendOrder">
-                    <div class="game_row">
-                        <figure>
-                            <img alt="Racer" src="<?php echo base_url() . $drills[6]['drill_image'];?>"/>
-                            <figcaption>
-                                <h3>Racer</h3>
-                                <p>Teaches the concept of Descending Order of Numbers</p>
-                                <p><a href="<?php echo base_url();?>games/racerDescending">Play Game</a></p>
-                            </figcaption>
-                        </figure>
-                        <div class="game_details">
-                            <div class="game_caption">
-                                Racer
-                            </div>
-                            <div class="game_desc">
-                                <p>
-                                Help Flinstone learn driving by picking up numbers in Descending order.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="botdotline"></div>
-                </span>
-                <span  id="Subtraction">
-                    <div class="game_row">
-                        <figure>
-
-                            <img alt="Racer" src="<?php echo base_url() . $drills[4]['drill_image'];?>"/>
-                            <figcaption>
-                                <h3>Life of a Bee</h3>
-                                <p>Practice your concepts of Subtraction</p>
-                                <p><a href="<?php echo base_url();?>games/racer">Play Game</a></p>
-                            </figcaption>
-                        </figure>
-                        <div class="game_details">
-                            <div class="game_caption">
-                                Racer
-                            </div>
-                            <div class="game_desc">
-                                <p>
-                                Dora the honey bee is in danger, there are spiders everywhere. She needs hep finding her correct home.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="botdotline"></div>
-                </span>
             </div>
         </div>
     </div>

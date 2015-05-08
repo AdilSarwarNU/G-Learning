@@ -5,21 +5,43 @@ class admin extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('admin_model');
-         if(!$this->session->userdata('validated'))
+        if(strcmp($this->session->userdata('type'),'student')==0)
+        {
+           redirect('home/student_dashboard');
+        }
+        if(strcmp($this->session->userdata('type'),'parent')==0)
+        {
+           redirect('parents');
+        }
+        if(strcmp($this->session->userdata('type'),'teacher')==0)
+        {
+           redirect('teacher');
+        }
+        if(strcmp($this->session->userdata('type'),'admin')==0)
+        {
+
+        }
+        else
         {
             redirect('login');
         }
     }
-    
+
+    public function index()
+    {
+        $this->student();
+    }
     public function student()
     {
         $this->session->unset_userdata('errorFlag');
         $this->session->unset_userdata('errorMessage');
         
         $data['page_title'] = 'G-Learning | Admin';
-        $this->load->view('main_header_new',$data);
+          $this->load->view('header_only_image',$data);
+      // $this->load->view('main_header_new',$data);
         $this->load->view('admin_home_view');
-        $this->load->view('footer');
+         $this->load->view('footer_new_design');
+      //  $this->load->view('footer');
     }
     
     public function teacher()
@@ -28,9 +50,9 @@ class admin extends CI_Controller
         $this->session->unset_userdata('errorMessage');
         
         $data['page_title'] = 'G-Learning | Admin';
-        $this->load->view('main_header_new',$data);
+       $this->load->view('header_only_image',$data);
         $this->load->view('admin_addteacher_view');
-        $this->load->view('footer');
+        $this->load->view('footer_new_design');
     }
     
     public function passwordRequests()
@@ -43,9 +65,9 @@ class admin extends CI_Controller
         $data['result_count'] = count($result)/3;
         
         $data['page_title'] = 'G-Learning | Admin';
-        $this->load->view('main_header_new',$data);
+       $this->load->view('header_only_image',$data);
         $this->load->view('password_requests_view');
-        $this->load->view('footer');
+        $this->load->view('footer_new_design');
     }
     
     public function deleteRequest()
@@ -69,9 +91,9 @@ class admin extends CI_Controller
             }
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('password_requests_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
     }
     
@@ -118,9 +140,9 @@ class admin extends CI_Controller
         }
         
         $data['page_title'] = 'G-Learning | Admin';
-        $this->load->view('main_header_new',$data);
+       $this->load->view('header_only_image',$data);
         $this->load->view('password_requests_view');
-        $this->load->view('footer');
+        $this->load->view('footer_new_design');
     }
 
     public function addStudent()
@@ -143,18 +165,18 @@ class admin extends CI_Controller
             $this->session->set_userdata('errorMessage',"Student Added Successfully");
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('admin_home_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
         else {
             $this->session->set_userdata('errorFlag',false);
             $this->session->set_userdata('errorMessage',$result);
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('admin_home_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
     }
     
@@ -180,18 +202,18 @@ class admin extends CI_Controller
             $this->session->set_userdata('errorMessage',"Student Updated Successfully");
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('admin_home_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
         else {
             $this->session->set_userdata('errorFlag',false);
             $this->session->set_userdata('errorMessage',$result);
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('admin_home_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
     }
     
@@ -260,18 +282,18 @@ class admin extends CI_Controller
             $this->session->set_userdata('errorMessage',"Teacher Added Successfully");
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('admin_addteacher_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
         else {
             $this->session->set_userdata('errorFlag',false);
             $this->session->set_userdata('errorMessage',$result);
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('admin_addteacher_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
     }
     
@@ -296,18 +318,18 @@ class admin extends CI_Controller
             $this->session->set_userdata('errorMessage',"Teacher Updated Successfully");
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('admin_addTeacher_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
         else {
             $this->session->set_userdata('errorFlag',false);
             $this->session->set_userdata('errorMessage',$result);
             
             $data['page_title'] = 'G-Learning | Admin';
-            $this->load->view('main_header_new',$data);
+           $this->load->view('header_only_image',$data);
             $this->load->view('admin_addTeacher_view');
-            $this->load->view('footer');
+            $this->load->view('footer_new_design');
         }
     }
     
