@@ -14,6 +14,7 @@
 			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
 		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
 		-->
+	
 		</script>
                 
                 
@@ -77,7 +78,7 @@
                             {
                                 var baseurl = "<?php print base_url(); ?>";
                                 $.ajax({
-                                    url:  baseurl +"games/topicAssessmentGameXML",
+                                    url:  baseurl +"index.php/games/logScore",
                                     type:'POST',
                                     cache:false,
                                     dataType: 'json',

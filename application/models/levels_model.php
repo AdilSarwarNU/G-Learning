@@ -25,6 +25,19 @@ class levels_model extends CI_Model {
         else
             return -1;
     }
+    public function getDrillId($drillName)
+    {
+        $this->db->where('topic_name', $drillName);
+        $query = $this->db->get('drill');
+        
+        if ($query->num_rows == 1)
+        {
+            $row = $query->row();
+            return $row->drill_id;
+        }
+        else
+            return -1;
+    }
     
     public function updateLevel($person_id, $newLevel)
     {

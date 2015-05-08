@@ -27,6 +27,7 @@ class login_model extends CI_Model {
                 $this->session->set_userdata('person_id',$row->person_id);
                 $this->session->set_userdata('school_id',$row->school_id);
                 $this->session->set_userdata('username',$row->username);
+                $this->session->set_userdata('validated',true);
                 $person_id = $row->person_id;
                 $this->db->where('person_id', $person_id);
                 $query1 = $this->db->get('person');
@@ -61,6 +62,7 @@ class login_model extends CI_Model {
                 $this->session->set_userdata('person_id',$row->person_id);
                 $this->session->set_userdata('school_id',$row->school_id);
                 $this->session->set_userdata('username',$row->username);
+                $this->session->set_userdata('validated',true);
         
                 
                 if($type == "student")

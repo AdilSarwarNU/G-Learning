@@ -5,6 +5,10 @@ class Parents extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('asset');
+        if(!$this->session->userdata('validated'))
+        {
+            redirect('login');
+        }
     }
     
     public function index()

@@ -5,6 +5,10 @@ class admin extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('admin_model');
+         if(!$this->session->userdata('validated'))
+        {
+            redirect('login');
+        }
     }
     
     public function student()

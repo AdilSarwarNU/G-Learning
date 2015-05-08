@@ -16,6 +16,7 @@
 		<script type="text/javascript">
 		<!--
 		    var mylevel = <?php echo $level;?>;
+		    var drill_id = <?php echo $drill_id;?>;
 		    var mode = "<?php echo $mode;?>";
 			var config = {
 				width: 960, 
@@ -93,7 +94,36 @@
                                 
                 function endGame( arg )
                 {
+
+                	score(arg);
                     window.location.href = "<?php echo base_url();?>"+"games/assessmentBird";
+
+                }
+                function score(arg)
+                {
+                	var percentageScore = arg;
+
+                    var baseurl = "<?php print base_url(); ?>";
+                    $.ajax({
+                        url:  baseurl +"games/logScore",
+                        type:'POST',
+                        data: {drill_id : drill_id , level :level, percentageScore : percentageScore},
+                        cache:false,
+                        dataType: 'json',
+                        success:function(data)
+                        {
+
+                            if(data)
+                            {                    
+                               
+                                alert(data);
+                            }
+                            //else
+                                //alert("Error Parsing XML");
+                        },
+                        error:function(x,e){
+                        }
+                    }); 
                 }
 		-->
 		</script>

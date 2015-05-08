@@ -15,6 +15,7 @@
 		<script type="text/javascript">
 		<!--
                         var mylevel = <?php echo $level;?>;
+                        var drill_id = <?php echo $drill_id;?>;
 			var config = {
 				width: 960, 
 				height: 540,
@@ -59,7 +60,7 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "<?php echo base_url();?>assets/unitygames/Balloon_Party.unity3d");
 			});
-                        function updateRange()
+                function updateRange()
 				{
                                 //    alert("Range");
                                     if(mylevel==1)
@@ -80,11 +81,42 @@
                                         u.getUnity().SendMessage("GameManager", "setupperRange", "99");    
                                     }
                                 }
-                            function UnityCall( arg )
+               function UnityCall( arg )
 				{
                                     //    alert( arg );
 				    updateRange();
 				}
+				function endGame( arg )
+                {
+                	score(arg);
+                    window.location.href = "<?php echo base_url();?>"+"games/shootEmUp";
+                }
+				function score(arg)
+                {
+                	var percentageScore = arg;
+
+                    var baseurl = "<?php print base_url(); ?>";
+                    $.ajax({
+                        url:  baseurl +"games/logScore",
+                        type:'POST',
+                        data: {drill_id : drill_id , level :level, percentageScore : percentageScore},
+                        cache:false,
+                        dataType: 'json',
+                        success:function(data)
+                        {
+
+                            if(data)
+                            {                    
+                               
+                                alert(data);
+                            }
+                            //else
+                                //alert("Error Parsing XML");
+                        },
+                        error:function(x,e){
+                        }
+                    }); 
+                }
 		-->
 		</script>
 		<style type="text/css">
