@@ -72,7 +72,7 @@
                 if(data == 0)
                     showDialog();
                 else
-                    window.location.href = "<?php echo base_url();?>"+"home/drills";
+                    window.location.href = "<?php echo base_url();?>"+"drills";
             },
             error:function(x,e){
             }

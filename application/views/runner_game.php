@@ -94,7 +94,7 @@
                 {
                 	//alert(arg);
                 	var percentageScore = arg;
-                	alert(percentageScore);
+                	//alert(percentageScore);
                     var baseurl = "<?php print base_url(); ?>";
                     $.ajax({
                         url:  baseurl +"games/logScore",
@@ -108,7 +108,7 @@
                             if(data)
                             {                    
                                window.location.href = "<?php echo base_url();?>"+"games/assessmentBird";
-                                alert(data);
+                               // alert(data);
                             }
                             //else
                                 //alert("Error Parsing XML");
