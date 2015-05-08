@@ -15,6 +15,9 @@
 		<script type="text/javascript">
 		<!--
                         var mylevel = <?php echo $level;?>;
+                        var drill_id = <?php echo $drill_id;?>;
+
+
 			var config = {
 				width: 960, 
 				height: 600,

@@ -74,7 +74,7 @@ class login extends CI_Controller{
         $this->session->unset_userdata('errorFlag');
         $this->session->unset_userdata('errorMessage');
         $this->session->unset_userdata('person_id');
-        session_destroy();
+        $this->session->sess_destroy();
         $this->load->view('login_view');
     }
 }

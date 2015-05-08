@@ -1,5 +1,6 @@
 <link href="<?php echo base_url();?>assets/css/normalize.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url();?>assets/css/nav_menu.css" rel="stylesheet" type="text/css">
+<?php print_r($drills);?>
 <script>
     function hideAll()
       {
@@ -144,7 +145,7 @@
                 <span id="addition">
                     <div class="game_row">
                         <figure>
-                            <img alt="Runner" src="<?php echo base_url();?>assets/images/runner_banner.jpg"/>
+                            <img alt="Runner" src="<?php echo base_url() . $drills[0]['drill_image'];?>"/>
                             <figcaption>
                                 <h3>Endless Adder</h3>
                                 <p>Teaches the concept of Addition</p>
@@ -169,7 +170,7 @@
                 <span id="even">
                     <div class="game_row" >
                         <figure>
-                            <img alt="Catchy" src="<?php echo base_url();?>assets/images/catchy-tile.png"/>
+                            <img alt="Catchy" src="<?php echo base_url() . $drills[1]['drill_image'];?>"/>
                             <figcaption>
                                 <h3>Catchy</h3>
                                 <p>Teaches the concept of Even / Odd numbers</p>
@@ -193,7 +194,7 @@
                 <span id="highest">
                     <div class="game_row" >
                         <figure>
-                            <img alt="Catchy" src="<?php echo base_url();?>assets/images/BalloonParty_tile.png"/>
+                            <img alt="Catchy" src="<?php echo base_url() . $drills[2]['drill_image'];?>"/>
                             <figcaption>
                                 <h3>Balloon Party</h3>
                                 <p>Teaches the concept of Highest / Lowest numbers</p>
@@ -215,7 +216,7 @@
                 <span  id="multiples">
                     <div class="game_row">
                         <figure>
-                            <img alt="Catchy" src="<?php echo base_url();?>assets/images/catchy-tile-2.png"/>
+                            <img alt="Catchy" src="<?php echo base_url() . $drills[3]['drill_image'];?>"/>
                             <figcaption>
                                 <h3>Catchy</h3>
                                 <p>Teaches the concept of multiples of a number</p>
@@ -238,7 +239,7 @@
                 <span  id="AscendOrder">
                     <div class="game_row">
                         <figure>
-                            <img alt="Racer" src="<?php echo base_url();?>assets/images/racergame.png"/>
+                            <img alt="Racer" src="<?php echo base_url() . $drills[5]['drill_image'];?>"/>
                             <figcaption>
                                 <h3>Racer</h3>
                                 <p>Teaches the concept of Ascending Order of Numbers</p>
@@ -261,7 +262,7 @@
                 <span  id="DescendOrder">
                     <div class="game_row">
                         <figure>
-                            <img alt="Racer" src="<?php echo base_url();?>assets/images/racergame.png"/>
+                            <img alt="Racer" src="<?php echo base_url() . $drills[6]['drill_image'];?>"/>
                             <figcaption>
                                 <h3>Racer</h3>
                                 <p>Teaches the concept of Descending Order of Numbers</p>
@@ -284,7 +285,7 @@
                 <span  id="Subtraction">
                     <div class="game_row">
                         <figure>
-                            <img alt="Racer" src="<?php echo base_url();?>assets/images/lifeofbee.png"/>
+                            <img alt="Racer" src="<?php echo base_url() . $drills[4]['drill_image'];?>"/>
                             <figcaption>
                                 <h3>Life of a Bee</h3>
                                 <p>Practice your concepts of Subtraction</p>
