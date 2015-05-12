@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -14,7 +15,7 @@
 		</script>
 		<script type="text/javascript">
 		<!--
-                        var mylevel = <?php echo $level;?>;
+                        var level = <?php echo $level;?>;
                         var drill_id = <?php echo $drill_id;?>;
 			var config = {
 				width: 960, 
@@ -60,27 +61,29 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "<?php echo base_url();?>assets/unitygames/Balloon_Party.unity3d");
 			});
+			 function SayHello( arg )
+                {
+                  
+                    updateRange();
+                }
                 function updateRange()
 				{
-                                //    alert("Range");
-                                    if(mylevel==1)
-                                    {
-                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "5");
-                                        u.getUnity().SendMessage("GameManager", "setupperRange", "20");
-                                    }
+                    //    alert("Range");
+                        if(level==1)
+                        {
+                            u.getUnity().SendMessage("GameManager", "setRange", "20");
+                        }
 
-                                    if(mylevel==2)
-                                    {
-                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "20");
-                                        u.getUnity().SendMessage("GameManager", "setupperRange", "60");
-                                    }
+                        if(level==2)
+                        {
+                           u.getUnity().SendMessage("GameManager", "setRange", "35");
+                        }
 
-                                    if(mylevel==3)
-                                    {
-                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "60");
-                                        u.getUnity().SendMessage("GameManager", "setupperRange", "99");    
-                                    }
-                                }
+                        if(level==3)
+                        {
+                             u.getUnity().SendMessage("GameManager", "setRange", "75");  
+                        }
+    			}
                function UnityCall( arg )
 				{
                                     //    alert( arg );
