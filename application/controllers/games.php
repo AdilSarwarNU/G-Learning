@@ -1,3 +1,4 @@
+
 <?php  
 class games extends CI_Controller{
     function __construct(){
@@ -187,4 +188,5 @@ class games extends CI_Controller{
 
     
 }
+
 ?>
