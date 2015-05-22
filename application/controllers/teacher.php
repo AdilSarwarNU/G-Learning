@@ -27,11 +27,6 @@ class teacher extends CI_Controller {
     }
     
     
-    public function excel()
-    {
-        $data['page_title'] = 'G-Learning | Teacher';
-        $this->load->view('excelgen') ;   
-    }
     public function index()
     {
             $data['scroll_to_div'] = 'view_student';

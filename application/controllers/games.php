@@ -1,4 +1,3 @@
-
 <?php  
 class games extends CI_Controller{
     function __construct(){
@@ -61,7 +60,7 @@ class games extends CI_Controller{
         $this->load->model('levels_model');
         $person_id = $this->session->userdata['person_id'];
         
-        $data['page_title'] = 'G-Learning | Balloon Party';
+        $data['page_title'] = 'G-Learning | Catchy';
         $data['level'] =  $this->levels_model->checkLevel($person_id);
         $data['drill_id'] = $this->levels_model->getDrillId("Highest/Lowest");
 
@@ -188,5 +187,4 @@ class games extends CI_Controller{
 
     
 }
-
 ?>
