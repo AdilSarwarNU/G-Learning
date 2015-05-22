@@ -130,7 +130,7 @@
     position:absolute;
     left:0;
     top:0px;
-    content: url(../images/Bg.png);
+    background-color:#fff7d9;
     opacity:0.5;
 }
 .mid-content:after{
@@ -138,7 +138,7 @@
     position:absolute;
     left:0;
     top:980px;
-    content: url(../images/Bg.png);
+   background-color:#fff7d9;
     opacity:0.5;
 }
 
@@ -172,12 +172,13 @@
 
 .student_menu_tab_body label
 {
-    font-size: 24px;
+    font-size: 40px;
     text-align: center;
-    color: #003399;
-    text-shadow: 2px 2px 6px #949494;
+    color: #399;
+   
     font-weight: 600;
-    margin-top: -7px;
+    font-family:"Jenna Sue";
+    margin-top:7px;
 }
 
 .student_menu_tabs img

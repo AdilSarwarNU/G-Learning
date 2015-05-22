@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -16,7 +15,7 @@
 		</script>
 		<script type="text/javascript">
 		<!--
-		    var level = <?php echo $level;?>;
+		    var mylevel = <?php echo $level;?>;
 		    var drill_id = <?php echo $drill_id;?>;
 		    var mode = "<?php echo $mode;?>";
 			var config = {
@@ -76,13 +75,13 @@
                   
                     u.getUnity().SendMessage("NumberManager", "setMode", mode);
                 //  alert("Range")
-                    if(level==1)
+                    if(mylevel==1)
                         u.getUnity().SendMessage("NumberManager", "setRange", "10");
                     
-                    if(level==2)
+                    if(mylevel==2)
                         u.getUnity().SendMessage("NumberManager", "setRange", "30");
                     
-                    if(level==3)
+                    if(mylevel==3)
                         u.getUnity().SendMessage("NumberManager", "setRange", "50");    
 
                 
