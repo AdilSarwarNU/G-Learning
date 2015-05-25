@@ -39,7 +39,7 @@ class teacher extends CI_Controller {
         
     }
 
-}
+
 
 
         
@@ -89,6 +89,6 @@ class teacher extends CI_Controller {
     
     
     
-    
+    }
     
     ?>
