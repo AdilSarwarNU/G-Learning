@@ -1443,8 +1443,7 @@ z-index:1000;
 }
 .teacher_mid_right{
     margin:auto;
-    height: 650px;
-    max-height:650px;
+   
     width:74%;
     overflow: auto;
 }
@@ -1728,7 +1727,7 @@ z-index:1000;
     font-size:18px;
     color:#f73f3f;
 }
-//----------------
+
 .edit_assessment_div{
     height:650px;
     max-height:650px;
@@ -1757,7 +1756,7 @@ z-index:1000;
 {
     margin: auto;
 //    width:915px;
-    width:545px;
+    width:100%;
     height:80px;
     
 }
@@ -1780,18 +1779,18 @@ z-index:1000;
     font-family: Montserrat;
 }
 .student_block label{
-    line-height:80px;
-    font-size: 22px;
-    font-weight: normal;
-    color:#000;
-    font-family: cursive;
+     line-height: 80px;
+  font-size: large;
+  font-weight: normal;
+  color: #000;
+  font-family: inherit;
 }
 
 .student_block_long{
     height:80px;
     float:left;
     display:inline-block;
-    width:270px;
+    width:49%;
     border: #f73f3f solid thin;
     background-color: #9bba1f;
     text-align: center;
@@ -1800,7 +1799,7 @@ z-index:1000;
     height:80px;
     float:left;
     display:inline-block;
-    width:270px;
+    width:49%;
     border: #f73f3f solid thin;
     background-color: #f73f3f;
     text-align: center;
@@ -1820,5 +1819,54 @@ z-index:1000;
     font-size: 22px;
     font-weight: normal;
     color:#000;
-    font-family: cursive;
+    font-family:inherit;
 }
+
+
+.result_card_div
+{
+ height:650px;
+    max-height:650px;
+    display:inline-block;
+    width:100%;   
+}
+
+
+.result_name_th
+{
+    width:140px;
+}
+
+.marks_th
+{
+    width:40px;
+    text-align: center;
+}
+
+
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#000000;border:1px; width:100%;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000000;color:#669;background-color:snow; text-align:center;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#000000;color:#D1D1D1 !important ;background-color:#343434;}
+.tg .tg-c5de{font-weight:bold;font-size:13px;color:#000000;text-align:center}
+
+
+.error_main_container{
+    margin-top: 20%;
+    height:80px;
+    
+    display:inline-block;
+    width:100%;
+    border: #f73f3f solid thin;
+    background-color: #f73f3f;
+    text-align: center;
+}
+
+.error_label{
+   
+line-height:80px;
+    font-size: 30px;
+    font-weight: bolder;
+    color:#fafafa;
+    background-color: #f73f3f;
+    font-family: Montserrat;}

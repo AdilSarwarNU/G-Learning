@@ -3,6 +3,7 @@ class DataEntry extends CI_Controller{
     function __construct(){
         parent::__construct();
         $this->load->helper('url');
+        
     }
     
     public function add_assessment()
@@ -62,9 +63,7 @@ class DataEntry extends CI_Controller{
         $question_option2  = $this->security->xss_clean($this->input->post('QuestionOption3_'.$i.''));
         $question_option3  = $this->security->xss_clean($this->input->post('QuestionOption4_'.$i.''));
         
-        //dummydata
         $complexity_level=1;
-        //---------
         
         $result = $this->Teacher_Model->insert_new_question($assess_id,$question_staement,$question_answer,$question_option1,$question_option2,$question_option3,$complexity_level);
         if ( $result) 
@@ -107,11 +106,7 @@ class DataEntry extends CI_Controller{
                 echo student_view_failed_to_load;
                 return false;
             }else
-            {
-                
-                    //loading questions
-                //    echo "edit_assess_search_match";
-                    
+            {    
                     $data['scroll_to_div'] = 'edit_assess_search_match';
                     $data['searched_assessment']= $assess_name;
                     $data['no_of_questions'] = $i;
@@ -142,15 +137,13 @@ class DataEntry extends CI_Controller{
             $result = $this->Teacher_Model->update_assessment_question($q_id,$statement,$answer,$option1,$option2,$option3);
            if($result==0)
            {
-                //  loading view
-                   $data['scroll_to_div'] = 'update_assess_updation_error';
-                   $data['searched_assessment']= $assess_name;
-                   $data['page_title'] = 'G-Learning | Teacher';
-                   $this->load->view('main_header_new',$data);
-                   $this->load->view('teacher_home');
-                   $this->load->view('footer');
-                
-               return 0;
+                $data['scroll_to_div'] = 'update_assess_updation_error';
+                $data['searched_assessment']= $assess_name;
+                $data['page_title'] = 'G-Learning | Teacher';
+                $this->load->view('main_header_new',$data);
+                $this->load->view('teacher_home');
+                $this->load->view('footer');    
+                return 0;
            }
         }
                 //loading add_view
@@ -215,7 +208,7 @@ class DataEntry extends CI_Controller{
                 $data['scroll_to_div'] = 'view_student';
                 $this->load->view('main_header_new',$data);
                 $this->load->view('teacher_home');
-                $this->load->view('footer');
+                $this->load->view('footer_new_design');
             }
     }
     

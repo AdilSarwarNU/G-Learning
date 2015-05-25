@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/alertify.core.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/alertify.default.css">
     <script src="<?php echo base_url(); ?>/assets/js/alertify.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/alertify.min.js"></script>
+    
     
 
 <script>

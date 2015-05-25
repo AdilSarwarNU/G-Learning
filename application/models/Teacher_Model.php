@@ -81,7 +81,7 @@ class Teacher_Model extends CI_Model {
             foreach ($results->result() as $row)
             {
             //    $array['rank'.$j] = $j+1;
-                $array['student_name'.$j] = $row->first_name . $row->last_name;// $row['first_name'].$row['last_name'];
+                $array['student_name'.$j] = $row->first_name .' '. $row->last_name;// $row['first_name'].$row['last_name'];
                 $array['student_contact'.$j] = $row->email;
          //       $array['score'.$j] = $row->score;
                 $j++;
@@ -95,6 +95,127 @@ class Teacher_Model extends CI_Model {
         
     }
     
+    function get_assessments_by_teacher_count($teacher_id)
+    {
+        return count($this->get_assessments_by_teacher($teacher_id)->result());
+    }
+    
+    function get_assessments_by_teacher($teacher_id)
+    {
+        $this->db->select('assessment_id');
+        $this->db->from('assessment');
+        $this->db->where('assessment.teacher_id',$teacher_id );
+        $assessments = $this->db->get();
+        return $assessments;
+    }
+    
+    function generate_result_card($teacher_id,$school_id)
+    {
+        $srno = 0;
+        $data = array(array());
+        $assessments_id = array();
+        $assessments = $this->get_assessments_by_teacher($teacher_id);
+        $assess_count = count($assessments->result());
+        $student = array();      
+        $student_ids = array();
+        
+        foreach ($assessments->result() as $assess_id)
+        {   
+            foreach ($assess_id as $id)
+                array_push($assessments_id,$id);
+        }
+        
+        
+        foreach ($assessments_id as $a)
+        {
+            $position = array(array());
+            $this->db->select('login.person_id,first_name,last_name,assessment_id,marks_obtained');
+            $this->db->where('assessment_id',$a);
+            $this->db->where('login.school_id', $school_id);        
+            $this->db->where('login.type', "student");
+            $this->db->from('login');
+            $this->db->join('person', 'person.person_id = login.person_id');
+            $this->db->join('gradesheet','student_id = login.person_id');
+            $results = $this->db->get();
+        
+            if ($results)
+            {
+                $result_array = $results->result_array();
+                        // Getting student ids
+                //  login.person_id,first_name,last_name,assessment_id,marks_obtained
+                foreach ($result_array as $row)
+                {   
+                    if (array_search($row['person_id'],$student_ids) === FALSE)                   
+                        array_push($student_ids,$row['person_id']);
+              
+                }
+                $data[$srno] = $result_array;
+                $srno++;
+            }
+            else
+            {
+
+            }
+            
+            $stu= 0;
+            $i=0;
+            
+            foreach ($student_ids as $id)
+            {
+                $other_data = FALSE;
+                $total_marks = 0;
+                foreach( $data as $rows)
+                {
+                    foreach ($rows as $row)
+                    {
+                        if ($row['person_id'] == $id)
+                        {
+                            if($other_data === FALSE)
+                            {
+                                for ($as = 0 ; $as<$assess_count; $as++)
+                                {
+                                    $student[$stu][$as] = 'NA';
+                                }
+                                $student[$stu]['name'] = $row['first_name']. " " . $row['last_name'];
+                                
+                                $other_data=TRUE;
+                            }
+                            $student[$stu][$i] = $row['marks_obtained'];
+                            $total_marks+=$row['marks_obtained'];  
+                        }
+                        
+                    }
+                    $i++;
+                }
+                $student[$stu]['total_marks'] = $total_marks;
+                $i=0;
+                $stu++;
+            }                
+            
+        }
+        usort($student, function($item1,$item2){
+             if ($item1['total_marks'] == $item2['total_marks']) return 0;
+            return ($item1['total_marks'] < $item2['total_marks']) ? 1 : -1;
+        });
+        $pos = 0;
+        $prev_student_marks = -1;
+        for ($iter =0; $iter <count($student); $iter++)        
+        {
+            if ($iter == 0 )
+                $prev_student_marks = $student[0]['total_marks'];
+            else
+                if ($student[$iter]['total_marks'] == $prev_student_marks)
+                {
+                    $pos--;
+                }
+            $pos++;
+            $prev_student_marks = $student[$iter]['total_marks'];
+            $student[$iter]['position'] = $pos;
+            
+
+        }
+            return $student;
+    }
     function search_assessment($assess_name,$school_id,$teacher_id)
     {
         $this->db->where('assessment_name', $assess_name);
@@ -120,7 +241,7 @@ class Teacher_Model extends CI_Model {
        $this->db->where('assessment_id', $assess_id);
         $this->db->from('question');
         $results = $this->db->get();
-    //    print_r($results->result_array());  //very helpfull
+    
         $array = array();
         
         if($results)
