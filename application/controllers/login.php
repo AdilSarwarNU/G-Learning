@@ -1,10 +1,12 @@
 <?php 
-session_start();
+//session_start();
 class login extends CI_Controller{
     function __construct(){
         parent::__construct();
-        $this->load->helper('url');
+         $this->load->helper('url');
+        $this->load->helper('asset');
         $this->load->model('login_model');
+        $this->load->helper(array('form'));
     }
     
     public function index()
@@ -26,8 +28,9 @@ class login extends CI_Controller{
 
             if($result == "student"){
                 $data['page_title'] = 'G-Learning | Student';
-                $this->load->view('student_header',$data);
+                $this->load->view('header_only_image',$data);
                 $this->load->view('student_dashboard');
+                $this->load->view('footer_new_design');
             }
             else if($result == "admin"){
                 $this->session->unset_userdata('errorFlag');

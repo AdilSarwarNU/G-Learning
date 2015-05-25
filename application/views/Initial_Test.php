@@ -320,7 +320,7 @@
                         <p id="level"></p>
                     </div>
                     <div id="submit_button" class="submit_question">
-                        <button type="button" onclick="location.href='<?php echo base_url();?>home/drills'">Start Drills</button>
+                        <button type="button" onclick="location.href='<?php echo base_url();?>drills/'">Start Drills</button>
                     </div>
                 </div>
             </form>

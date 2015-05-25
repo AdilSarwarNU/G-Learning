@@ -8,6 +8,12 @@
     
 
 <script>
+   $( document ).ready(function() {
+     $('html,body').animate({
+        scrollTop: $(".mid-content").offset().top},
+        'slow');
+    });
+    
     function ChangePassword()
     {
         var baseurl = "<?php print base_url(); ?>";
@@ -99,7 +105,7 @@
 </div>
 
 <div class="student_dashboard_body">
-    <div class="mid-content">
+    <div class="mid-content" id="mid-content">
         <div class="student_top_menu">
             <div class="student_menu_tabs">
                 <div class="student_menu_tab">
@@ -119,7 +125,7 @@
                     </a>
                 </div>
                 <div class="student_menu_tab">
-                    <a href="#video">
+                    <a href="#video_text">
                         <div class="student_menu_tab_body">
                             <img src="<?php echo base_url();?>assets/images/video.png"/>
                             <label>Videos</label>
@@ -146,18 +152,20 @@
             <a href="#" id="playButton" onclick="checkLevel();">
                 <div class="welcome_cloud">
                     <img src="<?php echo base_url();?>assets/images/cloud2.png"/>
-                    <label>Let's Play Friend</label>
                 </div>
             </a>
         </div>
         
+        <br/>
+        <div id = "video_text"></div>
+        <br/>
+        
+         <div class="drill_text" >
+            Explore the magical world of G-Learning - An introductory walkthrough 
+         </div>
+
+        
         <br/><br/>
-        
-        <div class="student_top_quote" id="video">
-            <label>Explore the magical world of G-Learning - An introductory walkthrough</label>
-        </div>
-        
-        <br/><br/><br/><br/><br/>
         
         <div class="student_dashboard_video" id="video">            
             <video width="640" height="360" controls>
@@ -166,12 +174,12 @@
                     Your browser does not support the video tag.
             </video>
         </div>
-        
+ <!--        
         <br/><br/><br/><br/><br/><br/>
         <div class="student_top_quote" id="ranks">
             <label>Our Student Rankings - Top 5</label>
         </div>
-        <div class="rankings_container">
+       <div class="rankings_container">
           <div class="box">
               <label class="box_Rank_Number">1st Rank</label>
               <label class="box_Student_Name">Haider Rasool</label>
@@ -197,6 +205,6 @@
               <label class="box_Student_Name">Adil Sarwar Khan</label>
               <label class="box_Student_Points">4,000pts</label>
           </div>
-      </div>
+      </div>-->
     </div>
 </div>
