@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 08, 2015 at 09:10 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: May 25, 2015 at 06:55 AM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -34,11 +34,20 @@ CREATE TABLE IF NOT EXISTS `assessment` (
   `drill_id` int(255) NOT NULL,
   `teacher_id` int(255) NOT NULL,
   `school_id` int(255) NOT NULL,
-  PRIMARY KEY (`assessment_id`),
+  PRIMARY KEY (`assessment_id`,`teacher_id`),
   KEY `FK_assessment_drill` (`drill_id`),
   KEY `FK_assessment_teacher` (`teacher_id`),
   KEY `FK_assessment_school` (`school_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `assessment`
+--
+
+INSERT INTO `assessment` (`assessment_id`, `assessment_name`, `total_marks`, `assessment_status`, `drill_id`, `teacher_id`, `school_id`) VALUES
+(1, 'Test1', 10, '0', 1, 47, 1),
+(2, 'T2', 20, '0', 1, 47, 1),
+(3, 'TT2', 30, '0', 1, 47, 1);
 
 -- --------------------------------------------------------
 
@@ -133,6 +142,17 @@ CREATE TABLE IF NOT EXISTS `gradesheet` (
   KEY `FK_gradesheet_assessment` (`assessment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `gradesheet`
+--
+
+INSERT INTO `gradesheet` (`student_id`, `assessment_id`, `marks_obtained`) VALUES
+(37, 1, 10),
+(37, 2, 5),
+(45, 2, 10),
+(46, 1, 5),
+(46, 2, 10);
+
 -- --------------------------------------------------------
 
 --
@@ -166,7 +186,9 @@ INSERT INTO `login` (`person_id`, `username`, `password`, `type`, `parent_passwo
 (43, 'zaid', 'Qcp2qbXj9s/6TeSK/Zs1vyNwmPFThYq08asuXugIMzsyTYKJP64NlVqSYv32HDEFgycQTtUzpHiGT+zzWY/aGw==', 'student', 'N2NdvL9h0ibZbnXlcCA73uoZ0JUtEracoN0PSiueiOo91b9YjmtFVkLxdkcOkkQvhqRs9LI96iD8rTmogBgO9A==', 1),
 (44, 'teach', 'jt2nsCq/D14XcGYhQ4ef3hGkahlogENkru9QFs4TPXtm7AOsdO9SCMzSPDNStW7FX0UHj9U/r8VWEXqiUpmEZw==', 'teacher', '', 1),
 (45, 'trix', 'WBEZuGgE6byRry98PyZgX1mOqmdEGwun5SMn96hJKyCHXpxe/gyP3JLNJTzk4P1f132Vu2KlkreyWj1VJ4PqOw==', 'student', 'k3+mgHcVKog0JOQLNsFJc2QLh74hPZwCWKosFm/zZcSq0BqfD37UdFnVQBbtbTWkwGYiMXqyWTHxzYcQrm5pUQ==', 1),
-(46, 'adil123', 'FKR1J6NFMNsceGQUzrJmm311QdBuWdYnaRKo2bejxA5bXdtYU9tPmnQkp8/DqHGsuJQt1HpPaU2t3QP85qPEIw==', 'student', '4Ebq3TI8ysQxg+LxJZGHK9joxtWOIIBgDO03Bp9R9u/MgsZCwcZ0x6lVNxfMWoMNyh2283a1+WBkCTAfaOUkFw==', 1);
+(46, 'adil123', 'FKR1J6NFMNsceGQUzrJmm311QdBuWdYnaRKo2bejxA5bXdtYU9tPmnQkp8/DqHGsuJQt1HpPaU2t3QP85qPEIw==', 'student', '4Ebq3TI8ysQxg+LxJZGHK9joxtWOIIBgDO03Bp9R9u/MgsZCwcZ0x6lVNxfMWoMNyh2283a1+WBkCTAfaOUkFw==', 1),
+(47, 'teacher', '/ugzT2V09Egu6eRhKD7Z3Zh0YqFCo9ufbf1Kj+QIOxqQoak2l6AjjNZuSIb7jyC+g2So9ej+J3I81bisU9fvlw==', 'teacher', '', 1),
+(48, 'teacher2', 'ejkrQ9aNQH98iXvo10FR5M7Z73XFiVaupKInaNXJkWpjpJkQ5O8WAKzTUNzvimdBfYO9HVlqAaM5Jmmkd5vSCA==', 'teacher', '', 1);
 
 -- --------------------------------------------------------
 
@@ -180,7 +202,14 @@ CREATE TABLE IF NOT EXISTS `password_requests` (
   `request_date` date NOT NULL,
   PRIMARY KEY (`request_id`),
   KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `password_requests`
+--
+
+INSERT INTO `password_requests` (`request_id`, `username`, `request_date`) VALUES
+(1, 'teacher2', '2015-05-24');
 
 -- --------------------------------------------------------
 
@@ -198,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `person` (
   `level_in_game` int(11) NOT NULL DEFAULT '0',
   `drill_level` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
 
 --
 -- Dumping data for table `person`
@@ -214,7 +243,9 @@ INSERT INTO `person` (`person_id`, `first_name`, `last_name`, `address`, `Contac
 (43, 'zaid', 'tariq', 'wapda town', NULL, 'zain@gmail.com', 0, 0),
 (44, 'teacher', 'aaaa', 'asdasda', NULL, 'teach@gmail.com', 0, 0),
 (45, 'Talha', 'Naveed', 'House #118, Block H-1 P.E.C.H.S Valancia Lahore, Pakistan', NULL, 'talhanaveed123@gmail.com', 2, 4),
-(46, 'Talha', 'Naveed', 'House #118, Block H-1 P.E.C.H.S Valancia Lahore, Pakistan', NULL, 'talhanaveed1as23@gmail.com', 0, 0);
+(46, 'Talha', 'Khan', 'House #118, Block H-1 P.E.C.H.S Valancia Lahore, Pakistan', NULL, 'talhanaveed1as23@gmail.com', 0, 0),
+(47, 'test', 'teacher', 'test', NULL, 'test@hotmail.com', 0, 0),
+(48, 'Test2', ' ', 'test2', NULL, 'test2@hotmail.com', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -234,7 +265,19 @@ CREATE TABLE IF NOT EXISTS `question` (
   `assessment_id` int(11) NOT NULL,
   PRIMARY KEY (`question_id`),
   KEY `assessment_id` (`assessment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`question_id`, `statement`, `option1`, `option2`, `option3`, `answer`, `complexity_level`, `question_status`, `assessment_id`) VALUES
+(1, '2+2', '2', '1', '4', '4', 1, '0', 1),
+(2, '3+10', '11', '5', '20', '13', 1, '0', 2),
+(3, '2+3', '2', '1', '4', '5', 1, '0', 2),
+(4, '40+11', '61', '31', '53', '51', 1, '0', 3),
+(5, '20+32', '34', '31', '62', '52', 1, '0', 3),
+(6, '10+50', '10', '32', '40', '60', 1, '0', 3);
 
 -- --------------------------------------------------------
 
