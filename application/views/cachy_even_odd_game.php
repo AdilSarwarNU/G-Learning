@@ -14,6 +14,10 @@
 		</script>
 		<script type="text/javascript">
 		<!--
+                        var mylevel = <?php echo $level;?>;
+                        var drill_id = <?php echo $drill_id;?>;
+
+
 			var config = {
 				width: 960, 
 				height: 600,
@@ -58,6 +62,32 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "<?php echo base_url();?>assets/unitygames/webcatchy.unity3d");
 			});
+                            function updateRange()
+				{
+                                //    alert("Range");
+                                    if(mylevel==1)
+                                    {
+                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "1");
+                                        u.getUnity().SendMessage("GameManager", "setupperRange", "20");
+                                    }
+
+                                    if(mylevel==2)
+                                    {
+                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "20");
+                                        u.getUnity().SendMessage("GameManager", "setupperRange", "50");
+                                    }
+
+                                    if(mylevel==3)
+                                    {
+                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "50");
+                                        u.getUnity().SendMessage("GameManager", "setupperRange", "99");    
+                                    }
+                                }
+                            function UnityCall( arg )
+				{
+                                    //    alert( arg );
+				    updateRange();
+				}
 		-->
 		</script>
 		<style type="text/css">
