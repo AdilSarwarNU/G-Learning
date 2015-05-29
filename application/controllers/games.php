@@ -35,7 +35,6 @@ class games extends CI_Controller{
         $data['page_title'] = 'G-Learning | Catchy';
         $data['level'] =  $this->levels_model->checkLevel($person_id);
         $data['drill_id'] = $this->levels_model->getDrillId("Even/Odd");
-
         $this->load->view('main_header_new',$data);
         $this->load->view('cachy_even_odd_game',$data);
         $this->load->view('footer');
@@ -60,10 +59,9 @@ class games extends CI_Controller{
         $this->load->model('levels_model');
         $person_id = $this->session->userdata['person_id'];
         
-        $data['page_title'] = 'G-Learning | Catchy';
+        $data['page_title'] = 'G-Learning | Balloon Party';
         $data['level'] =  $this->levels_model->checkLevel($person_id);
         $data['drill_id'] = $this->levels_model->getDrillId("Highest/Lowest");
-
         $this->load->view('main_header_new',$data);
         $this->load->view('balloon_party_game',$data);
         $this->load->view('footer');
@@ -78,7 +76,6 @@ class games extends CI_Controller{
         $data['page_title'] = 'G-Learning | Runner';
         $data['level'] =  $this->levels_model->checkLevel($person_id);
         $data['drill_id'] = $this->levels_model->getDrillId("Addition");
-
         $this->load->view('main_header_new',$data);
         $this->load->view('runner_game', $data);
         $this->load->view('footer');
@@ -105,7 +102,6 @@ class games extends CI_Controller{
         $this->load->view('footer');
     }
     
-
       public function racerDescending()
     {
         $this->load->model('levels_model');
@@ -115,7 +111,6 @@ class games extends CI_Controller{
         $data['drill_id'] = $this->levels_model->getDrillId("Descending");
         $data['mode'] = "descending";
         $data['page_title'] = 'G-Learning | Racer';
-
         $this->load->view('main_header_new',$data);
         $this->load->view('racer_game', $data);
         $this->load->view('footer');
@@ -127,16 +122,13 @@ class games extends CI_Controller{
         $this->load->view('shootemup_asses_game');
         $this->load->view('footer');
     }
-
     public function LifeofBee()
     {
         $this->load->model('levels_model');
         $person_id = $this->session->userdata['person_id'];
-
         $data['page_title'] = 'G-Learning | Life of a Bee';
         $data['level'] =  $this->levels_model->checkLevel($person_id);
         $data['drill_id'] = $this->levels_model->getDrillId("Subtraction");
-
         $this->load->view('main_header_new',$data);
         $this->load->view('Lifeofbee');
         $this->load->view('footer');
@@ -169,7 +161,6 @@ class games extends CI_Controller{
         echo json_encode($array);
         
     }
-
     public function LogScore()
     {
         $this->load->model('game_log_model');
@@ -179,13 +170,16 @@ class games extends CI_Controller{
         $percentageScore = $this->input->post('percentageScore');
         $person_id = $this->session->userdata['person_id'];
         echo $this->game_log_model->logScore($person_id, $drill_id, $level,$percentageScore);
-
     }
     public function testView()
     {
         $this->load->view('test_view');
     }
-
+    public function testConnection()
+    {
+         $drill_id  = $this->security->xss_clean($this->input->post('drill_id'));
+         echo $drill_id;
+    }
     
 }
 ?>
