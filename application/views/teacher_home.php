@@ -3,6 +3,7 @@
 <script src="<?php echo base_url();?>/assets/js/jquery.js"></script>
 <script src="<?php echo base_url();?>/assets/js/jsexcel.js"></script>
 <script>
+   
     $(document).ready(function () {
         
         codeAddress();    //runs on start
@@ -38,8 +39,20 @@
                 }
             }); 
     }
+    function SubmitAssessmentForm(value)
+    {
+      //  alert(value);
+        $('#EditAssessment_name').val(value);
+        $('#edit_assessment_form').submit();
+    }
 </script>
-
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+    .tg .tg-k6pi{font-size:12px}
+    .tg .tg-47zg{font-weight:bold;background-color:#000000;color:#ffffff}
+    </style>
 <div class="main_container_general">
  
     <div class="top_container_teacher" style="height:420px ;background-color: #9BBA1F;">
@@ -135,15 +148,54 @@
                 <div class="heading_teacher">
                     <h1>Edit Assessment</h1>
                 </div>
-                
+            <br>
+            
+            <table class="tg">
+              <tr>
+                <th class="tg-47zg">Assessment ID</th>
+                <th class="tg-47zg">Assessment Name</th>
+                <th class="tg-47zg">Drill Name</th>
+                <th class="tg-47zg">Total Marks</th>
+                <th class="tg-47zg">Edit</th>
+              </tr>
+           <?php  foreach($assessments as $assessment) 
+           { 
+          
+            ?> 
+              <tr>
+                <td class="tg-031e">
+                    <?php echo $assessment['assessment_id'] ?>
+                </td>
+                <td class="tg-031e">
+                     <?php echo $assessment['assessment_name'] ?>
+                </td>
+                <td class="tg-031e">
+                     <?php echo $assessment['drill_name'] ?>
+                </td>
+                <td class="tg-031e">
+                     <?php echo $assessment['total_marks'] ?>
+                </td>
+                <td class="tg-k6pi">
+                    <button onclick = "SubmitAssessmentForm('<?php echo $assessment['assessment_name'] ?>')">Edit</button>
+                </td>
+              </tr>
+              <?php }?>
+<!--              <tr>
+                <td class="tg-031e"></td>
+                <td class="tg-031e"></td>
+                <td class="tg-031e"></td>
+                <td class="tg-031e"></td>
+                <td class="tg-031e"></td>
+              </tr>-->
+            </table>
                 <form id="edit_assessment_form" name="edit_assessment_form" method="POST" action="<?php echo base_url();?>DataEntry/edit_assessment">
                     <div class="labelandtextbox">
-                        <label>Search Assessment:</label>
-                        <input type="text" name="EditAssessment_name" value="<?php if($scroll_to_div== "edit_assess_search_no_match" || $scroll_to_div== "edit_assess_search_match"){  echo $searched_assessment;  }?>" id="EditAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
+                       
+                        <input type="hidden" name="EditAssessment_name" value = "<?php if($scroll_to_div== "edit_assess_search_no_match" || $scroll_to_div== "edit_assess_search_match"){  echo $searched_assessment;  }?>" id="EditAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
                     </div>
-                    <div class="submit_button_teacher">
+<!--                    <div class="submit_button_teacher">
                         <input type="submit" value='Search Assessment'>
-                    </div>
+                    </div>-->
                 </form>
                 <?php if($scroll_to_div== "edit_assess_search_match") 
                     { ?>

@@ -102,12 +102,15 @@ class Teacher_Model extends CI_Model {
     
     function get_assessments_by_teacher($teacher_id)
     {
-        $this->db->select('assessment_id');
+        $this->db->select('assessment_id, assessment_name, drill_name, total_marks');
         $this->db->from('assessment');
+        $this->db->join('drill','assessment.drill_id = drill.drill_id');
         $this->db->where('assessment.teacher_id',$teacher_id );
-        $assessments = $this->db->get();
-        return $assessments;
+        $query = $this->db->get();
+      
+        return $query;
     }
+    
     
     function generate_result_card($teacher_id,$school_id)
     {

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/G-Learning/';
+$config['base_url']	= 'http://localhost:81/G-Learning/';
 /*
 |--------------------------------------------------------------------------
 | Index File

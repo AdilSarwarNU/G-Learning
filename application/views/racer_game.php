@@ -15,7 +15,7 @@
 		</script>
 		<script type="text/javascript">
 		<!--
-		    var mylevel = <?php echo $level;?>;
+		    var level = <?php echo $level;?>;
 		    var drill_id = <?php echo $drill_id;?>;
 		    var mode = "<?php echo $mode;?>";
 			var config = {
@@ -26,9 +26,7 @@
 			};
 			config.params["disableContextMenu"] = true; //This is the added line
 			var u = new UnityObject2(config);
-
 			jQuery(function() {
-
 				var $missingScreen = jQuery("#unityPlayer").find(".missing");
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
 				$missingScreen.hide();
@@ -63,7 +61,6 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "<?php echo base_url();?>assets/unitygames/Racer.unity3d");
 			});
-
 				     function log(msg) {
                                         setTimeout(function() {
                                             throw new Error(msg);
@@ -71,19 +68,17 @@
                                     }
             function updateRange()
                 {
-
                   
                     u.getUnity().SendMessage("NumberManager", "setMode", mode);
                 //  alert("Range")
-                    if(mylevel==1)
+                    if(level==1)
                         u.getUnity().SendMessage("NumberManager", "setRange", "10");
                     
-                    if(mylevel==2)
+                    if(level==2)
                         u.getUnity().SendMessage("NumberManager", "setRange", "30");
                     
-                    if(mylevel==3)
+                    if(level==3)
                         u.getUnity().SendMessage("NumberManager", "setRange", "50");    
-
                 
                  }
                 function SayHello( arg )
@@ -94,15 +89,12 @@
                                 
                 function endGame( arg )
                 {
-
                 	score(arg);
                     window.location.href = "<?php echo base_url();?>"+"games/assessmentBird";
-
                 }
                 function score(arg)
                 {
                 	var percentageScore = arg;
-
                     var baseurl = "<?php print base_url(); ?>";
                     $.ajax({
                         url:  baseurl +"games/logScore",
@@ -112,7 +104,6 @@
                         dataType: 'json',
                         success:function(data)
                         {
-
                             if(data)
                             {                    
                                

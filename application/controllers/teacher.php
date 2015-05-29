@@ -28,10 +28,14 @@ class teacher extends CI_Controller {
    
     public function index()
     {
-            $data['scroll_to_div'] = 'view_student';
+            $this->load->model('Teacher_Model');
+            $teacher_id = $this->session->userdata['person_id'];
+            $data['scroll_to_div'] = 'start';
             $data['results'] = 0;
             $data['page_title'] = 'G-Learning | Teacher';
+            $data['assessments'] = $this->Teacher_Model->get_assessments_by_teacher($teacher_id)->result_array();
 
+       //     print_r($data);
             $this->load->view('header_only_image',$data);
             $this->load->view('teacher_home');
             $this->load->view('footer_new_design');
@@ -39,6 +43,7 @@ class teacher extends CI_Controller {
         
     }
 
+  
 
 
 
