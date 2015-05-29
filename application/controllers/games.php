@@ -159,6 +159,7 @@ class games extends CI_Controller{
         $array[0] = count($questionArray);
         $array[1] = $questionArray;
         echo json_encode($array);
+        
     }
     public function LogScore()
     {

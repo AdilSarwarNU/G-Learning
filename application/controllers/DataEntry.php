@@ -1,7 +1,7 @@
 <?php  
 class DataEntry extends CI_Controller{
     function __construct(){
-        parent::__construct();
+        -parent::__construct();
         $this->load->helper('url');
         
     }
@@ -49,6 +49,7 @@ class DataEntry extends CI_Controller{
             //loading add_view
                 $data['page_title'] = 'G-Learning | Teacher';
                 $data['scroll_to_div'] = 'add_assess';
+                $data['assessments'] = $this->Teacher_Model->get_assessments_by_teacher($teacher_id)->result_array();
                 $this->load->view('main_header_new',$data);
                 $this->load->view('teacher_home');
                 $this->load->view('footer');
@@ -142,6 +143,7 @@ class DataEntry extends CI_Controller{
                 $data['scroll_to_div'] = 'update_assess_updation_error';
                 $data['searched_assessment']= $assess_name;
                 $data['page_title'] = 'G-Learning | Teacher';
+                $data['assessments'] = $this->Teacher_Model->get_assessments_by_teacher($teacher_id)->result_array();
                 $this->load->view('main_header_new',$data);
                 $this->load->view('teacher_home');
                 $this->load->view('footer');    
@@ -151,6 +153,7 @@ class DataEntry extends CI_Controller{
                 //loading add_view
                     $data['page_title'] = 'G-Learning | Teacher';
                     $data['scroll_to_div'] = 'update_assess';
+                    $data['assessments'] = $this->Teacher_Model->get_assessments_by_teacher($teacher_id)->result_array();
                     $this->load->view('main_header_new',$data);
                     $this->load->view('teacher_home');
                     $this->load->view('footer');
@@ -170,6 +173,7 @@ class DataEntry extends CI_Controller{
             //loading delete_assess
                 $data['page_title'] = 'G-Learning | Teacher';
                 $data['scroll_to_div'] = 'delete_failed';
+                $data['assessments'] = $this->Teacher_Model->get_assessments_by_teacher($teacher_id)->result_array();
                 $this->load->view('main_header_new',$data);
                 $this->load->view('teacher_home');
                 $this->load->view('footer');
@@ -180,6 +184,7 @@ class DataEntry extends CI_Controller{
                 //loading delete_assess
                 $data['page_title'] = 'G-Learning | Teacher';
                 $data['scroll_to_div'] = 'delete_assess';
+                 $data['assessments'] = $this->Teacher_Model->get_assessments_by_teacher($teacher_id)->result_array();
                 $this->load->view('main_header_new',$data);
                 $this->load->view('teacher_home');
                 $this->load->view('footer');

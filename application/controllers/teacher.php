@@ -75,8 +75,6 @@ class teacher extends CI_Controller {
         
         
         
-        
-        
         public function result_card()
     {   $this->load->model('Teacher_Model');
         $data['scroll_to_div'] = 'result_card';
@@ -85,7 +83,6 @@ class teacher extends CI_Controller {
         $school_id= $this->session->userdata['school_id'];
         $data['assess_count'] = $this->Teacher_Model->get_assessments_by_teacher_count($teacher_id);        
         $data['results'] = $this->Teacher_Model->generate_result_card($teacher_id,$school_id);        
-        
         $this->load->view('header_only_image',$data);
         $this->load->view('teacher_home',$data);
         $this->load->view('footer_new_design');
@@ -96,4 +93,4 @@ class teacher extends CI_Controller {
     
     }
     
-    ?>
+?>

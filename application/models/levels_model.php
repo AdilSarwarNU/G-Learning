@@ -62,7 +62,7 @@ class levels_model extends CI_Model {
             $row = $query->row();
             $id = $row->assessment_id;
             
-            $this->db->where('assessment_id', $id);
+            $this->db->where('assessment_id', 3);
             $questions = $this->db->get('question');
             $questionArray = array(array());
             $i = 0;

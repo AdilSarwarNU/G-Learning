@@ -16,6 +16,12 @@ class login extends CI_Controller{
         $this->load->view('login_view');
     }
     
+    public function login_new()
+    {
+        $this->session->sess_destroy();
+        $this->load->view('login_view_new');
+    }
+    
     public function checkLogin()
     {
         $username = $this->security->xss_clean($this->input->post('username'));
