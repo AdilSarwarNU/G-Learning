@@ -73,20 +73,25 @@
                         var XMLString = "";
 
                         var myArray = new Array();
-
+                            function log(msg)
+                            {
+                                setTimeout(function(){
+                                    throw new Error(msg);
+                                    },0);
+                            }
                             function getQuestionsXML()
                             {
                                 var baseurl = "<?php print base_url(); ?>";
                                 $.ajax({
                                     url:  baseurl +"index.php/games/logScore",
                                     type:'POST',
-                                    cache:false,
+                                    cache:true,
                                     dataType: 'json',
                                     success:function(data){
                                         if(data){                    
                                             myArray = data;
                                             makeXML();
-                                            //alert(XMLString);
+                                            //log(XMLString);
                                         }
                                         //else
                                             //alert("Error Parsing XML");
@@ -125,12 +130,7 @@
                                 
                             }
                                     
-                                    function log(msg) {
-                                        setTimeout(function() {
-                                            throw new Error(msg);
-                                        }, 0);
-                                    }   
-    
+                                    
 
 				function updateRange()
 				{
@@ -204,6 +204,7 @@
 			height: 600px;
 			width: 960px;
 		}
+                
 		-->
 		</style>
 	</head>

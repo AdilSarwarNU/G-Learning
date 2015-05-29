@@ -65,6 +65,8 @@ html ,body{
     padding:0;
     margin:auto;
     
+    
+    
     height:100%;    //for header_image
     padding:0;
     margin:0;
@@ -80,7 +82,7 @@ body {
     font: 14px/24px Tahoma, Geneva, sans-serif !important;
   //  width:1340px ;
     margin:auto !important;
-    background: whitesmoke; 
+    background: #fff7d9;
 }
 
 .main-header {
@@ -290,6 +292,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4d6db', end
     position: absolute;
 }
 #headfoot{
+    float:clear;
     width: 100%;
     background-color: #fff7d9;  //old: #1E2935; 
 }
@@ -370,8 +373,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4d6db', end
 
 /*  ADMIN CSS   */
 .main_container_general
-{
+{   
     width:1340px;
+    float:none;
     margin: auto;
     height: auto;
 }
@@ -407,7 +411,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4d6db', end
     background-color: #FFF7D9;
     min-height: 500px;
     width:1340px;
-    overflow: auto;
+    overflow: auto  ;
 }
 
 .right_nav_general
@@ -1443,9 +1447,9 @@ z-index:1000;
 }
 .teacher_mid_right{
     margin:auto;
-   
+    height:100%;
     width:74%;
-    overflow: auto;
+    
 }
 .no_option_seleted{
     height:60px;
@@ -1825,8 +1829,8 @@ z-index:1000;
 
 .result_card_div
 {
- height:650px;
-    max-height:650px;
+ height:100%;
+    max-height:auto;
     display:inline-block;
     width:100%;   
 }
@@ -1853,8 +1857,6 @@ z-index:1000;
 
 .error_main_container{
     margin-top: 20%;
-    height:80px;
-    
     display:inline-block;
     width:100%;
     border: #f73f3f solid thin;
@@ -1870,3 +1872,4 @@ line-height:80px;
     color:#fafafa;
     background-color: #f73f3f;
     font-family: Montserrat;}
+

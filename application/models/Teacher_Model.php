@@ -9,6 +9,7 @@ class Teacher_Model extends CI_Model {
     }
     public function insert_new_assessment($assess_name,$total_marks,$drill_id,$teacher_id,$school_id)
     {
+        
         $assess_status=0;
         // Preparing the Array to be inserted into Assessment Table
             $new_assessment = array(
@@ -111,6 +112,7 @@ class Teacher_Model extends CI_Model {
     
     function generate_result_card($teacher_id,$school_id)
     {
+        
         $srno = 0;
         $data = array(array());
         $assessments_id = array();
