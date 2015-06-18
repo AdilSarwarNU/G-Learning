@@ -1,33 +1,10 @@
  <?php  
 class Teacher_Model extends CI_Model {  
-  
     function Teacher_Model()
     {  
         // Call the Model constructor  
         parent::__construct(); 
         $this->load->helper('date');
-    }
-    public function insert_new_assessment($assess_name,$total_marks,$drill_id,$teacher_id,$school_id)
-    {
-        
-        $assess_status=0;
-        // Preparing the Array to be inserted into Assessment Table
-            $new_assessment = array(
-                'assessment_name' => $assess_name,
-                'total_marks' => $total_marks,
-                'assessment_status' => $assess_status,
-                'drill_id' => $drill_id,
-                'teacher_id' => $teacher_id,
-                'school_id' => $school_id
-            );
-            $query = $this->db->insert('assessment',$new_assessment);
-            $assess_id = $this->db->insert_id();
-            if($query)
-            {
-                return $assess_id;  //return assessmentid generated
-            }else{
-                return 0;
-            }
     }
     public function insert_new_question($assess_id,$question_staement,$question_answer,$question_option1,$question_option2,$question_option3,$complexity_level)
     {
@@ -82,7 +59,7 @@ class Teacher_Model extends CI_Model {
             foreach ($results->result() as $row)
             {
             //    $array['rank'.$j] = $j+1;
-                $array['student_name'.$j] = $row->first_name .' '. $row->last_name;// $row['first_name'].$row['last_name'];
+                $array['student_name'.$j] = $row->first_name . $row->last_name;// $row['first_name'].$row['last_name'];
                 $array['student_contact'.$j] = $row->email;
          //       $array['score'.$j] = $row->score;
                 $j++;
@@ -94,6 +71,95 @@ class Teacher_Model extends CI_Model {
             return $array;
         }
         
+    }
+    
+    function search_assessment($assess_name,$school_id,$teacher_id)
+    {
+        $this->db->where('assessment_name', $assess_name);
+        $this->db->where('school_id', $school_id);
+        $this->db->where('teacher_id', $teacher_id);
+        $this->db->from('assessment');
+        $query = $this->db->get();
+        if($query){
+            if($query->num_rows == 1)
+            {
+                $row = $query->row();
+                return $row->assessment_id;
+            }else{
+                return -1;
+            }
+        }else{
+                return -1;
+        }
+    }
+    
+    function give_assessment_questions($assess_id,&$i)
+    {
+       $this->db->where('assessment_id', $assess_id);
+        $this->db->from('question');
+        $results = $this->db->get();
+    //    print_r($results->result_array());  //very helpfull
+        $array = array();
+        
+        if($results)
+        {
+            foreach ($results->result() as $row)
+            {
+                $array['question_id'.$i] = $row->question_id;
+                $array['statement'.$i] = $row->statement;// $row['first_name'].$row['last_name'];
+                $array['answer'.$i] = $row->answer;
+                $array['option1'.$i] = $row->option1;
+                $array['option2'.$i] = $row->option2;
+                $array['option3'.$i] = $row->option3;
+            //    $array['option1'.$i] = $row->score;
+                $i++;
+            }
+            $array['feedback']=1;
+            return $array;
+        }else{
+            $array['feedback']=0;
+            return $array;
+        }
+        
+    }
+   
+    function sendPassRequest($username, $date)
+    {
+        $requestData = array(
+            'username' => $username,
+            'request_date' => $date
+            
+        );
+
+       $result=$this->db->insert('password_requests',$requestData);
+       if($result)
+           return true;
+       else 
+            return false;
+       
+    }
+
+public function insert_new_assessment($assess_name,$total_marks,$drill_id,$teacher_id,$school_id)
+    {
+        
+        $assess_status=0;
+        // Preparing the Array to be inserted into Assessment Table
+            $new_assessment = array(
+                'assessment_name' => $assess_name,
+                'total_marks' => $total_marks,
+                'assessment_status' => $assess_status,
+                'drill_id' => $drill_id,
+                'teacher_id' => $teacher_id,
+                'school_id' => $school_id
+            );
+            $query = $this->db->insert('assessment',$new_assessment);
+            $assess_id = $this->db->insert_id();
+            if($query)
+            {
+                return $assess_id;  //return assessmentid generated
+            }else{
+                return 0;
+            }
     }
     
     function get_assessments_by_teacher_count($teacher_id)
@@ -111,7 +177,6 @@ class Teacher_Model extends CI_Model {
       
         return $query;
     }
-    
     
     function generate_result_card($teacher_id,$school_id)
     {
@@ -221,55 +286,7 @@ class Teacher_Model extends CI_Model {
         }
             return $student;
     }
-    function search_assessment($assess_name,$school_id,$teacher_id)
-    {
-        $this->db->where('assessment_name', $assess_name);
-        $this->db->where('school_id', $school_id);
-        $this->db->where('teacher_id', $teacher_id);
-        $this->db->from('assessment');
-        $query = $this->db->get();
-        if($query){
-            if($query->num_rows == 1)
-            {
-                $row = $query->row();
-                return $row->assessment_id;
-            }else{
-                return -1;
-            }
-        }else{
-                return -1;
-        }
-    }
-    
-    function give_assessment_questions($assess_id,&$i)
-    {
-       $this->db->where('assessment_id', $assess_id);
-        $this->db->from('question');
-        $results = $this->db->get();
-    
-        $array = array();
-        
-        if($results)
-        {
-            foreach ($results->result() as $row)
-            {
-                $array['question_id'.$i] = $row->question_id;
-                $array['statement'.$i] = $row->statement;// $row['first_name'].$row['last_name'];
-                $array['answer'.$i] = $row->answer;
-                $array['option1'.$i] = $row->option1;
-                $array['option2'.$i] = $row->option2;
-                $array['option3'.$i] = $row->option3;
-            //    $array['option1'.$i] = $row->score;
-                $i++;
-            }
-            $array['feedback']=1;
-            return $array;
-        }else{
-            $array['feedback']=0;
-            return $array;
-        }
-        
-    }
+  
     function update_assessment_question($q_id,$statement,$answer,$option1,$option2,$option3)
     {
         
@@ -290,19 +307,6 @@ class Teacher_Model extends CI_Model {
             return 0;
         }
     }
-    function sendPassRequest($username, $date)
-    {
-        $requestData = array(
-            'username' => $username,
-            'request_date' => $date
-            
-        );
-
-       $result=$this->db->insert('password_requests',$requestData);
-       if($result)
-           return true;
-       else 
-            return false;
-       
-    }
+  
 }
+

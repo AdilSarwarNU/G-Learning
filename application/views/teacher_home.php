@@ -80,7 +80,7 @@
     </div>
   <div class="mid_content_general">
     <div class='page'>
-            <div class="navigation" id="navigation">
+            <div class="navigation expanded" id="navigation">
                 <a class="nav-toggler" href="#" id="navToggler">
                     <span class="show-nav">&#9776;</span>
                     <span class="hide-nav">&times;</span>
@@ -247,12 +247,13 @@
             </div>
             
                 <div id="result_card_div" class="result_card_div">
-                   <?php if($results) { ?>
-                    
                     <div class="heading_teacher">
                         <h1>Students Statistics</h1>
                         
                     </div>
+                   <?php if($results) { ?>
+                    
+                    
                     <?php if ($results){?>
                     <div style="padding:25px;margin:auto;text-align:center;"  >
                     <button class="btn-large btn-success"><a id="btnExport" >Export to Excel Sheet! </a></button>

@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Description of user
@@ -32,4 +33,5 @@ class game_log_model extends CI_Model {
     }
     
    
+
 }

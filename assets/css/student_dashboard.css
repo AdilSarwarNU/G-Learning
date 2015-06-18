@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: "Montserrat";
     src: url(../fonts/montserrat/Montserrat-Regular.ttf) format("truetype");
@@ -22,8 +23,9 @@
     width:100%;
     height:auto;
     margin:auto;
-    background-color: #fff7d9;  //old: #1E2935; 
+    //background-color: #fff7d9;  //old: #1E2935; 
     overflow: hidden;
+    background: url(../images/Bg.png);
 }
 
 .student_dashboard_video{
@@ -122,31 +124,16 @@
 
 .mid_images_container
 {
-    margin-top: 30px;
+    margin-top: -100px;
 }
 
-.mid-content:before{
-    z-index:-1;
-    position:absolute;
-    left:0;
-    top:0px;
-    background-color:#fff7d9;
-    opacity:0.5;
-}
-.mid-content:after{
-    z-index:-1;
-    position:absolute;
-    left:0;
-    top:980px;
-   background-color:#fff7d9;
-    opacity:0.5;
-}
+
 
 .student_top_menu
 {
     margin: auto;
     width:1300px;
-    height: auto;
+    height: 400px;
 }
 
 .student_menu_tabs
@@ -167,18 +154,18 @@
 
 .student_menu_tab_body
 {
-    margin-left:150px;
+    margin-left: 98px;
+  width: 233px;
 }
 
 .student_menu_tab_body label
 {
-    font-size: 40px;
+    font-size: 24px;
     text-align: center;
-    color: #399;
-   
+    color: #003399;
+    text-shadow: 2px 2px 6px #949494;
     font-weight: 600;
-    font-family:"Jenna Sue";
-    margin-top:7px;
+    margin-top: -7px;
 }
 
 .student_menu_tabs img
@@ -207,7 +194,13 @@
     margin-right: 140px;
 }
 
-.welcome_cloud label
+.welcome_label_text
+{
+    margin-top: -179px;
+    margin-left: 100px;
+}
+
+.welcome_label_text label
 {
     font-size: 36px;
     font-weight: 600;
@@ -222,10 +215,8 @@
 }
 
 .rankings_container { 
-    width:100% !important;
-    height:630px;
-    margin-left:280px;
-    marin-top:10px;
+    margin-top: 33px;
+    margin-bottom: 20px;
  }
 
 .box {    
@@ -428,12 +419,13 @@
 .student_top_quote
 {
     border: 1px solid whitesmoke;
-    height:40px;
-    text-align: center;
-    background-color: #D35453;
-    box-shadow: 0px 0px 15px #FFF;
-    -moz-box-shadow: 0px 0px 15px #FFF;
-    -webkit-box-shadow: 0px 0px 15px #FFF;
+  height: 28px;
+  text-align: center;
+  background-color: #D35453;
+  box-shadow: 0px 0px 15px #FFF;
+  -moz-box-shadow: 0px 0px 15px #FFF;
+  -webkit-box-shadow: 0px 0px 15px #FFF;
+  padding-top: 4px;
 }
 
 .student_top_quote label
@@ -676,4 +668,14 @@ figcaption a:hover {
     margin:auto;
     text-align: center;
     font-weight: normal;
+}
+.drill_text-2{
+    font-family: jango;
+    font-size: 26px;
+     color: gainsboro;
+  
+    height:auto;
+    margin:auto;
+    text-align: center;
+    font-weight: bold;
 }

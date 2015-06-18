@@ -200,7 +200,7 @@ class DataEntry extends CI_Controller{
             //loading students
             $school_id=$this->session->userdata['school_id'];
             $j = 0;
-
+             $teacher_id = $this->session->userdata['person_id'];
             $data['result'] = $this->Teacher_Model->get_all_students($school_id,$j);
 
             if ( $data['result']['feedback']==0) //insertion failed
@@ -212,6 +212,8 @@ class DataEntry extends CI_Controller{
                 $data['no_of_students'] = $j;
                 //loading delete_assess
                 $data['page_title'] = 'G-Learning | Teacher';
+                $data['assessments'] = $this->Teacher_Model->get_assessments_by_teacher($teacher_id)->result_array();
+
                 $data['scroll_to_div'] = 'view_student';
                 $this->load->view('main_header_new',$data);
                 $this->load->view('teacher_home');

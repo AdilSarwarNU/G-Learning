@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
+-- Generation Time: May 27, 2015 at 04:50 PM
+=======
 -- Generation Time: May 25, 2015 at 06:55 AM
+>>>>>>> master
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -34,7 +38,11 @@ CREATE TABLE IF NOT EXISTS `assessment` (
   `drill_id` int(255) NOT NULL,
   `teacher_id` int(255) NOT NULL,
   `school_id` int(255) NOT NULL,
+<<<<<<< HEAD
+  PRIMARY KEY (`assessment_id`),
+=======
   PRIMARY KEY (`assessment_id`,`teacher_id`),
+>>>>>>> master
   KEY `FK_assessment_drill` (`drill_id`),
   KEY `FK_assessment_teacher` (`teacher_id`),
   KEY `FK_assessment_school` (`school_id`)
@@ -45,9 +53,14 @@ CREATE TABLE IF NOT EXISTS `assessment` (
 --
 
 INSERT INTO `assessment` (`assessment_id`, `assessment_name`, `total_marks`, `assessment_status`, `drill_id`, `teacher_id`, `school_id`) VALUES
+<<<<<<< HEAD
+(2, 'A1', 10, '1', 1, 40, 1),
+(3, 'A2', 10, '1', 1, 40, 1);
+=======
 (1, 'Test1', 10, '0', 1, 47, 1),
 (2, 'T2', 20, '0', 1, 47, 1),
 (3, 'TT2', 30, '0', 1, 47, 1);
+>>>>>>> master
 
 -- --------------------------------------------------------
 
@@ -111,6 +124,9 @@ CREATE TABLE IF NOT EXISTS `gamelogic` (
   PRIMARY KEY (`log_id`),
   KEY `FK_game_student` (`student_id`),
   KEY `FK_game_drill` (`drill_id`)
+<<<<<<< HEAD
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
@@ -127,6 +143,7 @@ INSERT INTO `gamelogic` (`log_id`, `complexity_level`, `percentage`, `drill_id`,
 (7, 2, 0, 1, 45),
 (8, 2, 2, 1, 45),
 (9, 2, 2, 1, 45);
+>>>>>>> master
 
 -- --------------------------------------------------------
 
@@ -147,11 +164,18 @@ CREATE TABLE IF NOT EXISTS `gradesheet` (
 --
 
 INSERT INTO `gradesheet` (`student_id`, `assessment_id`, `marks_obtained`) VALUES
+<<<<<<< HEAD
+(37, 2, 8),
+(37, 3, 9),
+(41, 2, 10),
+(41, 3, 10);
+=======
 (37, 1, 10),
 (37, 2, 5),
 (45, 2, 10),
 (46, 1, 5),
 (46, 2, 10);
+>>>>>>> master
 
 -- --------------------------------------------------------
 
@@ -178,6 +202,13 @@ CREATE TABLE IF NOT EXISTS `login` (
 
 INSERT INTO `login` (`person_id`, `username`, `password`, `type`, `parent_password`, `school_id`) VALUES
 (32, 'admin', 'dbavOTe8181uxXKLxigyFmZGibTzmLK1k7CTMvBxmDbr8Mf6e1qM2xhZdKvh1D5bhkfLHSsQMSsBLy9FbXc1NQ==', 'admin', '', 1),
+<<<<<<< HEAD
+(37, 'adil', 'ePwCxbdzxwXRKnT8E5peb0RBksKmu/BmAbn7laE+wXeZfCSem1ySINhfV5hMiTsFw21cqw4EBTDkVdm8i2WkzQ==', 'student', 'du1CLaWIFWg7oHs1xOwKmkcsEDtJOavJzwegvmbZO4O6IqiW0kgW3xlKoYIcHhOabQfXhLVeGxZn6ZS3E8LR7w==', 1),
+(40, 'Adil Sarwar', 'byFNDjdAW7dZIM+WIzcBcVsH/atGKKS4qU93ztB8hBiltBt77gCsAGNqBu+Ip7e5+6bKiCq2fKo66IkYHpTUfg==', 'teacher', '', 1),
+(41, 'Tahla Naveed', 'VKL0GE9EFaVmaF0n5IMjZ5AXdcWuvS61BSbWcOFXdx4+N077yxIekLLBdGKGh0vY6NX5h6oIqnlMO0AoGpKHLw==', 'student', 'WgJUi81p6eIaSLO2rbQnbmvOdgm50Juefww8ASYmhP/MIEGQj1iF7BWoqKL8Oze+l8hdkE1wiefANTIDzZffgQ==', 1),
+(47, 'talha', 'KRPLous5nDlasKMWvu43AOF1aFsG3RCW9dq36/dvZ4SvGMULbOZiqXCB2dOa+UKYRdKmk9iQO1WzQEZ04+bMQw==', 'student', 'VZahN9sPlQHNmoHTd626cp3ITkCHhBqu+ZWl+ED9+UU7B8pm27OX9iReybvzUbRQk9TaDFFiKB8mcnNEuOm3Gg==', 1),
+(53, 'yasir', 'Ppvq0eKkGmhX/bmTiju7N+ABzdpABW8NDRzDJzZpeHQlym6Y+rqD/n489h5si2F+kWYy+4Un5mkwFvBzjZsjWA==', 'student', 'tbVSZm2ieD+2n8pvfUFA1ycqhv6aExt1Pc4klPh/TaSLoIXXxk9EPEf52qPJ2f/DDThzq1d+8KeOGNfTQRUgpA==', 2);
+=======
 (37, 'adil', 'du1CLaWIFWg7oHs1xOwKmkcsEDtJOavJzwegvmbZO4O6IqiW0kgW3xlKoYIcHhOabQfXhLVeGxZn6ZS3E8LR7w==', 'student', 'sPb2WMKFDGf8UXfH6hDKgZGFVDZ3hzKYoQgrIJxOijpbCsVkjmaHPY01xRVsu/HkcM2pePwQHm/HkpCloisQgQ==', 1),
 (39, 'adilteacher', 'yV6L4sDh5MWeYlK675Zqx7s9eJCEM5vHU2qY47IjulCMqTzFOpTbSQdJcaktEup4A5xLFYZ+XUa/mTd2Zq9lRg==', 'teacher', '', 1),
 (40, 'adit', 'byFNDjdAW7dZIM+WIzcBcVsH/atGKKS4qU93ztB8hBiltBt77gCsAGNqBu+Ip7e5+6bKiCq2fKo66IkYHpTUfg==', 'teacher', '', 1),
@@ -189,6 +220,7 @@ INSERT INTO `login` (`person_id`, `username`, `password`, `type`, `parent_passwo
 (46, 'adil123', 'FKR1J6NFMNsceGQUzrJmm311QdBuWdYnaRKo2bejxA5bXdtYU9tPmnQkp8/DqHGsuJQt1HpPaU2t3QP85qPEIw==', 'student', '4Ebq3TI8ysQxg+LxJZGHK9joxtWOIIBgDO03Bp9R9u/MgsZCwcZ0x6lVNxfMWoMNyh2283a1+WBkCTAfaOUkFw==', 1),
 (47, 'teacher', '/ugzT2V09Egu6eRhKD7Z3Zh0YqFCo9ufbf1Kj+QIOxqQoak2l6AjjNZuSIb7jyC+g2So9ej+J3I81bisU9fvlw==', 'teacher', '', 1),
 (48, 'teacher2', 'ejkrQ9aNQH98iXvo10FR5M7Z73XFiVaupKInaNXJkWpjpJkQ5O8WAKzTUNzvimdBfYO9HVlqAaM5Jmmkd5vSCA==', 'teacher', '', 1);
+>>>>>>> master
 
 -- --------------------------------------------------------
 
@@ -202,6 +234,9 @@ CREATE TABLE IF NOT EXISTS `password_requests` (
   `request_date` date NOT NULL,
   PRIMARY KEY (`request_id`),
   KEY `username` (`username`)
+<<<<<<< HEAD
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
@@ -210,6 +245,7 @@ CREATE TABLE IF NOT EXISTS `password_requests` (
 
 INSERT INTO `password_requests` (`request_id`, `username`, `request_date`) VALUES
 (1, 'teacher2', '2015-05-24');
+>>>>>>> master
 
 -- --------------------------------------------------------
 
@@ -222,17 +258,35 @@ CREATE TABLE IF NOT EXISTS `person` (
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `address` varchar(1000) NOT NULL,
+<<<<<<< HEAD
+  `email` varchar(100) NOT NULL,
+  `pic_path` varchar(100) NOT NULL,
+  `level_in_game` int(11) NOT NULL DEFAULT '0',
+  `drill_level` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`person_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
+=======
   `ContactNumber` varchar(20) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
   `level_in_game` int(11) NOT NULL DEFAULT '0',
   `drill_level` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`person_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+>>>>>>> master
 
 --
 -- Dumping data for table `person`
 --
 
+<<<<<<< HEAD
+INSERT INTO `person` (`person_id`, `first_name`, `last_name`, `address`, `email`, `pic_path`, `level_in_game`, `drill_level`) VALUES
+(32, 'zain', 'malak', 'cantt', 'xyz@malik.com', '', 0, 1),
+(37, 'Adil', 'Sarwar', 'haiders home', 'Adil.sarwar11l4405@Gmail.com', 'student_pic.png', 1, 1),
+(40, 'Adil', 'sarwar', 'wapda town', 'adi@yahoo.com', '', 0, 1),
+(41, 'Talha', 'Naveed', 'lkjasd', 'talhanaveed123@gmail.com', 'student_pic.png', 1, 2),
+(47, 'Talha', 'Naveed', 'Valencia', 'Talha@gmail.com', 'student_pic.png', 0, 6),
+(53, 'Yaisr', 'shah', 'Lahore', 'yasir@gmail.com', 'student_pic.png', 0, 1);
+=======
 INSERT INTO `person` (`person_id`, `first_name`, `last_name`, `address`, `ContactNumber`, `email`, `level_in_game`, `drill_level`) VALUES
 (32, 'zain', 'malak', 'cantt', '03347563256', 'xyz@malik.com', 0, 0),
 (37, 'Adil', 'Sarwar', 'haiders home', NULL, 'adil@gmail.com', 0, 0),
@@ -246,6 +300,7 @@ INSERT INTO `person` (`person_id`, `first_name`, `last_name`, `address`, `Contac
 (46, 'Talha', 'Khan', 'House #118, Block H-1 P.E.C.H.S Valancia Lahore, Pakistan', NULL, 'talhanaveed1as23@gmail.com', 0, 0),
 (47, 'test', 'teacher', 'test', NULL, 'test@hotmail.com', 0, 0),
 (48, 'Test2', ' ', 'test2', NULL, 'test2@hotmail.com', 0, 0);
+>>>>>>> master
 
 -- --------------------------------------------------------
 
@@ -265,6 +320,9 @@ CREATE TABLE IF NOT EXISTS `question` (
   `assessment_id` int(11) NOT NULL,
   PRIMARY KEY (`question_id`),
   KEY `assessment_id` (`assessment_id`)
+<<<<<<< HEAD
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+=======
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
@@ -278,6 +336,7 @@ INSERT INTO `question` (`question_id`, `statement`, `option1`, `option2`, `optio
 (4, '40+11', '61', '31', '53', '51', 1, '0', 3),
 (5, '20+32', '34', '31', '62', '52', 1, '0', 3),
 (6, '10+50', '10', '32', '40', '60', 1, '0', 3);
+>>>>>>> master
 
 -- --------------------------------------------------------
 
