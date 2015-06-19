@@ -194,12 +194,16 @@ public function insert_new_assessment($assess_name,$total_marks,$drill_id,$teach
         $student = array();      
         $student_ids = array();
         
+//        foreach ($assessments->result() as $assess_id)
+//        {   
+//            foreach ($assess_id as $id)
+//                array_push($assessments_id,$id);
+//        }
+        
         foreach ($assessments->result() as $assess_id)
         {   
-            foreach ($assess_id as $id)
-                array_push($assessments_id,$id);
+                array_push($assessments_id,$assess_id->assessment_id);
         }
-        
         
         foreach ($assessments_id as $a)
         {
