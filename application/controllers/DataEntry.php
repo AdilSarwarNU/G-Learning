@@ -125,7 +125,7 @@ class DataEntry extends CI_Controller{
     public function update_assessment()
     {
         $no_of_questions   = $this->security->xss_clean($this->input->post('update_hiddenfield_noofqs'));
-        
+        $teacher_id = $this->session->userdata['person_id'];
         $this->load->model('Teacher_Model');
         
         for( $z=0; $z<$no_of_questions; $z++)
@@ -134,8 +134,8 @@ class DataEntry extends CI_Controller{
             $statement  = $this->security->xss_clean($this->input->post('update_question_' . $z));
             $answer   = $this->security->xss_clean($this->input->post('update_CorrectOption1_' . $z));
             $option1   = $this->security->xss_clean($this->input->post('update_QuestionOption2_' . $z));
-            $option2   = $this->security->xss_clean($this->input->post('update_QuestionOption2_' . $z));
-            $option3   = $this->security->xss_clean($this->input->post('update_QuestionOption3_' . $z));
+            $option2   = $this->security->xss_clean($this->input->post('update_QuestionOption3_' . $z));
+            $option3   = $this->security->xss_clean($this->input->post('update_QuestionOption4_' . $z));
             
             $result = $this->Teacher_Model->update_assessment_question($q_id,$statement,$answer,$option1,$option2,$option3);
            if($result==0)
