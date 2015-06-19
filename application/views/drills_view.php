@@ -83,7 +83,7 @@
 <div class="student_dashboard_body">
     <div class="drills-content">
         <div class='page'>
-            <div class="navigation" id="navigation">
+            <div class="navigation expanded" id="navigation">
                 <a class="nav-toggler" href="#" id="navToggler">
                     <span class="show-nav">&#9776;</span>
                     <span class="hide-nav">&times;</span>
@@ -179,4 +179,5 @@
             </div>
         </div>
     </div>
+>>>>>>> master
 </div>

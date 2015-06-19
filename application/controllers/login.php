@@ -1,12 +1,11 @@
+
 <?php 
-//session_start();
+session_start();
 class login extends CI_Controller{
     function __construct(){
         parent::__construct();
-         $this->load->helper('url');
-        $this->load->helper('asset');
+        $this->load->helper('url');
         $this->load->model('login_model');
-        $this->load->helper(array('form'));
     }
     
     public function index()
@@ -16,36 +15,22 @@ class login extends CI_Controller{
         $this->load->view('login_view');
     }
     
-    public function login_new()
-    {
-        $this->session->sess_destroy();
-        $this->load->view('login_view_new');
-    }
-    
     public function checkLogin()
     {
         $username = $this->security->xss_clean($this->input->post('username'));
         $password = $this->security->xss_clean($this->input->post('password'));
         $type = $this->security->xss_clean($this->input->post('type'));
         if($type != "parent"){
-        
             // Model Function Call
             $result = $this->login_model->checkLogin($username,$password,$type);
 
             if($result == "student"){
-                $data['page_title'] = 'G-Learning | Student';
-                $this->load->view('header_only_image',$data);
-                $this->load->view('student_dashboard');
-                $this->load->view('footer_new_design');
+                redirect('home/student_dashboard');
             }
             else if($result == "admin"){
                 $this->session->unset_userdata('errorFlag');
                 $this->session->unset_userdata('errorMessage');
-
-                $data['page_title'] = 'G-Learning | Admin';
-                $this->load->view('main_header_new',$data);
-                $this->load->view('admin_home_view');
-                $this->load->view('footer');
+                redirect('admin/student');
             }
             else if($result == "N"){
                 $this->session->set_userdata('errorFlag',false);
@@ -64,9 +49,7 @@ class login extends CI_Controller{
             if($result1 == false){
                 $data['page_title'] = 'G-Learning | Parents';
                 $data['name'] = $this->session->userdata['Namesss'];
-                $this->load->view('main_header_new',$data);
-                $this->load->view('parents_view');
-                $this->load->view('footer');
+                redirect('parents');
             }
             else{
                 $this->session->set_userdata('errorFlag',false);
@@ -75,7 +58,6 @@ class login extends CI_Controller{
             }
        }
     }
-    
     public function logout()
     {
         $this->session->unset_userdata('errorFlag');
@@ -84,5 +66,18 @@ class login extends CI_Controller{
         $this->session->sess_destroy();
         $this->load->view('login_view');
     }
+
+
+
+    public function login_new()
+    {
+        $this->session->sess_destroy();
+        $this->load->view('login_view_new');
+    }
+    
+   
+    
+    
 }
+
 ?>

@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/initial_test.css" type="text/css" media="screen">
 <?php   $q_array_size = 10;
         $q_array= array( // questions      //12
@@ -335,4 +336,5 @@
             <p>Road to Drills</p>
         </div>
     </div>
+
 </div>

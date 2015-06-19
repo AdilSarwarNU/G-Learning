@@ -56,6 +56,16 @@
 }
 
 /*  Parents_View CSS  */
+#report_card
+{
+    display: none;
+}
+
+#book_main_page
+{
+    display: none;
+}
+
 .book_main_page
 {
     background: url(../images/report.png);
@@ -97,13 +107,19 @@
     text-align: center;
 }
 
+#assignment_list
+{
+    display: none;
+}
+
+
 .result_sheet_heading
 {
     font-weight: 600;
     font-size: 24px;
     font-family: myriad-pro;
-    margin-top:30px;
-    color:#D35453;
+    margin-top:50px;
+    color:#6FB89F;
 }
 
 .CSSTableGenerator {

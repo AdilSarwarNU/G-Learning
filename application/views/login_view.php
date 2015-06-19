@@ -1,20 +1,18 @@
 <head>
-
-  <meta charset="UTF-8">
-
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css" type="text/css" media="screen">
     <link rel="icon" href="<?php echo base_url(); ?>/assets/images/favicon.ico" type="image/x-icon">
-     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/login.css" type="text/css">
-     <script src="<?php echo base_url();?>/assets/js/jquery.min.js"></script>
-    
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/login.css" type="text/css">
+    <script src="<?php echo base_url();?>/assets/js/jquery.min.js"></script>
 </head>
 <body>
-<div id="login"   >
- 
+
+<div id="login"  >
+
   <h1 >G-Learning</h1>
   <div class="error-div-failure" id="js-error-block" >
-            <div class="failure" id="js-error-block-message" ></div>
-        </div>
+    <div class="failure" id="js-error-block-message" ></div>
+  </div>
     
     <?php if(!$this->session->userdata('errorFlag') && $this->session->userdata('errorMessage'))
             {?>
@@ -72,6 +70,8 @@
 
 </body>
 
+
+
     <script>
             
         function validateLogin()
@@ -91,7 +91,7 @@
                 $('#js-error-block-message').text("Username is required");
             else if(password == "")
                 $('#js-error-block-message').text("Password is required");
-            
+
             $('#js-error-block').show();
             
     

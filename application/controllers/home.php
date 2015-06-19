@@ -24,12 +24,26 @@ class home extends CI_Controller{
         }
         else
         {
+
+            $this->load->model('levels_model');
+            $students = $this->levels_model->getAllStudentDrillLevel();
+            $myStudents = array(array());
+            $i = 0;
+            foreach ($students as $student)
+            {
+                $myStudents[$i][0] = $student->pic_path;
+                $myStudents[$i][1] = $student->drill_level;
+                $i++;
+            }
+            $data['students'] = $myStudents;
             $data['page_title'] = 'G-Learning | Student';
             $this->load->view('student_header',$data);
             $this->load->view('student_dashboard');  
         }
     
     }
+
+
     public function intitial_test() 
     {
         if(strcmp($this->session->userdata('type'),'student')!=0)

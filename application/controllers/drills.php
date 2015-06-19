@@ -48,7 +48,7 @@ class drills extends CI_Controller{
         $drill_level = $this->session->userdata('drill_level');
         $id = $this->session->userdata('person_id');
         $assessments = $this->drills_model->get_assessments($drill_level,$id);
-        
+        $data['scroll_to_div'] = 'heading_teacher';
         if ($assessments == 0)
             $data['msg'] = "Hurrah!! <br/> No Assessments to give right now!!";
            
@@ -61,4 +61,5 @@ class drills extends CI_Controller{
     
     
 }
+
 ?>

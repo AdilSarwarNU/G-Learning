@@ -45,6 +45,12 @@
         $('#EditAssessment_name').val(value);
         $('#edit_assessment_form').submit();
     }
+    function SubmitAssessmentDeleteForm(value)
+    {
+      //  alert(value);
+        $('#DeleteAssessment_name').val(value);
+        $('#delete_assessment_form').submit();
+    }
 </script>
     <style type="text/css">
     .tg  {border-collapse:collapse;border-spacing:0;}
@@ -80,7 +86,7 @@
     </div>
   <div class="mid_content_general">
     <div class='page'>
-            <div class="navigation" id="navigation">
+            <div class="navigation expanded" id="navigation">
                 <a class="nav-toggler" href="#" id="navToggler">
                     <span class="show-nav">&#9776;</span>
                     <span class="hide-nav">&times;</span>
@@ -234,25 +240,65 @@
                 <div class="heading_teacher">
                     <h1>Delete Assessment</h1>
                 </div>
+                <br>
+                  <table class="tg">
+              <tr>
+                <th class="tg-47zg">Assessment ID</th>
+                <th class="tg-47zg">Assessment Name</th>
+                <th class="tg-47zg">Drill Name</th>
+                <th class="tg-47zg">Total Marks</th>
+                <th class="tg-47zg">Delete</th>
+              </tr>
+           <?php  foreach($assessments as $assessment) 
+           { 
+          
+            ?> 
+              <tr>
+                <td class="tg-031e">
+                    <?php echo $assessment['assessment_id'] ?>
+                </td>
+                <td class="tg-031e">
+                     <?php echo $assessment['assessment_name'] ?>
+                </td>
+                <td class="tg-031e">
+                     <?php echo $assessment['drill_name'] ?>
+                </td>
+                <td class="tg-031e">
+                     <?php echo $assessment['total_marks'] ?>
+                </td>
+                <td class="tg-k6pi">
+                    <button onclick = "SubmitAssessmentDeleteForm('<?php echo $assessment['assessment_name'] ?>')">Delete</button>
+                </td>
+              </tr>
+              <?php }?>
+<!--              <tr>
+                <td class="tg-031e"></td>
+                <td class="tg-031e"></td>
+                <td class="tg-031e"></td>
+                <td class="tg-031e"></td>
+                <td class="tg-031e"></td>
+              </tr>-->
+            </table>
                 <form id="delete_assessment_form" name="delete_assessment_form" method="POST" action= "<?php echo base_url();?>DataEntry/delete_assessment">
                     <div class="labelandtextbox">
-                        <label>Assessment Name:</label>
-                        <input type="text" name="DeleteAssessment_name" value="" id="DeleteAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
+                        <!--<label>Assessment Name:</label>-->
+                        <input type="hidden" name="DeleteAssessment_name" value="" id="DeleteAssessment_name" maxlength="20" placeholder="Enter Assessment Name" required="required">
                     </div>
-                    <div class="submit_button_teacher">
+                    <!--<div class="submit_button_teacher">
                         <input type="submit" value='Delete Assessment'>
-                    </div>
+                    </div>-->
                     
                 </form>
             </div>
             
                 <div id="result_card_div" class="result_card_div">
-                   <?php if($results) { ?>
-                    
                     <div class="heading_teacher">
                         <h1>Students Statistics</h1>
                         
                     </div>
+                   <?php if($results) { ?>
+                    
+                    
                     <?php if ($results){?>
                     <div style="padding:25px;margin:auto;text-align:center;"  >
                     <button class="btn-large btn-success"><a id="btnExport" >Export to Excel Sheet! </a></button>

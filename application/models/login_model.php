@@ -1,11 +1,8 @@
+
 <?php
-/**
- * Description of user
- *
- * @author Haider
- */
+
 class login_model extends CI_Model {
-    
+
     function login_model()  
     {  
         // Call the Model constructor  
@@ -84,4 +81,5 @@ class login_model extends CI_Model {
         else
             return "N";
     }
+
 }
