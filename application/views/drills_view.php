@@ -80,7 +80,7 @@
 
 </script>
 
-<div class="student_dashboard_body">
+<div class="drills_page_body">
     <div class="drills-content">
         <div class='page'>
             <div class="navigation expanded" id="navigation">
@@ -143,7 +143,7 @@
 
            foreach($drills as $drill) 
            { 
-            if($count > $this->session->userdata('drill_level'))
+            if($count >= $this->session->userdata('drill_level'))
                 {
                     break;
                  }
@@ -179,5 +179,5 @@
             </div>
         </div>
     </div>
->>>>>>> master
+
 </div>

@@ -5,16 +5,16 @@
 		<title>Unity Web Player | Racer</title>
 		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
 		<script type="text/javascript">
-		<!--
+		
 		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
 		if (document.location.protocol == 'https:')
 			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
 		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
 	
-		-->
+		
 		</script>
 		<script type="text/javascript">
-		<!--
+		
 		    var level = <?php echo $level;?>;
 		    var drill_id = <?php echo $drill_id;?>;
 		    var mode = "<?php echo $mode;?>";
@@ -116,10 +116,41 @@
                         }
                     }); 
                 }
-		-->
+				  $(document).ready(function() {
+               	 $('.connectionState').hide();     
+               	 setInterval(function () {
+
+               	 	var baseurl = "<?php print base_url(); ?>";
+                    $.ajax({
+                        url:  baseurl +"games/testConnection",
+                        type:'POST',
+                        data: {drill_id : drill_id},
+                        dataType: 'json',
+                        success:function(data)
+                        {
+                        	if(data)
+                            {            
+                            $('.connectionState').hide();        
+                               
+                              //  alert(data);
+                            }
+                            //else
+                                //alert("Error Parsing XML");
+                        },
+                        error:function(x,e){
+
+                        //	alert("Server down");
+                        	$('.connectionState').show();
+                        }
+                    }); 
+
+
+               	 }, 3000);
+               });
+		
 		</script>
 		<style type="text/css">
-		<!--
+		
 		body {
 			font-family: Helvetica, Verdana, Arial, sans-serif;
 			background-color: white;
@@ -170,10 +201,30 @@
 			height: 600px;
 			width: 960px;
 		}
-		-->
+		.connectionState{
+		/*	     width:100%;
+			      height: 100%;
+			       background: rgba(131,131,131,0.4); position: fixed;
+		z-index: 10000;
+		margin-top: -67px;*/
+		}
+		.connectionState h1{
+			color: red;
+			font-size: 50px;
+		}
+		.connectionState p{
+
+			margin-top: 10px;
+		}
+		
 		</style>
 	</head>
 	<body>
+		<div style="" class="connectionState">
+
+			<h1>Connection Lost</h1>
+			<p>Please check your internet connection.</p>
+		</div>
 		<p class="header"><span>Unity Web Player | </span>Racer</p>
 		<div class="content">
 			<div id="unityPlayer">
