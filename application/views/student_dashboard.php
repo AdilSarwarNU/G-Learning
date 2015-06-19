@@ -16,6 +16,12 @@
 
 
 <script>
+    
+    $( document ).ready(function() {
+     $('html,body').animate({
+        scrollTop: $(".mid-content").offset().top},
+        'slow');
+    });
     function init_dw_Scroll() {
         // arguments: id of scroll area div, id of content div
         var wndo1 = new dw_scrollObj('wn1', 'lyr1');
@@ -134,7 +140,7 @@
 </div>
 
 <div class="student_dashboard_body">
-    <div class="mid-content">
+    <div class="mid-content" id="mid-content">
         <div class="student_top_menu">
             <div class="student_menu_tabs">
                 <div class="student_menu_tab">
@@ -154,7 +160,7 @@
                     </a>
                 </div>
                 <div class="student_menu_tab">
-                    <a href="#video">
+                     <a href="#video_text">
                         <div class="student_menu_tab_body">
                             <img src="<?php echo base_url();?>assets/images/video.png"/>
                             <label>Videos</label>
@@ -181,16 +187,16 @@
             <a href="#" id="playButton" onclick="checkLevel();">
                 <div class="welcome_cloud">
                     <img src="<?php echo base_url();?>assets/images/cloud2.png"/>
-                    <div class="welcome_label_text"><label>Let's Play Friend</label></div>
+                
                 </div>
             </a>
         </div>
         <br/><br/>
-        
-        <div class="student_top_quote" id="video">
-            <label>Explore the magical world of G-Learning - An introductory walkthrough</label>
+         <div class="student_top_quote" id="video_text" >
+           <div class="drill_text-2" >
+                Explore the magical world of G-Learning - An introductory walkthrough 
+             </div>
         </div>
-        
         <br/><br/>
         
         <div class="student_dashboard_video" id="video">            
@@ -201,7 +207,7 @@
             </video>
         </div>
         <div class="student_top_quote" id="ranks">
-            <label>Our Student Rankings</label>
+            <div class = "drill_text-2">Our Student Rankings</div>
         </div>
         <div class="rankings_container">
             <div class="ranking_pic_body">
