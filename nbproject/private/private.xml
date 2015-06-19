@@ -3,18 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/G-Learning/application/views/admin_home_view.php</file>
-            <file>file:/C:/wamp/www/G-Learning/application/views/admin_Addteacher_view.php</file>
-            <file>file:/C:/wamp/www/G-Learning/README.md</file>
-            <file>file:/C:/wamp/www/G-Learning/application/views/teacher_home.php</file>
-            <file>file:/C:/wamp/www/G-Learning/application/controllers/drills.php</file>
-            <file>file:/C:/wamp/www/G-Learning/application/controllers/DataEntry.php</file>
-            <file>file:/C:/wamp/www/G-Learning/application/views/password_requests_view.php</file>
-            <file>file:/C:/wamp/www/G-Learning/application/controllers/admin.php</file>
-            <file>file:/C:/wamp/www/G-Learning/application/views/drills_view.php</file>
-            <file>file:/C:/wamp/www/G-Learning/application/views/test_view.php</file>
+            <file>file:/C:/wamp/www/G-Learning/application/views/shootemup_asses_game.php</file>
+            <file>file:/C:/wamp/www/G-Learning/application/views/racer_game.php</file>
+            <file>file:/C:/wamp/www/G-Learning/application/views/lifeofbee.php</file>
+            <file>file:/C:/wamp/www/G-Learning/application/controllers/games.php</file>
             <file>file:/C:/wamp/www/G-Learning/assets/css/home.css</file>
             <file>file:/C:/wamp/www/G-Learning/application/controllers/teacher.php</file>
+            <file>file:/C:/wamp/www/G-Learning/application/views/runner_game.php</file>
         </group>
     </open-files>
 </project-private>

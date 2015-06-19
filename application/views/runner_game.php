@@ -82,41 +82,7 @@
 				    updateRange();
 				}
                                 
-                function endGame( arg )
-                {
-                	var x = parseInt(arg);
-                //	alert(x);
-                	score(x);
-				    
-				}
-
-				function score(arg)
-                {
-                	//alert(arg);
-                	var percentageScore = arg;
-                	//alert(percentageScore);
-                    var baseurl = "<?php print base_url(); ?>";
-                    $.ajax({
-                        url:  baseurl +"games/logScore",
-                        type:'POST',
-                        data: {drill_id : drill_id , level :level, percentageScore : percentageScore},
-                        cache:false,
-                        dataType: 'json',
-                        success:function(data)
-                        {
-
-                            if(data)
-                            {                    
-                               window.location.href = "<?php echo base_url();?>"+"games/shootEmUp";
-                               // alert(data);
-                            }
-                            //else
-                                //alert("Error Parsing XML");
-                        },
-                        error:function(x,e){
-                        }
-                    }); 
-                }
+               
 				
 		-->
 		</script>
