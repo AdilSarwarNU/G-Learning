@@ -94,6 +94,7 @@
                             <h2>Menu</h2>
                         </li>
                         <li><a  href="<?php echo base_url();?>home/student_dashboard">Dashboard</a></li>
+                        <li><a  href="<?php echo base_url();?>drills/assessments">Assessments</a></li>
                         <li><a href="<?php echo base_url();?>login/logout">Logout</a></li>
                     </ul>
                 </div>
@@ -178,4 +179,5 @@
             </div>
         </div>
     </div>
+>>>>>>> master
 </div>

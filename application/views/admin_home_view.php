@@ -1,3 +1,4 @@
+
 <link href="<?php echo base_url();?>assets/css/normalize.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url();?>assets/css/nav_menu.css" rel="stylesheet" type="text/css">
 <script>
@@ -220,6 +221,7 @@
                 
                 <div class="search_general" id="general_edit">
                     <div class="scroll_content mCustomScrollbar">
+                        <?php  if(isset($students)){ ?>
                         <div class="CSSTableGenerator">
                             <table id="students_list">
                                 <tr>
@@ -236,11 +238,17 @@
                                 <?php } ?>
                             </table>
                         </div>
+                        <?php } else { ?>
+                            <div class="password-note">
+                                <label>No Students</label>
+                            </div>
+                            <?php }   ?>
                     </div>
                 </div>
                 
                 <div class="search_general" id="general_delete">
                     <div class="scroll_content mCustomScrollbar">
+                        <?php  if(isset($students)){ ?>
                         <div class="CSSTableGenerator">
                             <table id="students_list">
                                 <tr>
@@ -248,15 +256,20 @@
                                     <td>Username</td>
                                     <td>Delete</td>
                                 </tr>
-                                <?php for($i = 0; $i < count($students); $i++ ) {?>
+                                <?php  for($i = 0; $i < count($students); $i++ ) {?>
                                     <tr>
                                         <td><?php echo $students[$i][1]." ".$students[$i][2]; ?></td>
                                         <td><?php echo $students[$i][3]; ?></td>
                                         <td><a href="<?php print base_url(); ?>admin/deleteStudent?person_id=<?php echo $students[$i][0]; ?>" class="edit_link">Delete</a></td>
                                     </tr>
-                                <?php } ?>
+                                <?php }  ?>
                             </table>
                         </div>
+                        <?php } else { ?>
+                            <div class="password-note">
+                                <label>No Students</label>
+                            </div>
+                            <?php }   ?>
                     </div>
                 </div>
                 
@@ -528,5 +541,4 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>

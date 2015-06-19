@@ -24,6 +24,7 @@ class home extends CI_Controller{
         }
         else
         {
+
             $this->load->model('levels_model');
             $students = $this->levels_model->getAllStudentDrillLevel();
             $myStudents = array(array());
@@ -41,7 +42,8 @@ class home extends CI_Controller{
         }
     
     }
-    
+
+
     public function intitial_test() 
     {
         if(strcmp($this->session->userdata('type'),'student')!=0)

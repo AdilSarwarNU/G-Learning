@@ -59,67 +59,20 @@ class games extends CI_Controller{
     {
         $this->load->model('levels_model');
         $person_id = $this->session->userdata['person_id'];
-        
-        $data['page_title'] = 'G-Learning | Catchy';
+     
+        $data['page_title'] = 'G-Learning | Balloon Party';
         $data['level'] =  $this->levels_model->checkLevel($person_id);
         $data['drill_id'] = $this->levels_model->getDrillId("Highest/Lowest");
-
         $this->load->view('main_header_new',$data);
         $this->load->view('balloon_party_game',$data);
         $this->load->view('footer');
+    
     }
     
-    public function runner()
-    {
-        $this->load->model('levels_model');
-        $person_id = $this->session->userdata['person_id'];
-        
-        
-        $data['page_title'] = 'G-Learning | Runner';
-        $data['level'] =  $this->levels_model->checkLevel($person_id);
-        $data['drill_id'] = $this->levels_model->getDrillId("Addition");
-
-        $this->load->view('main_header_new',$data);
-        $this->load->view('runner_game', $data);
-        $this->load->view('footer');
-    }
-    public function assessmentBird()
-    {
-        $data['page_title'] = 'G-Learning | Assessment Bird';
-        $this->load->view('main_header_new',$data);
-        $this->load->view('assessment_bird_game', $data);
-        $this->load->view('footer');
-    }
-    public function racerAscending()
-    {
-        $this->load->model('levels_model');
-        $person_id = $this->session->userdata['person_id'];
-        
-        $data['level'] =  $this->levels_model->checkLevel($person_id);
-        $data['drill_id'] = $this->levels_model->getDrillId("Ascending");
-        $data['mode'] = "ascending";
-        $data['page_title'] = 'G-Learning | Racer';
-        
-        $this->load->view('main_header_new',$data);
-        $this->load->view('racer_game', $data);
-        $this->load->view('footer');
-    }
+  
     
 
-      public function racerDescending()
-    {
-        $this->load->model('levels_model');
-        $person_id = $this->session->userdata['person_id'];
-       
-        $data['level'] =  $this->levels_model->checkLevel($person_id);
-        $data['drill_id'] = $this->levels_model->getDrillId("Descending");
-        $data['mode'] = "descending";
-        $data['page_title'] = 'G-Learning | Racer';
-
-        $this->load->view('main_header_new',$data);
-        $this->load->view('racer_game', $data);
-        $this->load->view('footer');
-    }
+    
     public function shootEmUp()
     {
         $data['page_title'] = 'G-Learning | Shoot Em Up';
@@ -157,18 +110,58 @@ class games extends CI_Controller{
         $this->load->view('footer');
     }
     
-     
-    public function topicAssessmentGameXML()
+
+      
+    public function runner()
     {
         $this->load->model('levels_model');
-        $questionArray = array(array());
-        $questionArray = $this->levels_model->getAssessmentQuestions();
-        $array = array(2);
-        $array[0] = count($questionArray);
-        $array[1] = $questionArray;
-        echo json_encode($array);
+        $person_id = $this->session->userdata['person_id'];
+        
+        
+        $data['page_title'] = 'G-Learning | Runner';
+        $data['level'] =  $this->levels_model->checkLevel($person_id);
+        $data['drill_id'] = $this->levels_model->getDrillId("Addition");
+        $this->load->view('main_header_new',$data);
+        $this->load->view('runner_game', $data);
+        $this->load->view('footer');
     }
-
+    public function assessmentBird()
+    {
+        $data['page_title'] = 'G-Learning | Assessment Bird';
+        $this->load->view('main_header_new',$data);
+        $this->load->view('assessment_bird_game', $data);
+        $this->load->view('footer');
+    }
+    public function racerAscending()
+    {
+        $this->load->model('levels_model');
+        $person_id = $this->session->userdata['person_id'];
+        
+        $data['level'] =  $this->levels_model->checkLevel($person_id);
+        $data['drill_id'] = $this->levels_model->getDrillId("Ascending");
+        $data['mode'] = "ascending";
+        $data['page_title'] = 'G-Learning | Racer';
+        
+        $this->load->view('main_header_new',$data);
+        $this->load->view('racer_game', $data);
+        $this->load->view('footer');
+    }
+    
+      public function racerDescending()
+    {
+        $this->load->model('levels_model');
+        $person_id = $this->session->userdata['person_id'];
+       
+        $data['level'] =  $this->levels_model->checkLevel($person_id);
+        $data['drill_id'] = $this->levels_model->getDrillId("Descending");
+        $data['mode'] = "descending";
+        $data['page_title'] = 'G-Learning | Racer';
+        $this->load->view('main_header_new',$data);
+        $this->load->view('racer_game', $data);
+        $this->load->view('footer');
+    }
+  
+  
     public function LogScore()
     {
         $this->load->model('game_log_model');
@@ -179,10 +172,20 @@ class games extends CI_Controller{
         $person_id = $this->session->userdata['person_id'];
         echo $this->game_log_model->logScore($person_id, $drill_id, $level,$percentageScore);
 
+
+
     }
     public function testView()
     {
         $this->load->view('test_view');
+    }
+
+
+
+    public function testConnection()
+    {
+         $drill_id  = $this->security->xss_clean($this->input->post('drill_id'));
+         echo $drill_id;
     }
 
     

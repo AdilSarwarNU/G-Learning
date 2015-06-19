@@ -1,3 +1,4 @@
+
 <?php 
 session_start();
 class login extends CI_Controller{
@@ -65,5 +66,18 @@ class login extends CI_Controller{
         $this->session->sess_destroy();
         $this->load->view('login_view');
     }
+
+
+
+    public function login_new()
+    {
+        $this->session->sess_destroy();
+        $this->load->view('login_view_new');
+    }
+    
+   
+    
+    
 }
+
 ?>

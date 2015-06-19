@@ -14,7 +14,7 @@
 		</script>
 		<script type="text/javascript">
 		<!--
-                        var mylevel = <?php echo $level;?>;
+                        var level = <?php echo $level;?>;
                         var drill_id = <?php echo $drill_id;?>;
 			var config = {
 				width: 960, 
@@ -23,9 +23,7 @@
 				
 			};
 			var u = new UnityObject2(config);
-
 			jQuery(function() {
-
 				var $missingScreen = jQuery("#unityPlayer").find(".missing");
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
 				$missingScreen.hide();
@@ -60,27 +58,27 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "<?php echo base_url();?>assets/unitygames/Balloon_Party.unity3d");
 			});
+			 function SayHello( arg )
+                {
+                  
+                    updateRange();
+                }
                 function updateRange()
 				{
-                                //    alert("Range");
-                                    if(mylevel==1)
-                                    {
-                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "5");
-                                        u.getUnity().SendMessage("GameManager", "setupperRange", "20");
-                                    }
-
-                                    if(mylevel==2)
-                                    {
-                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "20");
-                                        u.getUnity().SendMessage("GameManager", "setupperRange", "60");
-                                    }
-
-                                    if(mylevel==3)
-                                    {
-                                        u.getUnity().SendMessage("GameManager", "setlowerRange", "60");
-                                        u.getUnity().SendMessage("GameManager", "setupperRange", "99");    
-                                    }
-                                }
+                    //    alert("Range");
+                        if(level==1)
+                        {
+                            u.getUnity().SendMessage("GameManager", "setRange", "20");
+                        }
+                        if(level==2)
+                        {
+                           u.getUnity().SendMessage("GameManager", "setRange", "35");
+                        }
+                        if(level==3)
+                        {
+                             u.getUnity().SendMessage("GameManager", "setRange", "75");  
+                        }
+    			}
                function UnityCall( arg )
 				{
                                     //    alert( arg );
@@ -89,12 +87,11 @@
 				function endGame( arg )
                 {
                 	score(arg);
-                    window.location.href = "<?php echo base_url();?>"+"games/shootEmUp";
+                   
                 }
 				function score(arg)
                 {
                 	var percentageScore = arg;
-
                     var baseurl = "<?php print base_url(); ?>";
                     $.ajax({
                         url:  baseurl +"games/logScore",
@@ -104,7 +101,7 @@
                         dataType: 'json',
                         success:function(data)
                         {
-
+                        	 window.location.href = "<?php echo base_url();?>"+"games/shootEmUp";
                             if(data)
                             {                    
                                
@@ -114,13 +111,47 @@
                                 //alert("Error Parsing XML");
                         },
                         error:function(x,e){
+
+                        	//alert("Server down");
                         }
                     }); 
                 }
+
+               $(document).ready(function() {
+               	 $('.connectionState').hide();     
+               	 setInterval(function () {
+
+               	 	var baseurl = "<?php print base_url(); ?>";
+                    $.ajax({
+                        url:  baseurl +"games/testConnection",
+                        type:'POST',
+                        data: {drill_id : drill_id},
+                        dataType: 'json',
+                        success:function(data)
+                        {
+                        	if(data)
+                            {            
+                            $('.connectionState').hide();        
+                               
+                              //  alert(data);
+                            }
+                            //else
+                                //alert("Error Parsing XML");
+                        },
+                        error:function(x,e){
+
+                        //	alert("Server down");
+                        	$('.connectionState').show();
+                        }
+                    }); 
+
+
+               	 }, 3000);
+               });
 		-->
 		</script>
 		<style type="text/css">
-		<!--
+	
 		body {
 			font-family: Helvetica, Verdana, Arial, sans-serif;
 			background-color: white;
@@ -171,10 +202,30 @@
 			height: 540px;
 			width: 960px;
 		}
-		-->
+		.connectionState{
+		/*	     width:100%;
+			      height: 100%;
+			       background: rgba(131,131,131,0.4); position: fixed;
+		z-index: 10000;
+		margin-top: -67px;*/
+		}
+		.connectionState h1{
+			color: red;
+			font-size: 50px;
+		}
+		.connectionState p{
+
+			margin-top: 10px;
+		}
+	
 		</style>
 	</head>
 	<body>
+		<div style="" class="connectionState">
+
+			<h1>Connection Lost</h1>
+			<p>Please check your internet connection.</p>
+		</div>
 		<p class="header"><span>Unity Web Player | </span>BalloonParty</p>
 		<div class="content">
 			<div id="unityPlayer">

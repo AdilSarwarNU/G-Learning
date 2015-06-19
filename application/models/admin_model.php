@@ -23,6 +23,7 @@ class admin_model extends CI_Model {
         return $row->email;
     }
     
+
     function validateEmail($email, $person_id)
     {
         if($person_id != -1){
@@ -209,6 +210,7 @@ class admin_model extends CI_Model {
             return "Deleted";
         else
             return "Not Deleted";
+
     }
     
     public function searchStudent($username)

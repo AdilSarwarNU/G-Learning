@@ -1,11 +1,8 @@
+
 <?php
-/**
- * Description of user
- *
- * @author Haider
- */
+
 class login_model extends CI_Model {
-    
+
     function login_model()  
     {  
         // Call the Model constructor  
@@ -27,7 +24,7 @@ class login_model extends CI_Model {
                 $this->session->set_userdata('person_id',$row->person_id);
                 $this->session->set_userdata('school_id',$row->school_id);
                 $this->session->set_userdata('username',$row->username);
-                $this->session->set_userdata('type',"parent");
+                $this->session->set_userdata('type',$row->type);
                 $this->session->set_userdata('validated',true);
                 $person_id = $row->person_id;
                 $this->db->where('person_id', $person_id);
@@ -84,4 +81,5 @@ class login_model extends CI_Model {
         else
             return "N";
     }
+
 }

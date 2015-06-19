@@ -1,3 +1,4 @@
+
 <?php
 class admin extends CI_Controller
 {
@@ -48,20 +49,25 @@ class admin extends CI_Controller
         
         $students = array(array());
         $results = $this->admin_model->getAllStudents();
-        $i = 0;
-        foreach($results as $student){
-            $students[$i][0] = $student->person_id;
-            $students[$i][1] = $student->first_name;
-            $students[$i][2] = $student->last_name;
-            $students[$i][3] = $student->username;
-            $students[$i][4] = $student->email;
-            $students[$i][5] = $student->address;
-            $students[$i][6] = $this->encrypt->decode($student->password);
-            $students[$i][7] = $this->encrypt->decode($student->parent_password);
-            $students[$i][8] = $student->school_name;
-            $i++;
+        if(count($results) == 0)
+            $data['students'] = null;
+        else
+        {
+            $i = 0;
+            foreach($results as $student){
+                $students[$i][0] = $student->person_id;
+                $students[$i][1] = $student->first_name;
+                $students[$i][2] = $student->last_name;
+                $students[$i][3] = $student->username;
+                $students[$i][4] = $student->email;
+                $students[$i][5] = $student->address;
+                $students[$i][6] = $this->encrypt->decode($student->password);
+                $students[$i][7] = $this->encrypt->decode($student->parent_password);
+                $students[$i][8] = $student->school_name;
+                $i++;
+            }
+            $data['students'] = $students;
         }
-        $data['students'] = $students;
         
         $data['page_title'] = 'G-Learning | Admin';
         $this->load->view('main_header_new',$data);
@@ -88,20 +94,25 @@ class admin extends CI_Controller
         
         $teachers = array(array());
         $results = $this->admin_model->getAllTeachers();
-        $i = 0;
-        foreach($results as $teacher){
-            $teachers[$i][0] = $teacher->person_id;
-            $teachers[$i][1] = $teacher->first_name;
-            $teachers[$i][2] = $teacher->last_name;
-            $teachers[$i][3] = $teacher->username;
-            $teachers[$i][4] = $teacher->email;
-            $teachers[$i][5] = $teacher->address;
-            $teachers[$i][6] = $this->encrypt->decode($teacher->password);
-            $teachers[$i][7] = $this->encrypt->decode($teacher->parent_password);
-            $teachers[$i][8] = $teacher->school_name;
-            $i++;
+        if(count($results) == 0)
+            $data['students'] = null;
+        else
+        {
+            $i = 0;
+            foreach($results as $teacher){
+                $teachers[$i][0] = $teacher->person_id;
+                $teachers[$i][1] = $teacher->first_name;
+                $teachers[$i][2] = $teacher->last_name;
+                $teachers[$i][3] = $teacher->username;
+                $teachers[$i][4] = $teacher->email;
+                $teachers[$i][5] = $teacher->address;
+                $teachers[$i][6] = $this->encrypt->decode($teacher->password);
+                $teachers[$i][7] = $this->encrypt->decode($teacher->parent_password);
+                $teachers[$i][8] = $teacher->school_name;
+                $i++;
+            }
+            $data['teachers'] = $teachers;
         }
-        $data['teachers'] = $teachers;
         
         $data['page_title'] = 'G-Learning | Admin';
         $this->load->view('main_header_new',$data);
@@ -457,4 +468,3 @@ class admin extends CI_Controller
         }
     }
 }
-?>
