@@ -143,10 +143,9 @@
 
            foreach($drills as $drill) 
            { 
-            if($count >= $this->session->userdata('drill_level'))
-                {
-                    break;
-                 }
+            if($count >= $this->session->userdata('drill_level')){
+                break;
+            }
             ?> 
                 
                     <div class="game_row">

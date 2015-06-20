@@ -20,7 +20,9 @@
 		<script type="text/javascript">
 		<!--
                         var level = <?php echo $level;?>;
-                        var drill_id = <?php echo $drill_id;?>; 
+                        var drill_id = <?php echo $drill_id;?>;
+                        var p_id = <?php echo $this->session->userdata['person_id']; ?>;
+                        var assessment_id = 0;
 			var config = {
 				width: 960, 
 				height: 540,
@@ -104,6 +106,7 @@
                             }
 
                             function makeXML(){
+                                
                                 var size = myArray[0];
                                 XMLString = XMLString + "<assessment>\n<questions>"+size+"</questions>\n";
                                 for(var i = 0; i < size; i++){
@@ -150,35 +153,29 @@
                                 {
                                         var x = parseInt(arg);
                                         log(x);
-                                //	alert(x);
                                         score(x);
-
-                                                }
+                                }
 
                                 function score(arg)
                                 {
-                                        //alert(arg);
-                                    
-//                                    window.location.href = "<?php echo base_url();?>"+"drills/index";
-    
-//                                    var percentageScore = arg;
-//                                        //alert(percentageScore);
+                                    var percentageScore = arg;
                                     var baseurl = "<?php print base_url(); ?>";
-//                                    $.ajax({
-//                                        url:  baseurl +"games/logScore",
-//                                        type:'POST',
-//                                        data: {drill_id : drill_id , level :level, percentageScore : percentageScore},
-//                                        cache:false,
-//                                        dataType: 'json',
-//                                        success:function(data)
-//                                        {
-//                                            if(data)
-//                                            {                    
-                                               
-//                                        },
-//                                        error:function(x,e){
-//                                        }
-//                                    }); 
+                                    log('storing score');
+                                    $.ajax({
+                                        url:  baseurl +"games/LogAssessmentScore",
+                                        type:'POST',
+                                        data: { score : percentageScore},
+                                        cache:false,
+                                        dataType: 'json',
+                                        success:function(data)
+                                        {
+                                            if(data){  
+                                               window.location.href = "<?php echo base_url();?>"+"drills/updateDrillLevel";
+                                            }
+                                        },
+                                        error:function(x,e){
+                                        }
+                                    }); 
                                 }
 				
 		-->
